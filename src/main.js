@@ -177,6 +177,7 @@ async function boot() {
   }
   state.base = data.places;
   const q = readQuery();
+  const hadPosition = location.hash.includes('mapa='); // antes de o mapa reescrever o #hash
   state.era = [q.era, state.prefs.era].find((e) => eraById(e)) ?? 'aang';
 
   const nav = $('#eras');
@@ -198,7 +199,7 @@ async function boot() {
     refreshPlaces();
     writeQuery({ era: state.era });
     if (state.prefs.editor) setEditor(true);
-    if (q.place && byId(q.place)) select(q.place, { fly: !location.hash.includes('mapa=') });
+    if (q.place && byId(q.place)) select(q.place, { fly: !hadPosition });
     map.once('idle', () => { document.body.dataset.pronto = '1'; }); // usado pelo teste automático
   });
 

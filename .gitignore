@@ -5,3 +5,5 @@ public/overlays/
 public/previews/
 *.log
 .DS_Store
+arte/*
+!arte/LEIA-ME.txt

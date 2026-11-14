@@ -328,6 +328,7 @@ button { cursor: pointer; }
     padding-bottom: calc(20px + env(safe-area-inset-bottom));
   }
   .ferramentas { bottom: 24px; left: 8px; }
+  body:has(#painel:not([hidden])) .ferramentas { display: none; }
   .camadas { left: 8px; right: 8px; bottom: 70px; }
   .editor { top: auto; bottom: 70px; left: 8px; right: 8px; width: auto; max-height: 40dvh; }
   .aviso { top: 112px; }

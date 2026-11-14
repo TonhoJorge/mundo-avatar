@@ -143,7 +143,7 @@ export function createMap({ container, meta, era }) {
     pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
     attributionControl: {
       compact: true,
-      customAttribution: 'Projeto de fã sem fins lucrativos · Avatar © Nickelodeon/Paramount · Mapa procedural original',
+      customAttribution: 'Projeto de fã sem fins lucrativos · Avatar © Nickelodeon/Paramount',
     },
   });
   map.addControl(new NavigationControl({ visualizePitch: true }), 'bottom-right');

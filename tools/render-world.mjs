@@ -543,7 +543,7 @@ async function main() {
   const prev = fs.existsSync(metaFile) ? JSON.parse(fs.readFileSync(metaFile, 'utf8')) : {};
   const meta = { ...prev, maxzoom: maxZoom, overlaysMaxzoom: 2, generated: new Date().toISOString() };
   fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2));
-  console.log('Pronto.');
+  console.log(`Pronto. Memória máxima usada: ${Math.round(process.resourceUsage().maxRSS / 1024)} MB`);
 }
 
 if (isMainThread) main().catch((e) => { console.error(e); process.exit(1); });

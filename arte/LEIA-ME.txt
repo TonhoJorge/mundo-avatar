@@ -1,0 +1,2 @@
+# Coloque aqui a arte oficial do mapa (opcional): aang.jpg, korra.jpg, havens.jpg
+# Veja docs/ARTE-OFICIAL.md. Imagens deste diretório não vão para o git.

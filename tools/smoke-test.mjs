@@ -42,7 +42,20 @@ try {
   if (shots) await page.screenshot({ path: `${shots}/3-korra-nuvens.png` });
   await page.click('#btn-camadas'); // o menu fecha ao clicar fora dele
   await page.uncheck('#camadas input[name="clouds"]');
+  await page.check('#camadas input[name="editor"]');
+  await page.waitForSelector('.editor', { timeout: 10000 });
+  await page.uncheck('#camadas input[name="editor"]');
+  check((await page.$('.editor')) === null, 'editor não fechou');
   await page.keyboard.press('Escape');
+
+  // celular
+  const phone = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  phone.on('pageerror', (e) => problems.push(`erro de página (celular): ${e.message}`));
+  await phone.goto(`${url.split('?')[0].split('#')[0]}?era=korra&lugar=cidade-republica`);
+  await phone.waitForSelector('body[data-pronto="1"]', { timeout: 90000 });
+  check((await phone.textContent('#painel h2')) === 'Cidade República', 'link direto não abriu o lugar');
+  await phone.waitForTimeout(3000);
+  if (shots) await phone.screenshot({ path: `${shots}/4-celular.png` });
 } finally {
   await browser.close();
 }

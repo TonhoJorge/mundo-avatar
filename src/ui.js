@@ -87,7 +87,7 @@ export function showEraInfo(eraId) {
     h('dl', { class: 'meta' }, h('dt', {}, 'Fontes'), h('dd', {}, e.sources)),
     h('p', { class: 'legal' },
       'Projeto de fã, sem fins lucrativos. Avatar: A Lenda de Aang, A Lenda de Korra e Avatar: Sete Refúgios são marcas da Nickelodeon/Paramount. ',
-      'O mapa é uma pintura procedural original; posições marcadas como estimadas são aproximações.'),
+      'A pintura do mapa é procedural e original (salvo quando o administrador do site usa outra arte); posições marcadas como estimadas são aproximações.'),
   );
 }
 
