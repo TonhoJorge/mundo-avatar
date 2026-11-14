@@ -22,7 +22,13 @@ docker compose version
 
 ## 2. Levar o projeto para a VM
 
-**Opção A: arquivo compactado (`mundo-avatar.tar.gz`)**
+**Opção A (recomendada): GitHub**
+
+```bash
+git clone https://github.com/TonhoJorge/mundo-avatar.git ~/mundo-avatar
+```
+
+**Opção B: arquivo compactado (`mundo-avatar.tar.gz`)**
 
 1. No seu computador, copie o arquivo para a VM, trocando `usuario` e `IP-DA-VM`:
 
@@ -35,12 +41,6 @@ docker compose version
    ```bash
    mkdir -p ~/mundo-avatar && tar -xzf ~/mundo-avatar.tar.gz -C ~/mundo-avatar
    ```
-
-**Opção B: GitHub (quando o repositório existir)**
-
-```bash
-git clone https://github.com/SEU-USUARIO/mundo-avatar.git ~/mundo-avatar
-```
 
 ## 3. Subir o site
 
@@ -89,12 +89,12 @@ Nesse caso, mantenha a porta 8080 fechada para a internet e abra só a 80 e a 44
 
 ## 6. Atualizar
 
-- **Opção A:** extraia o arquivo novo por cima da pasta e rode `docker compose up -d --build`.
-- **Opção B:**
+- **Opção A (GitHub):**
 
   ```bash
-  ./deploy/atualizar.sh
+  cd ~/mundo-avatar && ./deploy/atualizar.sh
   ```
+- **Opção B:** extraia o arquivo novo por cima da pasta e rode `docker compose up -d --build`.
 
 ## Problemas comuns
 

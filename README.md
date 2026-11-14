@@ -64,7 +64,7 @@ Passo a passo detalhado para iniciantes: [docs/PUBLICAR.md](docs/PUBLICAR.md).
 No servidor, com Docker e o plugin Compose instalados:
 
 ```bash
-git clone <url-do-seu-repositorio> mundo-avatar
+git clone https://github.com/TonhoJorge/mundo-avatar.git
 ```
 
 ```bash
