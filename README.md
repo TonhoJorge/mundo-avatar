@@ -8,7 +8,7 @@ Globo interativo do mundo de *Avatar*, no estilo Google Earth: gire o planeta, a
 | Korra | 170–174 DG | A Lenda de Korra |
 | Pavi e Nisha | ≈ 399 DG | Avatar: Sete Refúgios |
 
-**Site no ar:** https://tonhojorge.github.io/mundo-avatar/
+**Site no ar:** https://avatarmaps.vercel.app (espelho: https://tonhojorge.github.io/mundo-avatar/)
 
 > Projeto de fã, **sem fins lucrativos**. *Avatar* e seus personagens são marcas da Nickelodeon/Paramount. A pintura do mapa incluída aqui é procedural e original. A arte oficial pode ser usada no seu próprio servidor (veja [docs/ARTE-OFICIAL.md](docs/ARTE-OFICIAL.md)).
 

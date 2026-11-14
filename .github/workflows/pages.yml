@@ -67,3 +67,32 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Mesma build publicada em https://avatarmaps.vercel.app.
+  # Precisa dos segredos VERCEL_TOKEN, VERCEL_ORG_ID e VERCEL_PROJECT_ID; sem o token, pula.
+  vercel:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - id: check
+        run: |
+          if [ -n "$VERCEL_TOKEN" ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "::notice::VERCEL_TOKEN não configurado; publicação na Vercel pulada."; fi
+
+      - if: steps.check.outputs.ok == 'true'
+        uses: actions/download-artifact@v5
+        with:
+          name: github-pages
+          path: artifact
+
+      - name: Publicar na Vercel
+        if: steps.check.outputs.ok == 'true'
+        run: |
+          mkdir -p site/public
+          tar -xf artifact/artifact.tar -C site/public
+          cd site
+          printf '{"framework":null,"buildCommand":null,"installCommand":null,"outputDirectory":"public"}\n' > vercel.json
+          npx --yes vercel@latest deploy --prod --yes --archive=tgz --token "$VERCEL_TOKEN"
