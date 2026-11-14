@@ -28,7 +28,7 @@ Este mapa junta informação de várias fontes, com níveis de confiança difere
 
 - CBR, *Every Haven Introduced in Avatar: Seven Havens, So Far*: https://www.cbr.com/avatar-seven-havens-book-one-survival-list/
 - Wikipédia (inglês): https://en.wikipedia.org/wiki/Avatar:_Seven_Havens
-- Avatar Wiki (fandom), páginas *Seven Havens* e *Ellora* (conteúdo lido via busca, sem acesso direto): https://avatar.fandom.com/wiki/Seven_Havens
+- Avatar Wiki (fandom): páginas *Seven Havens*, *Ellora*, *New Ba Sing Se*, *Akasha*, *Feather Mountain* e as páginas de cada lugar: https://avatar.fandom.com/wiki/Seven_Havens
 - TV Tropes, personagens de *Seven Havens*: https://tvtropes.org/pmwiki/pmwiki.php/Characters/AvatarSevenHavens
 - Knight Edge Media (relatos de bastidores; tratados como rumor): https://knightedgemedia.com/2025/10/where-are-the-twin-avatars-in-avatar-seven-havens-exclusive/
 - ComicBook.com, *What we know so far*: https://comicbook.com/anime/news/avatar-seven-havens-what-we-know-so-far
@@ -45,19 +45,24 @@ Não foi encontrado nenhum repositório aberto com o mundo Avatar já georrefere
 
 ## Como as posições foram definidas
 
-1. O mapa-múndi oficial foi tratado como uma projeção plana do globo.
-2. Continentes, ilhas e lugares receberam coordenadas aproximadas a partir da disposição conhecida desse mapa e das descrições relativas da série. Exemplos:
-   - Ellora fica no sudeste do Grande Continente;
-   - as Ilhas Flutuantes ficam a nordeste de Ellora, onde era a Baía Camaleão;
-   - a Passagem da Serpente fica entre o Lago Oriental e o mar.
-3. O gerador confere se cada lugar terrestre caiu em terra.
-4. Posições `baixa` devem ser revisadas com o **modo editor** sobre a arte oficial (veja [ARTE-OFICIAL.md](ARTE-OFICIAL.md)).
+1. **Disposição geral:** o mapa-múndi oficial da série (*Avatar world map*, publicado no Avatar Wiki) foi usado **só como referência de posição**. Nenhuma parte da arte foi copiada para o projeto. A conversão do mapa plano para o globo foi:
+   - longitude = (x% − 50) × 5,8
+   - latitude = 139,2 − 2,821 × y%
+
+   Sendo x% e y% a posição na imagem do mapa. Ela mantém as proporções do mapa nas latitudes médias e põe as terras das Tribos da Água sobre os polos. Os contornos em `world/geography.mjs` são simplificações desenhadas à mão sobre essa grade.
+2. **Localização de cada lugar:** campo *location* da página de cada lugar no **Avatar Wiki** (`avatar.fandom.com`, consultado em 14/11/2026). Exemplos:
+   - Ba Sing Se, Passagem da Serpente e Baía Camaleão ficam no nordeste do Reino da Terra;
+   - Omashu e a Caverna dos Dois Amantes ficam na Cordilheira Kolau (sudoeste);
+   - as Montanhas Taihua vão do sul de Ba Sing Se até o Templo do Ar do Norte;
+   - a Ilha Crescente e a Ilha de Roku ficam no leste da Nação do Fogo; a Rocha Fervente, a Ilha Ember e os Guerreiros do Sol, no norte;
+   - Makapu fica no nordeste da República Unida, Senlin no sul e a Floresta Wulong na costa oeste;
+   - Ellora fica no sudeste do Grande Continente; Nova Ba Sing Se, onde era Ba Sing Se.
+3. **Cores das nações:** seguem o mapa oficial: Fogo laranja-avermelhado, Terra bege, Água azul-gelo, Ar branco-acinzentado.
+4. **Era de Pavi e Nisha:** as tempestades violáceas seguem a arte oficial *Seven Havens from space* (Avatar Wiki), que mostra o planeta coberto de tempestades com sete refúgios brilhando.
+5. **Conferência automática:** o gerador avisa se algum lugar terrestre cair na água. Posições `baixa` devem ser revisadas com o **modo editor** sobre a arte oficial (veja [ARTE-OFICIAL.md](ARTE-OFICIAL.md)).
 
 ## Ainda falta consultar
 
-O ambiente onde o projeto foi montado bloqueava o acesso direto a alguns sites. Com acesso liberado, os próximos passos são:
-
-- **Avatar Wiki** (`avatar.fandom.com`): campos de localização das páginas de cada lugar e o mapa-múndi.
-- **Reddit:** r/TheLastAirbender e r/legendofkorra, onde há discussões sobre geografia, escala do mundo e mapas de fãs.
+- **Reddit:** r/TheLastAirbender e r/legendofkorra têm discussões sobre geografia e escala do mundo, mas o Reddit bloqueia leitura automática (erro 403); precisa ser consultado à mão.
 - **Wikipédia:** listas de episódios para conferir cada referência.
 - **Quadrinhos e romances** listados acima, para lugares extras de cada era.

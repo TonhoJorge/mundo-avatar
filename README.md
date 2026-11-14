@@ -59,6 +59,8 @@ npm run dev
 
 ## Publicar no servidor (instância isolada com Docker)
 
+Passo a passo detalhado para iniciantes: [docs/PUBLICAR.md](docs/PUBLICAR.md).
+
 No servidor, com Docker e o plugin Compose instalados:
 
 ```bash

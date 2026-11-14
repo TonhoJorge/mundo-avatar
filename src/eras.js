@@ -30,7 +30,10 @@ export const ERAS = [
     summary:
       'Cerca de 225 anos depois de Korra, um Cataclismo derrubou as Quatro Nações. A humanidade sobrevive em sete refúgios isolados, cercados pelas Terras Duras e castigados por tempestades. Os gêmeos Pavi e Nisha, de Ellora, estão no centro da disputa sobre quem é o verdadeiro Avatar.',
     sources: 'Avatar: Sete Refúgios (2026–). Série em exibição: informações e posições ainda podem mudar.',
-    unknown: ['Montanha da Pena — localização não revelada', 'Sétimo refúgio — ainda não revelado'],
+    unknown: [
+      'Montanha da Pena — governada pela imperatriz Yeshe, preserva as tradições dos Nômades do Ar; localização não revelada',
+      'Sétimo refúgio — ainda não revelado',
+    ],
   },
 ];
 

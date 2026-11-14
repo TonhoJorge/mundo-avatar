@@ -16,8 +16,9 @@ const RANK_MINZOOM = { 1: 0, 2: 2.2, 3: 3.4 };
 const RANK_SIZE = { 1: 15, 2: 13.5, 3: 12.5 };
 
 export const PLACE_LAYERS = ['lugares-1', 'lugares-2', 'lugares-3'];
-export const LABEL_LAYERS = ['regioes-1', 'regioes-2', 'aguas-2', 'aguas-3', ...PLACE_LAYERS];
-export const CLICKABLE_LAYERS = [...PLACE_LAYERS, 'regioes-1', 'regioes-2', 'aguas-2', 'aguas-3'];
+const REGION_LAYERS = ['regioes-1', 'regioes-2', 'regioes-3'];
+export const LABEL_LAYERS = [...REGION_LAYERS, 'aguas-2', 'aguas-3', ...PLACE_LAYERS];
+export const CLICKABLE_LAYERS = [...PLACE_LAYERS, ...REGION_LAYERS, 'aguas-2', 'aguas-3'];
 
 const nationText = ['match', ['get', 'nation'], ...Object.entries(NATION).flatMap(([k, v]) => [k, v.text]), INK];
 
@@ -118,6 +119,7 @@ export function createMap({ container, meta, era }) {
         'circle-stroke-color': '#b8861e', 'circle-stroke-width': 2,
       },
     },
+    regionLayer('regioes-3', 3, 3.2, 7.5),
     regionLayer('regioes-2', 2, 1.8, 6.5),
     regionLayer('regioes-1', 1, 0, 5.5),
     waterLayer('aguas-3', [3], 3.4),

@@ -26,6 +26,8 @@ const ROOT = path.resolve(path.dirname(__filename), '..');
 const ERAS = ['aang', 'korra', 'havens'];
 const NATIONS = ['none', 'earth', 'fire', 'water', 'air', 'republic', 'havens'];
 const D2R = Math.PI / 180;
+// força da tinta de cada nação sobre o mapa (Ar quase branco, como no mapa oficial)
+const TINT_WEIGHT = { air: 0.62, fire: 0.32, water: 0.3, earth: 0.22, republic: 0.26, havens: 0.2 };
 const LAND_TYPES = new Set(['capital', 'city', 'village', 'temple', 'haven', 'landmark', 'spirit']);
 const RIPPLES = [[4, 0.34], [8.5, 0.24], [14, 0.15]]; // linhas paralelas à costa: [px, intensidade]
 
@@ -187,11 +189,11 @@ function buildInputs(places, FW, FH) {
       const polys = t.poly ? [t.poly] : t.polyRef ? [G.landById(t.polyRef).poly] : t.polyRefs.map((r) => G.landById(r).poly);
       for (const p of polys) fillPoly(idx, TW, TH, p, NATIONS.indexOf(t.nation));
     }
-    const ch = [new Float32Array(TW * TH), new Float32Array(TW * TH), new Float32Array(TW * TH), new Float32Array(TW * TH)];
+    const ch = Array.from({ length: 5 }, () => new Float32Array(TW * TH)); // r, g, b, presença, força
     for (let i = 0; i < idx.length; i++) {
       if (!idx[i]) continue;
-      const c = G.nationColors[NATIONS[idx[i]]];
-      ch[0][i] = c[0]; ch[1][i] = c[1]; ch[2][i] = c[2]; ch[3][i] = 1;
+      const n = NATIONS[idx[i]], c = G.nationColors[n];
+      ch[0][i] = c[0]; ch[1][i] = c[1]; ch[2][i] = c[2]; ch[3][i] = 1; ch[4][i] = TINT_WEIGHT[n] ?? 0.24;
     }
     tints[era] = ch.map((a) => ({ W: TW, H: TH, a: share(boxBlur(a, TW, TH, 2, 2)) }));
   }
@@ -293,7 +295,7 @@ function shade(C, era, lon, lat, pxDeg, X, Y) {
     const ny = -((sE(u, v - dv) - sE(u, v + dv)) / (2 * dLat)) * 6;
     const light = Math.max(0, (nx * -0.5 + ny * 0.5 + 0.7071) / Math.hypot(nx, ny, 1)) / 0.7071; // luz do noroeste (1 = plano)
     const moist = clamp01(0.5 + fbm(12, 4, 41) * 1.1);
-    r = mix(224, 168, moist); g = mix(208, 184, moist); b = mix(160, 120, moist);
+    r = mix(230, 194, moist); g = mix(212, 192, moist); b = mix(164, 130, moist); // pergaminho bege, pouco verde
 
     const des = smooth(0.25, 0.75, S.desert(u, v) + 0.9 * fbm(20, 5, 9));
     if (des > 0) {
@@ -322,7 +324,7 @@ function shade(C, era, lon, lat, pxDeg, X, Y) {
     // tinta das nações e fronteiras
     const T = C.tint[era], ta = T[3](u, v);
     if (ta > 0.01) {
-      const k = 0.24 * ta * (1 - snow * 0.6);
+      const k = T[4](u, v) * (1 - snow * 0.6);
       r = mix(r, T[0](u, v) / ta, k); g = mix(g, T[1](u, v) / ta, k); b = mix(b, T[2](u, v) / ta, k);
     }
     const sg = C.segs[era];
@@ -415,7 +417,7 @@ async function tileJob(C, sharp, { era, z, x, y, out }) {
 
 async function cloudJob(C, sharp, { set, z, x, y, out }) {
   const W = 256 * 2 ** z, buf = Buffer.alloc(256 * 256 * 4);
-  const storm = set === 'storms', tint = storm ? [214, 196, 168] : [255, 255, 255];
+  const storm = set === 'storms', tint = storm ? [172, 150, 206] : [255, 255, 255]; // tempestades violáceas, como na arte oficial de Sete Refúgios
   for (let j = 0; j < 256; j++) for (let i = 0; i < 256; i++) {
     const X = x * 256 + i + 0.5, Y = y * 256 + j + 0.5;
     const lat = Math.atan(Math.sinh(Math.PI * (1 - (2 * Y) / W))) / D2R;

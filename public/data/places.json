@@ -2,384 +2,1256 @@
   "version": 1,
   "places": [
     {
-      "id": "reino-da-terra", "name": "Reino da Terra", "type": "region", "lon": 88, "lat": 16, "rank": 1, "conf": "alta", "canon": "serie",
+      "id": "reino-da-terra",
+      "name": "Reino da Terra",
+      "type": "region",
+      "lon": 30,
+      "lat": 22,
+      "rank": 1,
+      "conf": "alta",
+      "canon": "serie",
       "desc": "A maior nação do mundo, ocupando quase todo o Grande Continente. Diversa e descentralizada, com reis e governadores locais sob a autoridade de Ba Sing Se.",
       "eras": {
-        "aang": { "nation": "earth", "desc": "Em guerra contra a Nação do Fogo há cem anos; perdeu territórios no oeste para as colônias do Fogo." },
-        "korra": { "nation": "earth", "desc": "Abalado pela queda da Rainha da Terra; Kuvira o reunifica à força como Império da Terra, até ser detida por Korra." }
+        "aang": {
+          "nation": "earth",
+          "desc": "Em guerra contra a Nação do Fogo há cem anos; perdeu territórios no oeste para as colônias do Fogo."
+        },
+        "korra": {
+          "nation": "earth",
+          "desc": "Abalado pela queda da Rainha da Terra; Kuvira o reunifica à força como Império da Terra, até ser detida por Korra."
+        }
       },
-      "refs": ["Avatar: A Lenda de Aang", "A Lenda de Korra"]
+      "refs": [
+        "Avatar: A Lenda de Aang",
+        "A Lenda de Korra"
+      ]
     },
     {
-      "id": "nacao-do-fogo", "name": "Nação do Fogo", "type": "region", "lon": -104, "lat": 15, "rank": 1, "conf": "alta", "canon": "serie",
+      "id": "nacao-do-fogo",
+      "name": "Nação do Fogo",
+      "type": "region",
+      "lon": -112,
+      "lat": 21,
+      "rank": 1,
+      "conf": "alta",
+      "canon": "serie",
       "desc": "Arquipélago vulcânico a oeste do Grande Continente, governado pelo Senhor do Fogo a partir da Capital.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "Potência industrial e militar que trava a Guerra dos Cem Anos desde o ataque de Sozin aos Nômades do Ar." },
-        "korra": { "nation": "fire", "desc": "Nação em paz, governada pela Senhora do Fogo Izumi, filha de Zuko." }
+        "aang": {
+          "nation": "fire",
+          "desc": "Potência industrial e militar que trava a Guerra dos Cem Anos desde o ataque de Sozin aos Nômades do Ar."
+        },
+        "korra": {
+          "nation": "fire",
+          "desc": "Nação em paz, governada pela Senhora do Fogo Izumi, filha de Zuko."
+        }
       },
-      "refs": ["Avatar: A Lenda de Aang", "A Lenda de Korra"]
+      "refs": [
+        "Avatar: A Lenda de Aang",
+        "A Lenda de Korra"
+      ]
     },
     {
-      "id": "tribo-agua-norte-regiao", "name": "Tribo da Água do Norte", "type": "region", "lon": -18, "lat": 77, "rank": 1, "conf": "alta", "canon": "serie",
+      "id": "tribo-agua-norte-regiao",
+      "name": "Tribo da Água do Norte",
+      "type": "region",
+      "lon": -15,
+      "lat": 75.5,
+      "rank": 1,
+      "conf": "alta",
+      "canon": "serie",
       "desc": "Território polar do norte, lar da maior das Tribos da Água.",
-      "eras": { "aang": { "nation": "water" }, "korra": { "nation": "water" } },
-      "refs": ["Avatar: A Lenda de Aang"]
+      "eras": {
+        "aang": {
+          "nation": "water"
+        },
+        "korra": {
+          "nation": "water"
+        }
+      },
+      "refs": [
+        "Avatar: A Lenda de Aang"
+      ]
     },
     {
-      "id": "tribo-agua-sul-regiao", "name": "Tribo da Água do Sul", "type": "region", "lon": 5, "lat": -77, "rank": 1, "conf": "alta", "canon": "serie",
+      "id": "tribo-agua-sul-regiao",
+      "name": "Tribo da Água do Sul",
+      "type": "region",
+      "lon": -5,
+      "lat": -76,
+      "rank": 1,
+      "conf": "alta",
+      "canon": "serie",
       "desc": "Território polar do sul, lar da Tribo da Água do Sul.",
-      "eras": { "aang": { "nation": "water" }, "korra": { "nation": "water" } },
-      "refs": ["Avatar: A Lenda de Aang"]
+      "eras": {
+        "aang": {
+          "nation": "water"
+        },
+        "korra": {
+          "nation": "water"
+        }
+      },
+      "refs": [
+        "Avatar: A Lenda de Aang"
+      ]
     },
     {
-      "id": "colonias-do-fogo", "name": "Colônias do Fogo", "type": "region", "lon": -38, "lat": 30, "rank": 2, "conf": "media", "canon": "serie",
+      "id": "colonias-do-fogo",
+      "name": "Colônias do Fogo",
+      "type": "region",
+      "lon": -42,
+      "lat": 47,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Faixa no noroeste do Grande Continente colonizada pela Nação do Fogo durante a guerra.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "Cidades mistas de gente do Fogo e da Terra, algumas com mais de um século." },
-        "korra": { "nation": "republic", "name": "República Unida das Nações", "desc": "As antigas colônias formam a República Unida das Nações, fundada por Aang e Zuko após o Movimento de Restauração da Harmonia." }
+        "aang": {
+          "nation": "fire",
+          "desc": "Cidades mistas de gente do Fogo e da Terra, algumas com mais de um século."
+        },
+        "korra": {
+          "nation": "republic",
+          "name": "República Unida das Nações",
+          "desc": "As antigas colônias formam a República Unida das Nações, fundada por Aang e Zuko após o Movimento de Restauração da Harmonia."
+        }
       },
-      "refs": ["The Promise (quadrinhos)", "A Lenda de Korra"]
+      "refs": [
+        "The Promise (quadrinhos)",
+        "A Lenda de Korra"
+      ]
     },
     {
-      "id": "terras-duras", "name": "Terras Duras", "aka": ["Harshlands"], "type": "region", "lon": 58, "lat": 4, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "terras-duras",
+      "name": "Terras Duras",
+      "aka": [
+        "Harshlands"
+      ],
+      "type": "region",
+      "lon": 40,
+      "lat": 4,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Nome dado ao mundo devastado fora dos refúgios, castigado por tempestades depois do Cataclismo.",
-      "eras": { "havens": { "nation": "none" } },
-      "refs": ["Avatar: Sete Refúgios"]
+      "eras": {
+        "havens": {
+          "nation": "none"
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
     },
     {
-      "id": "deserto-si-wong", "name": "Deserto de Si Wong", "type": "region", "lon": 18, "lat": 16, "rank": 2, "conf": "alta", "canon": "serie",
+      "id": "deserto-si-wong",
+      "name": "Deserto de Si Wong",
+      "type": "region",
+      "lon": 47,
+      "lat": -3,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Imenso deserto no coração do Reino da Terra, cruzado por nômades da areia em veleiros de areia.",
       "eras": {
-        "aang": { "nation": "earth", "desc": "Appa é capturado aqui por nômades da areia." },
-        "korra": { "nation": "earth" },
-        "havens": { "nation": "none" }
+        "aang": {
+          "nation": "earth",
+          "desc": "Appa é capturado aqui por nômades da areia."
+        },
+        "korra": {
+          "nation": "earth"
+        },
+        "havens": {
+          "nation": "none"
+        }
       },
-      "refs": ["ATLA L2: The Desert"]
+      "refs": [
+        "ATLA L2: The Desert"
+      ]
     },
     {
-      "id": "pantano-nebuloso", "name": "Pântano Nebuloso", "aka": ["Foggy Swamp"], "type": "region", "lon": -15, "lat": -19, "rank": 2, "conf": "media", "canon": "serie",
+      "id": "pantano-nebuloso",
+      "name": "Pântano Nebuloso",
+      "aka": [
+        "Foggy Swamp"
+      ],
+      "type": "region",
+      "lon": 12,
+      "lat": -23,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Pântano vivo no sudoeste do Reino da Terra, ligado pelas raízes de uma única árvore gigante. Abriga uma tribo isolada de dobradores de água.",
       "eras": {
-        "aang": { "nation": "earth", "desc": "A Equipe Avatar se perde aqui e tem visões de entes queridos." },
-        "korra": { "nation": "earth", "desc": "Toph Beifong vive no pântano como eremita e ajuda Korra a se recuperar." }
+        "aang": {
+          "nation": "earth",
+          "desc": "A Equipe Avatar se perde aqui e tem visões de entes queridos."
+        },
+        "korra": {
+          "nation": "earth",
+          "desc": "Toph Beifong vive no pântano como eremita e ajuda Korra a se recuperar."
+        }
       },
-      "refs": ["ATLA L2: The Swamp", "LoK Livro 4"]
+      "refs": [
+        "ATLA L2: The Swamp",
+        "LoK Livro 4"
+      ]
     },
     {
-      "id": "mar-mo-ce", "name": "Mar Mo Ce", "type": "water", "lon": -70, "lat": -2, "rank": 2, "conf": "media", "canon": "serie",
+      "id": "mar-mo-ce",
+      "name": "Mar Mo Ce",
+      "type": "water",
+      "lon": -62,
+      "lat": 10,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Mar entre a Nação do Fogo e o Grande Continente.",
-      "eras": { "aang": {}, "korra": {}, "havens": {} },
-      "refs": ["Avatar: A Lenda de Aang"]
-    },
-    {
-      "id": "baia-yue", "name": "Baía Yue", "type": "water", "lon": -38.6, "lat": 46.8, "rank": 3, "conf": "media", "canon": "serie",
-      "desc": "Baía onde foi construída a Cidade República; leva o nome da princesa Yue.",
-      "eras": { "korra": {} },
-      "refs": ["A Lenda de Korra"]
-    },
-    {
-      "id": "lago-oriental", "name": "Lago Oriental", "type": "water", "lon": 63.5, "lat": 11.5, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Lago atravessado pelas balsas que levam refugiados a Ba Sing Se.",
-      "eras": { "aang": {}, "korra": {} },
-      "refs": ["ATLA L2: The Serpent's Pass"]
-    },
-    {
-      "id": "baia-lua-cheia", "name": "Baía da Lua Cheia", "type": "water", "lon": 56, "lat": -3, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Porto escondido de onde partem as balsas de refugiados para Ba Sing Se.",
-      "eras": { "aang": {} },
-      "refs": ["ATLA L2: The Serpent's Pass"]
-    },
-    {
-      "id": "baia-camaleao", "name": "Baía Camaleão", "type": "water", "lon": 104, "lat": -23.5, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Baía no sudeste do Grande Continente.",
       "eras": {
-        "aang": { "desc": "Ponto de encontro da frota da Tribo da Água do Sul liderada por Hakoda." },
+        "aang": {},
+        "korra": {},
+        "havens": {}
+      },
+      "refs": [
+        "Avatar: A Lenda de Aang"
+      ]
+    },
+    {
+      "id": "baia-yue",
+      "name": "Baía Yue",
+      "type": "water",
+      "lon": -25,
+      "lat": 33,
+      "rank": 3,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Baía onde foi construída a Cidade República; leva o nome da princesa Yue.",
+      "eras": {
         "korra": {}
       },
-      "refs": ["ATLA Livro 2"]
+      "refs": [
+        "A Lenda de Korra"
+      ]
     },
-
     {
-      "id": "templo-ar-sul", "name": "Templo do Ar do Sul", "type": "temple", "lon": -30, "lat": -49.5, "rank": 1, "conf": "media", "canon": "serie",
-      "desc": "Um dos quatro templos dos Nômades do Ar, no alto da cordilheira Patola.",
+      "id": "lago-oriental",
+      "name": "Lago Oriental",
+      "type": "water",
+      "lon": 56,
+      "lat": 20.5,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Lago atravessado pelas balsas que levam refugiados a Ba Sing Se.",
       "eras": {
-        "aang": { "nation": "air", "status": "Em ruínas", "desc": "Lar de Aang e do monge Gyatso. Abandonado desde o ataque de Sozin, cem anos antes; Aang volta aqui e descobre o destino de seu povo." },
-        "korra": { "nation": "air", "desc": "Mantido por Acólitos do Ar e visitado pela família de Tenzin." }
+        "aang": {},
+        "korra": {}
       },
-      "refs": ["ATLA L1: The Southern Air Temple", "LoK Livro 2"]
+      "refs": [
+        "ATLA L2: The Serpent's Pass"
+      ]
     },
     {
-      "id": "templo-ar-norte", "name": "Templo do Ar do Norte", "type": "temple", "lon": 6, "lat": 56, "rank": 1, "conf": "media", "canon": "serie",
-      "desc": "Templo dos Nômades do Ar nas montanhas do norte do Reino da Terra.",
+      "id": "baia-lua-cheia",
+      "name": "Baía da Lua Cheia",
+      "type": "water",
+      "lon": 43,
+      "lat": 18.5,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Porto escondido no centro do Reino da Terra, de onde partem as balsas de refugiados para Ba Sing Se.",
       "eras": {
-        "aang": { "nation": "air", "desc": "Ocupado por refugiados liderados pelo Mecânico, que o encheram de engenhocas movidas a vapor." },
-        "korra": { "nation": "air", "desc": "Sede da nova Nação do Ar: Tenzin treina aqui os novos dobradores de ar, até o ataque da Lótus Vermelha." }
+        "aang": {}
       },
-      "refs": ["ATLA L1: The Northern Air Temple", "LoK Livro 3"]
+      "refs": [
+        "ATLA L2: The Serpent's Pass"
+      ]
     },
     {
-      "id": "templo-ar-oeste", "name": "Templo do Ar do Oeste", "type": "temple", "lon": -97, "lat": 43, "rank": 1, "conf": "baixa", "canon": "serie",
-      "desc": "Templo construído de cabeça para baixo, pendurado na parede de um penhasco.",
+      "id": "baia-camaleao",
+      "name": "Baía Camaleão",
+      "type": "water",
+      "lon": 95,
+      "lat": 6,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Grande baía na costa leste do Grande Continente. Identificação no mapa estimada.",
       "eras": {
-        "aang": { "nation": "air", "status": "Abandonado", "desc": "Refúgio da Equipe Avatar após o Dia do Sol Negro; é aqui que Zuko se junta ao grupo." },
-        "korra": { "nation": "air" }
+        "aang": {
+          "desc": "Ponto de encontro da frota da Tribo da Água do Sul liderada por Hakoda."
+        },
+        "korra": {}
       },
-      "refs": ["ATLA L3: The Western Air Temple"]
+      "refs": [
+        "ATLA Livro 2"
+      ]
     },
     {
-      "id": "templo-ar-leste", "name": "Templo do Ar do Leste", "type": "temple", "lon": 130, "lat": 8.5, "rank": 1, "conf": "baixa", "canon": "serie",
-      "desc": "Antigo templo das monjas dos Nômades do Ar, nas montanhas do leste.",
+      "id": "templo-ar-sul",
+      "name": "Templo do Ar do Sul",
+      "type": "temple",
+      "lon": -28,
+      "lat": -45.5,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Um dos quatro templos dos Nômades do Ar, na Cordilheira Patola, no Arquipélago do Sul.",
       "eras": {
-        "aang": { "nation": "air", "status": "Abandonado", "desc": "Aang treina com o guru Pathik para dominar o Estado Avatar abrindo seus chacras." },
-        "korra": { "nation": "air" }
+        "aang": {
+          "nation": "air",
+          "status": "Em ruínas",
+          "desc": "Lar de Aang e do monge Gyatso. Abandonado desde o ataque de Sozin, cem anos antes; Aang volta aqui e descobre o destino de seu povo."
+        },
+        "korra": {
+          "nation": "air",
+          "desc": "Mantido por Acólitos do Ar e visitado pela família de Tenzin."
+        }
       },
-      "refs": ["ATLA L2: The Guru"]
+      "refs": [
+        "ATLA L1: The Southern Air Temple",
+        "LoK Livro 2"
+      ]
     },
     {
-      "id": "ilha-templo-ar", "name": "Ilha do Templo do Ar", "type": "temple", "lon": -40.5, "lat": 43.9, "rank": 2, "conf": "media", "canon": "serie",
+      "id": "templo-ar-norte",
+      "name": "Templo do Ar do Norte",
+      "type": "temple",
+      "lon": 12,
+      "lat": 60.5,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Templo dos Nômades do Ar no extremo oeste das Montanhas Taihua, no norte do Grande Continente.",
+      "eras": {
+        "aang": {
+          "nation": "air",
+          "desc": "Ocupado por refugiados liderados pelo Mecânico, que o encheram de engenhocas movidas a vapor."
+        },
+        "korra": {
+          "nation": "air",
+          "desc": "Sede da nova Nação do Ar: Tenzin treina aqui os novos dobradores de ar, até o ataque da Lótus Vermelha."
+        }
+      },
+      "refs": [
+        "ATLA L1: The Northern Air Temple",
+        "LoK Livro 3"
+      ]
+    },
+    {
+      "id": "templo-ar-oeste",
+      "name": "Templo do Ar do Oeste",
+      "type": "temple",
+      "lon": -92,
+      "lat": 48,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Templo construído de cabeça para baixo na parede de um penhasco, numa cordilheira ao norte das ilhas do Fogo.",
+      "eras": {
+        "aang": {
+          "nation": "air",
+          "status": "Abandonado",
+          "desc": "Refúgio da Equipe Avatar após o Dia do Sol Negro; é aqui que Zuko se junta ao grupo."
+        },
+        "korra": {
+          "nation": "air"
+        }
+      },
+      "refs": [
+        "ATLA L3: The Western Air Temple"
+      ]
+    },
+    {
+      "id": "templo-ar-leste",
+      "name": "Templo do Ar do Leste",
+      "type": "temple",
+      "lon": 115,
+      "lat": -20,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Antigo templo das monjas dos Nômades do Ar, numa cordilheira a sudeste do Reino da Terra.",
+      "eras": {
+        "aang": {
+          "nation": "air",
+          "status": "Abandonado",
+          "desc": "Aang treina com o guru Pathik para dominar o Estado Avatar abrindo seus chacras."
+        },
+        "korra": {
+          "nation": "air"
+        }
+      },
+      "refs": [
+        "ATLA L2: The Guru"
+      ]
+    },
+    {
+      "id": "ilha-templo-ar",
+      "name": "Ilha do Templo do Ar",
+      "type": "temple",
+      "lon": -19.5,
+      "lat": 34.6,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Ilha na Baía Yue, diante da Cidade República.",
-      "eras": { "korra": { "nation": "air", "desc": "Lar de Tenzin, sua família e dos Acólitos do Ar; onde Korra aprende dobra de ar." } },
-      "refs": ["A Lenda de Korra"]
+      "eras": {
+        "korra": {
+          "nation": "air",
+          "desc": "Lar de Tenzin, sua família e dos Acólitos do Ar; onde Korra aprende dobra de ar."
+        }
+      },
+      "refs": [
+        "A Lenda de Korra"
+      ]
     },
-
     {
-      "id": "capital-fogo", "name": "Capital da Nação do Fogo", "aka": ["Cidade Capital"], "type": "capital", "lon": -102.5, "lat": 4.5, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "capital-fogo",
+      "name": "Capital da Nação do Fogo",
+      "aka": [
+        "Cidade Capital"
+      ],
+      "type": "capital",
+      "lon": -112,
+      "lat": 3,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Capital construída dentro da cratera de um vulcão extinto, sede do Palácio Real.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "Alvo da invasão no Dia do Sol Negro; palco do Agni Kai final entre Zuko e Azula." },
-        "korra": { "nation": "fire", "desc": "Sede do governo da Senhora do Fogo Izumi." }
+        "aang": {
+          "nation": "fire",
+          "desc": "Alvo da invasão no Dia do Sol Negro; palco do Agni Kai final entre Zuko e Azula."
+        },
+        "korra": {
+          "nation": "fire",
+          "desc": "Sede do governo da Senhora do Fogo Izumi."
+        }
       },
-      "refs": ["ATLA L3: The Day of Black Sun", "ATLA L3: Sozin's Comet"]
+      "refs": [
+        "ATLA L3: The Day of Black Sun",
+        "ATLA L3: Sozin's Comet"
+      ]
     },
     {
-      "id": "ilha-ember", "name": "Ilha Ember", "type": "city", "lon": -87, "lat": 22, "rank": 2, "conf": "media", "canon": "serie",
+      "id": "ilha-ember",
+      "name": "Ilha Ember",
+      "type": "city",
+      "lon": -74,
+      "lat": 3.5,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Ilha de veraneio da nobreza do Fogo, com praias e a casa de praia da família real.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "A Equipe Avatar se esconde aqui e assiste à peça dos Atores da Ilha Ember." },
-        "korra": { "nation": "fire" }
+        "aang": {
+          "nation": "fire",
+          "desc": "A Equipe Avatar se esconde aqui e assiste à peça dos Atores da Ilha Ember."
+        },
+        "korra": {
+          "nation": "fire"
+        }
       },
-      "refs": ["ATLA L3: The Beach", "ATLA L3: The Ember Island Players"]
+      "refs": [
+        "ATLA L3: The Beach",
+        "ATLA L3: The Ember Island Players"
+      ]
     },
     {
-      "id": "ilha-crescente", "name": "Ilha Crescente", "type": "temple", "lon": -122.8, "lat": 3.5, "rank": 2, "conf": "baixa", "canon": "serie",
-      "desc": "Ilha vulcânica onde fica o Templo do Fogo de Avatar Roku.",
+      "id": "ilha-crescente",
+      "name": "Ilha Crescente",
+      "type": "temple",
+      "lon": -55,
+      "lat": -4,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Ilha vulcânica no leste da Nação do Fogo, onde fica o Templo do Fogo de Avatar Roku.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "Aang fala com Avatar Roku no solstício de inverno; o templo é destruído pela erupção." },
-        "korra": { "nation": "fire" }
+        "aang": {
+          "nation": "fire",
+          "desc": "Aang fala com Avatar Roku no solstício de inverno; o templo é destruído pela erupção."
+        },
+        "korra": {
+          "nation": "fire"
+        }
       },
-      "refs": ["ATLA L1: Winter Solstice, Part 2: Avatar Roku"]
+      "refs": [
+        "ATLA L1: Winter Solstice, Part 2: Avatar Roku"
+      ]
     },
     {
-      "id": "ilha-roku", "name": "Ilha de Roku", "type": "landmark", "lon": -131, "lat": -14, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Ilha natal de Avatar Roku.",
-      "eras": { "aang": { "nation": "fire", "status": "Destruída", "desc": "Devastada por uma erupção há cerca de 70 anos; Roku morreu tentando contê-la." } },
-      "refs": ["ATLA L3: The Avatar and the Fire Lord"]
+      "id": "ilha-roku",
+      "name": "Ilha de Roku",
+      "type": "landmark",
+      "lon": -42.5,
+      "lat": 2,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Ilha natal de Avatar Roku, no leste da Nação do Fogo.",
+      "eras": {
+        "aang": {
+          "nation": "fire",
+          "status": "Destruída",
+          "desc": "Devastada por uma erupção há cerca de 70 anos; Roku morreu tentando contê-la."
+        }
+      },
+      "refs": [
+        "ATLA L3: The Avatar and the Fire Lord"
+      ]
     },
     {
-      "id": "rocha-fervente", "name": "Rocha Fervente", "aka": ["Boiling Rock"], "type": "landmark", "lon": -121, "lat": 33, "rank": 2, "conf": "baixa", "canon": "serie", "water": true,
+      "id": "rocha-fervente",
+      "name": "Rocha Fervente",
+      "aka": [
+        "Boiling Rock"
+      ],
+      "type": "landmark",
+      "lon": -121,
+      "lat": 9,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Prisão de segurança máxima numa ilha no meio de um lago fervente.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "Sokka e Zuko invadem a prisão para resgatar Hakoda e Suki." },
-        "korra": { "nation": "fire" }
+        "aang": {
+          "nation": "fire",
+          "desc": "Sokka e Zuko invadem a prisão para resgatar Hakoda e Suki."
+        },
+        "korra": {
+          "nation": "fire"
+        }
       },
-      "refs": ["ATLA L3: The Boiling Rock"]
+      "refs": [
+        "ATLA L3: The Boiling Rock"
+      ]
     },
     {
-      "id": "guerreiros-do-sol", "name": "Ruínas dos Guerreiros do Sol", "type": "landmark", "lon": -93.5, "lat": -8, "rank": 2, "conf": "baixa", "canon": "serie",
-      "desc": "Cidade antiga da civilização que aprendeu a dobra de fogo com os dragões.",
+      "id": "guerreiros-do-sol",
+      "name": "Ruínas dos Guerreiros do Sol",
+      "type": "landmark",
+      "lon": -96,
+      "lat": 10,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Cidade antiga, nas ilhas do norte da Nação do Fogo, da civilização que aprendeu a dobra de fogo com os dragões.",
       "eras": {
-        "aang": { "nation": "fire", "desc": "Zuko e Aang conhecem os dragões Ran e Shaw e redescobrem o verdadeiro sentido do fogo." },
-        "korra": { "nation": "fire" }
+        "aang": {
+          "nation": "fire",
+          "desc": "Zuko e Aang conhecem os dragões Ran e Shaw e redescobrem o verdadeiro sentido do fogo."
+        },
+        "korra": {
+          "nation": "fire"
+        }
       },
-      "refs": ["ATLA L3: The Firebending Masters"]
+      "refs": [
+        "ATLA L3: The Firebending Masters"
+      ]
     },
     {
-      "id": "fonte-de-fogo", "name": "Cidade da Fonte de Fogo", "type": "city", "lon": -97, "lat": -14, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "fonte-de-fogo",
+      "name": "Cidade da Fonte de Fogo",
+      "type": "city",
+      "lon": -90,
+      "lat": -18,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Cidade portuária com uma enorme estátua-fonte que cospe fogo.",
-      "eras": { "aang": { "nation": "fire", "desc": "Toph e Sokka aplicam golpes aqui até virarem alvo de cartazes de procurados." }, "korra": { "nation": "fire" } },
-      "refs": ["ATLA L3: The Runaway"]
+      "eras": {
+        "aang": {
+          "nation": "fire",
+          "desc": "Toph e Sokka aplicam golpes aqui até virarem alvo de cartazes de procurados."
+        },
+        "korra": {
+          "nation": "fire"
+        }
+      },
+      "refs": [
+        "ATLA L3: The Runaway"
+      ]
     },
     {
-      "id": "shu-jing", "name": "Shu Jing", "type": "village", "lon": -80, "lat": 6, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "shu-jing",
+      "name": "Shu Jing",
+      "type": "village",
+      "lon": -38,
+      "lat": 5,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Ilha da Nação do Fogo.",
-      "eras": { "aang": { "nation": "fire", "desc": "Katara confronta Yon Rha, responsável pela morte de sua mãe." } },
-      "refs": ["ATLA L3: The Southern Raiders"]
+      "eras": {
+        "aang": {
+          "nation": "fire",
+          "desc": "Katara confronta Yon Rha, responsável pela morte de sua mãe."
+        }
+      },
+      "refs": [
+        "ATLA L3: The Southern Raiders"
+      ]
     },
-
     {
-      "id": "tribo-agua-norte", "name": "Agna Qel'a", "aka": ["Tribo da Água do Norte"], "type": "capital", "lon": -18, "lat": 70.5, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "tribo-agua-norte",
+      "name": "Agna Qel'a",
+      "aka": [
+        "Tribo da Água do Norte"
+      ],
+      "type": "capital",
+      "lon": -17,
+      "lat": 68.6,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Cidade de gelo e canais, capital da Tribo da Água do Norte.",
       "eras": {
-        "aang": { "nation": "water", "desc": "Resiste ao cerco do Almirante Zhao; a princesa Yue se torna o espírito da Lua." },
-        "korra": { "nation": "water", "desc": "Governada por Unalaq e depois por Desna e Eska." }
+        "aang": {
+          "nation": "water",
+          "desc": "Resiste ao cerco do Almirante Zhao; a princesa Yue se torna o espírito da Lua."
+        },
+        "korra": {
+          "nation": "water",
+          "desc": "Governada por Unalaq e depois por Desna e Eska."
+        }
       },
-      "refs": ["ATLA L1: The Siege of the North", "LoK Livro 2"]
+      "refs": [
+        "ATLA L1: The Siege of the North",
+        "LoK Livro 2"
+      ]
     },
     {
-      "id": "oasis-espiritual", "name": "Oásis Espiritual", "type": "spirit", "lon": -17, "lat": 72.5, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "oasis-espiritual",
+      "name": "Oásis Espiritual",
+      "type": "spirit",
+      "lon": -16,
+      "lat": 71,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Lago sagrado e quente onde Tui e La, os espíritos da Lua e do Oceano, nadam como peixes-koi.",
-      "eras": { "aang": { "nation": "water" }, "korra": { "nation": "water" } },
-      "refs": ["ATLA L1: The Siege of the North"]
+      "eras": {
+        "aang": {
+          "nation": "water"
+        },
+        "korra": {
+          "nation": "water"
+        }
+      },
+      "refs": [
+        "ATLA L1: The Siege of the North"
+      ]
     },
     {
-      "id": "portal-norte", "name": "Portal Espiritual do Norte", "type": "spirit", "lon": -18, "lat": 79, "rank": 2, "conf": "baixa", "canon": "serie",
+      "id": "portal-norte",
+      "name": "Portal Espiritual do Norte",
+      "type": "spirit",
+      "lon": -12,
+      "lat": 78,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Passagem entre o mundo físico e o Mundo Espiritual no Polo Norte.",
-      "eras": { "korra": { "nation": "water", "spirit": 2.0, "desc": "Aberto por Korra no fim do Livro 2." } },
-      "refs": ["LoK Livro 2"]
+      "eras": {
+        "korra": {
+          "nation": "water",
+          "spirit": 2.0,
+          "desc": "Aberto por Korra no fim do Livro 2."
+        }
+      },
+      "refs": [
+        "LoK Livro 2"
+      ]
     },
     {
-      "id": "tribo-agua-sul", "name": "Tribo da Água do Sul", "type": "capital", "lon": 2, "lat": -67.2, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "tribo-agua-sul",
+      "name": "Tribo da Água do Sul",
+      "type": "capital",
+      "lon": -6,
+      "lat": -70.3,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Povo do Polo Sul.",
       "eras": {
-        "aang": { "nation": "water", "desc": "Pequena aldeia de Katara e Sokka, onde Aang é encontrado num iceberg." },
-        "korra": { "nation": "water", "desc": "Cresceu e virou uma cidade portuária; lar de Korra e palco da Guerra Civil das Tribos da Água." }
+        "aang": {
+          "nation": "water",
+          "desc": "Pequena aldeia de Katara e Sokka, onde Aang é encontrado num iceberg."
+        },
+        "korra": {
+          "nation": "water",
+          "desc": "Cresceu e virou uma cidade portuária; lar de Korra e palco da Guerra Civil das Tribos da Água."
+        }
       },
-      "refs": ["ATLA L1: The Boy in the Iceberg", "LoK Livro 2"]
+      "refs": [
+        "ATLA L1: The Boy in the Iceberg",
+        "LoK Livro 2"
+      ]
     },
     {
-      "id": "portal-sul", "name": "Portal Espiritual do Sul", "type": "spirit", "lon": 5, "lat": -71, "rank": 2, "conf": "baixa", "canon": "serie",
+      "id": "portal-sul",
+      "name": "Portal Espiritual do Sul",
+      "type": "spirit",
+      "lon": 2,
+      "lat": -77,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Passagem para o Mundo Espiritual no Polo Sul, cercada pelas Selvas Espirituais.",
-      "eras": { "korra": { "nation": "water", "spirit": 2.4, "desc": "Reaberto por Korra durante a Convergência Harmônica." } },
-      "refs": ["LoK Livro 2"]
+      "eras": {
+        "korra": {
+          "nation": "water",
+          "spirit": 2.4,
+          "desc": "Reaberto por Korra durante a Convergência Harmônica."
+        }
+      },
+      "refs": [
+        "LoK Livro 2"
+      ]
     },
-
     {
-      "id": "ba-sing-se", "name": "Ba Sing Se", "aka": ["Cidade Impenetrável"], "type": "capital", "lon": 63, "lat": 30, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "ba-sing-se",
+      "name": "Ba Sing Se",
+      "aka": [
+        "Cidade Impenetrável"
+      ],
+      "type": "capital",
+      "lon": 71,
+      "lat": 40,
+      "rank": 1,
+      "conf": "alta",
+      "canon": "serie",
       "desc": "Capital do Reino da Terra, cercada por muralhas concêntricas.",
       "eras": {
-        "aang": { "nation": "earth", "desc": "Controlada em segredo pelo Dai Li; cai para Azula no fim do Livro 2 e é libertada pela Ordem da Lótus Branca." },
-        "korra": { "nation": "earth", "desc": "A Rainha da Terra Hou-Ting é morta por Zaheer; depois a cidade passa ao Império da Terra de Kuvira." },
-        "havens": { "nation": "havens", "name": "Nova Ba Sing Se", "zone": 5, "desc": "Ainda de pé depois do Cataclismo, agora chamada Nova Ba Sing Se (ou \"Nova Ba\"). É um dos Sete Refúgios." }
+        "aang": {
+          "nation": "earth",
+          "desc": "Controlada em segredo pelo Dai Li; cai para Azula no fim do Livro 2 e é libertada pela Ordem da Lótus Branca."
+        },
+        "korra": {
+          "nation": "earth",
+          "desc": "A Rainha da Terra Hou-Ting é morta por Zaheer; depois a cidade passa ao Império da Terra de Kuvira."
+        },
+        "havens": {
+          "nation": "havens",
+          "name": "Nova Ba Sing Se",
+          "zone": 9,
+          "desc": "Refúgio no nordeste do Grande Continente, erguido onde ficava a antiga capital do Reino da Terra; o nome preserva os laços com o Velho Mundo. Valoriza tradições e costumes antigos. Também chamado de \"Nova Ba\"."
+        }
       },
-      "refs": ["ATLA L2: The Crossroads of Destiny", "LoK Livros 3 e 4", "Avatar: Sete Refúgios"]
+      "refs": [
+        "ATLA L2: The Crossroads of Destiny",
+        "LoK Livros 3 e 4",
+        "Avatar: Sete Refúgios"
+      ]
     },
     {
-      "id": "lago-laogai", "name": "Lago Laogai", "type": "water", "lon": 66, "lat": 29, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "lago-laogai",
+      "name": "Lago Laogai",
+      "type": "water",
+      "lon": 81.5,
+      "lat": 35.4,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Lago dentro das muralhas de Ba Sing Se.",
-      "eras": { "aang": { "desc": "Esconde a base secreta do Dai Li, onde Appa era mantido prisioneiro." }, "korra": {} },
-      "refs": ["ATLA L2: Lake Laogai"]
-    },
-    {
-      "id": "omashu", "name": "Omashu", "type": "city", "lon": -26, "lat": 6, "rank": 1, "conf": "media", "canon": "serie",
-      "desc": "Grande cidade do Reino da Terra erguida sobre uma montanha, famosa pelas calhas de entrega.",
       "eras": {
-        "aang": { "nation": "earth", "desc": "Governada pelo excêntrico rei Bumi; ocupada pela Nação do Fogo e rebatizada de Nova Ozai, até ser libertada no eclipse." },
-        "korra": { "nation": "earth" }
+        "aang": {
+          "desc": "Esconde a base secreta do Dai Li, onde Appa era mantido prisioneiro."
+        },
+        "korra": {}
       },
-      "refs": ["ATLA L1: The King of Omashu", "ATLA L2: Return to Omashu"]
+      "refs": [
+        "ATLA L2: Lake Laogai"
+      ]
     },
     {
-      "id": "caverna-dois-amantes", "name": "Caverna dos Dois Amantes", "type": "landmark", "lon": -24, "lat": 11, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "omashu",
+      "name": "Omashu",
+      "type": "city",
+      "lon": 17,
+      "lat": -4,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Grande cidade erguida sobre uma montanha da Cordilheira Kolau, no sudoeste do Reino da Terra; famosa pelas calhas de entrega.",
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Governada pelo excêntrico rei Bumi; ocupada pela Nação do Fogo e rebatizada de Nova Ozai, até ser libertada no eclipse."
+        },
+        "korra": {
+          "nation": "earth"
+        }
+      },
+      "refs": [
+        "ATLA L1: The King of Omashu",
+        "ATLA L2: Return to Omashu"
+      ]
+    },
+    {
+      "id": "caverna-dois-amantes",
+      "name": "Caverna dos Dois Amantes",
+      "type": "landmark",
+      "lon": 12,
+      "lat": 0.5,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Labirinto subterrâneo criado por Oma e Shu, os primeiros dobradores de terra, que dá acesso a Omashu.",
-      "eras": { "aang": { "nation": "earth" }, "korra": { "nation": "earth" } },
-      "refs": ["ATLA L2: The Cave of Two Lovers"]
+      "eras": {
+        "aang": {
+          "nation": "earth"
+        },
+        "korra": {
+          "nation": "earth"
+        }
+      },
+      "refs": [
+        "ATLA L2: The Cave of Two Lovers"
+      ]
     },
     {
-      "id": "gaoling", "name": "Gaoling", "type": "city", "lon": 24, "lat": -26, "rank": 2, "conf": "baixa", "canon": "serie",
+      "id": "gaoling",
+      "name": "Gaoling",
+      "type": "city",
+      "lon": 50,
+      "lat": -25,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Cidade do sul do Reino da Terra, lar da rica família Beifong.",
-      "eras": { "aang": { "nation": "earth", "desc": "Cidade natal de Toph, onde ela lutava em segredo no torneio Earth Rumble." }, "korra": { "nation": "earth" } },
-      "refs": ["ATLA L2: The Blind Bandit"]
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Cidade natal de Toph, onde ela lutava em segredo no torneio Earth Rumble."
+        },
+        "korra": {
+          "nation": "earth"
+        }
+      },
+      "refs": [
+        "ATLA L2: The Blind Bandit"
+      ]
     },
     {
-      "id": "ilha-kyoshi", "name": "Ilha Kyoshi", "type": "village", "lon": -7, "lat": -43, "rank": 2, "conf": "media", "canon": "serie",
+      "id": "ilha-kyoshi",
+      "name": "Ilha Kyoshi",
+      "type": "village",
+      "lon": -5,
+      "lat": -33.5,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Ilha criada pela Avatar Kyoshi ao separar sua terra natal do continente; lar das Guerreiras Kyoshi.",
       "eras": {
-        "aang": { "nation": "earth", "desc": "A Equipe Avatar conhece Suki e as Guerreiras Kyoshi." },
-        "korra": { "nation": "earth" }
+        "aang": {
+          "nation": "earth",
+          "desc": "A Equipe Avatar conhece Suki e as Guerreiras Kyoshi."
+        },
+        "korra": {
+          "nation": "earth"
+        }
       },
-      "refs": ["ATLA L1: The Warriors of Kyoshi"]
+      "refs": [
+        "ATLA L1: The Warriors of Kyoshi"
+      ]
     },
     {
-      "id": "vila-chin", "name": "Vila Chin", "type": "village", "lon": -19, "lat": -25, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "vila-chin",
+      "name": "Vila Chin",
+      "type": "village",
+      "lon": 30,
+      "lat": -25,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Vila costeira que celebra o \"Dia do Avatar\".",
-      "eras": { "aang": { "nation": "earth", "desc": "Aang é julgado pelo suposto crime de Kyoshi contra Chin, o Conquistador." } },
-      "refs": ["ATLA L2: Avatar Day"]
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Aang é julgado pelo suposto crime de Kyoshi contra Chin, o Conquistador."
+        }
+      },
+      "refs": [
+        "ATLA L2: Avatar Day"
+      ]
     },
     {
-      "id": "vila-senlin", "name": "Vila Senlin", "type": "village", "lon": -36, "lat": 18, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Vila à beira da floresta, atormentada pelo espírito Hei Bai.",
-      "eras": { "aang": { "nation": "earth", "desc": "Aang acalma Hei Bai e faz sua primeira viagem ao Mundo Espiritual." } },
-      "refs": ["ATLA L1: Winter Solstice, Part 1: The Spirit World"]
+      "id": "vila-senlin",
+      "name": "Vila Senlin",
+      "type": "village",
+      "lon": -45,
+      "lat": 29.5,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Vila à beira da floresta, no sul das antigas colônias (depois República Unida), atormentada pelo espírito Hei Bai.",
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Aang acalma Hei Bai e faz sua primeira viagem ao Mundo Espiritual."
+        },
+        "korra": {
+          "nation": "republic"
+        }
+      },
+      "refs": [
+        "ATLA L1: Winter Solstice, Part 1: The Spirit World"
+      ]
     },
     {
-      "id": "makapu", "name": "Makapu", "type": "village", "lon": -35, "lat": -8, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Vila ao pé de um vulcão, lar da cartomante Tia Wu.",
-      "eras": { "aang": { "nation": "earth", "desc": "Aang e Katara salvam a vila de uma erupção." } },
-      "refs": ["ATLA L1: The Fortuneteller"]
+      "id": "makapu",
+      "name": "Makapu",
+      "type": "village",
+      "lon": -14,
+      "lat": 49,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Vila num vale ao pé de um vulcão, no nordeste das antigas colônias (depois República Unida); lar da cartomante Tia Wu.",
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Aang e Katara salvam a vila de uma erupção."
+        },
+        "korra": {
+          "nation": "republic"
+        }
+      },
+      "refs": [
+        "ATLA L1: The Fortuneteller"
+      ]
     },
     {
-      "id": "grande-divisao", "name": "A Grande Divisão", "type": "landmark", "lon": 5, "lat": 26, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "grande-divisao",
+      "name": "A Grande Divisão",
+      "type": "landmark",
+      "lon": 32,
+      "lat": 12,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "O maior cânion do mundo.",
-      "eras": { "aang": { "nation": "earth", "desc": "Aang guia duas tribos rivais pela travessia do cânion." }, "korra": { "nation": "earth" } },
-      "refs": ["ATLA L1: The Great Divide"]
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Aang guia duas tribos rivais pela travessia do cânion."
+        },
+        "korra": {
+          "nation": "earth"
+        }
+      },
+      "refs": [
+        "ATLA L1: The Great Divide"
+      ]
     },
     {
-      "id": "oasis-palmeiras", "name": "Oásis das Palmeiras Enevoadas", "type": "village", "lon": 8, "lat": 20, "rank": 3, "conf": "baixa", "canon": "serie",
+      "id": "oasis-palmeiras",
+      "name": "Oásis das Palmeiras Enevoadas",
+      "type": "village",
+      "lon": 28,
+      "lat": -7,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Oásis decadente na borda do Deserto de Si Wong.",
-      "eras": { "aang": { "nation": "earth", "desc": "A Equipe Avatar conhece o professor Zei, que procura a biblioteca perdida." } },
-      "refs": ["ATLA L2: The Library"]
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "A Equipe Avatar conhece o professor Zei, que procura a biblioteca perdida."
+        }
+      },
+      "refs": [
+        "ATLA L2: The Library"
+      ]
     },
     {
-      "id": "biblioteca-wan-shi-tong", "name": "Biblioteca de Wan Shi Tong", "type": "spirit", "lon": 25, "lat": 12, "rank": 2, "conf": "baixa", "canon": "serie",
+      "id": "biblioteca-wan-shi-tong",
+      "name": "Biblioteca de Wan Shi Tong",
+      "type": "spirit",
+      "lon": 50,
+      "lat": -4,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Biblioteca do espírito do conhecimento, escondida nas areias do deserto.",
-      "eras": { "aang": { "nation": "earth", "desc": "Sokka descobre a data do eclipse; a biblioteca afunda nas areias e volta ao Mundo Espiritual." } },
-      "refs": ["ATLA L2: The Library"]
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Sokka descobre a data do eclipse; a biblioteca afunda nas areias e volta ao Mundo Espiritual."
+        }
+      },
+      "refs": [
+        "ATLA L2: The Library"
+      ]
     },
     {
-      "id": "passagem-serpente", "name": "Passagem da Serpente", "type": "landmark", "lon": 59.5, "lat": 6.5, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Faixa estreita de terra entre o Lago Oriental e o mar, rota perigosa para Ba Sing Se.",
-      "eras": { "aang": { "nation": "earth", "desc": "Aang enfrenta a serpente marinha que guarda a passagem." } },
-      "refs": ["ATLA L2: The Serpent's Pass"]
+      "id": "passagem-serpente",
+      "name": "Passagem da Serpente",
+      "type": "landmark",
+      "lon": 75,
+      "lat": 18.5,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Faixa estreita de terra no nordeste do Reino da Terra, entre o Lago Oriental e o mar: rota perigosa para Ba Sing Se.",
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Aang enfrenta a serpente marinha que guarda a passagem."
+        }
+      },
+      "refs": [
+        "ATLA L2: The Serpent's Pass"
+      ]
     },
     {
-      "id": "floresta-wulong", "name": "Floresta Wulong", "type": "landmark", "lon": 42, "lat": -8, "rank": 3, "conf": "baixa", "canon": "serie",
-      "desc": "Floresta do Reino da Terra.",
-      "eras": { "aang": { "nation": "earth", "desc": "Palco da batalha final entre Aang e Ozai durante o Cometa de Sozin." } },
-      "refs": ["ATLA L3: Sozin's Comet"]
+      "id": "floresta-wulong",
+      "name": "Floresta Wulong",
+      "type": "landmark",
+      "lon": -55,
+      "lat": 38,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Floresta na costa oeste das antigas colônias (depois República Unida).",
+      "eras": {
+        "aang": {
+          "nation": "earth",
+          "desc": "Palco da batalha final entre Aang e Ozai durante o Cometa de Sozin."
+        },
+        "korra": {
+          "nation": "republic"
+        }
+      },
+      "refs": [
+        "ATLA L3: Sozin's Comet"
+      ]
     },
     {
-      "id": "yu-dao", "name": "Yu Dao", "type": "city", "lon": -30, "lat": 36, "rank": 3, "conf": "baixa", "canon": "quadrinhos",
+      "id": "yu-dao",
+      "name": "Yu Dao",
+      "type": "city",
+      "lon": -50,
+      "lat": 34,
+      "rank": 3,
+      "conf": "baixa",
+      "canon": "quadrinhos",
       "desc": "A mais antiga colônia da Nação do Fogo.",
-      "eras": { "aang": { "nation": "fire", "desc": "Centro da crise do Movimento de Restauração da Harmonia, logo após a guerra." } },
-      "refs": ["The Promise (quadrinhos)"]
+      "eras": {
+        "aang": {
+          "nation": "fire",
+          "desc": "Centro da crise do Movimento de Restauração da Harmonia, logo após a guerra."
+        }
+      },
+      "refs": [
+        "The Promise (quadrinhos)"
+      ]
     },
-
     {
-      "id": "cidade-republica", "name": "Cidade República", "type": "capital", "lon": -40, "lat": 38.8, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "cidade-republica",
+      "name": "Cidade República",
+      "type": "capital",
+      "lon": -18.5,
+      "lat": 39,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Capital da República Unida das Nações, metrópole onde vivem pessoas de todas as nações.",
-      "eras": { "korra": { "nation": "republic", "spirit": 1.6, "desc": "Cenário principal de A Lenda de Korra. Após a batalha contra Kuvira, um portal espiritual surge no centro da cidade." } },
-      "refs": ["A Lenda de Korra"]
+      "eras": {
+        "korra": {
+          "nation": "republic",
+          "spirit": 1.6,
+          "desc": "Cenário principal de A Lenda de Korra. Após a batalha contra Kuvira, um portal espiritual surge no centro da cidade."
+        }
+      },
+      "refs": [
+        "A Lenda de Korra"
+      ]
     },
     {
-      "id": "zaofu", "name": "Zaofu", "type": "city", "lon": 2, "lat": -10, "rank": 2, "conf": "baixa", "canon": "serie",
+      "id": "zaofu",
+      "name": "Zaofu",
+      "type": "city",
+      "lon": 24,
+      "lat": -15,
+      "rank": 2,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "Cidade de metal fundada por Suyin Beifong, protegida por domos em forma de pétalas.",
-      "eras": { "korra": { "nation": "earth", "desc": "Lar do Clã do Metal; tomada por Kuvira no Livro 4." } },
-      "refs": ["LoK L3: The Metal Clan"]
+      "eras": {
+        "korra": {
+          "nation": "earth",
+          "desc": "Lar do Clã do Metal; tomada por Kuvira no Livro 4."
+        }
+      },
+      "refs": [
+        "LoK L3: The Metal Clan"
+      ]
     },
-
     {
-      "id": "ellora", "name": "Ellora", "aka": ["Elora", "Refúgio do Vento e da Areia"], "type": "haven", "lon": 90, "lat": -29.3, "rank": 1, "conf": "media", "canon": "serie",
+      "id": "ellora",
+      "name": "Ellora",
+      "aka": [
+        "Elora",
+        "Refúgio do Vento e da Areia"
+      ],
+      "type": "haven",
+      "lon": 80,
+      "lat": -21,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
       "desc": "Refúgio principal da série e lar dos gêmeos Pavi e Nisha.",
-      "eras": { "havens": { "nation": "havens", "zone": 4.5, "desc": "No sudeste do Grande Continente, protegido por cânions estreitos contra tempestades de areia e tornados. Fundado perto das ruínas de uma cidade avançada do antigo Reino da Terra." } },
-      "refs": ["Avatar: Sete Refúgios"]
+      "eras": {
+        "havens": {
+          "nation": "havens",
+          "zone": 4,
+          "desc": "Metrópole cosmopolita de mais de um milhão de habitantes no sudeste do Grande Continente, com planta em forma de mandala octogonal. Um sistema de cânions estreitos a protege das tempestades de areia e dos tornados das Terras Duras."
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
     },
     {
-      "id": "ilhas-flutuantes", "name": "Ilhas Flutuantes", "type": "haven", "lon": 104.5, "lat": -24.5, "rank": 1, "conf": "media", "canon": "serie", "water": true,
+      "id": "ilhas-flutuantes",
+      "name": "Ilhas Flutuantes",
+      "type": "haven",
+      "lon": 101.5,
+      "lat": 9,
+      "rank": 1,
+      "conf": "media",
+      "canon": "serie",
+      "water": true,
       "desc": "Refúgio construído sobre a água, perto da costa.",
-      "eras": { "havens": { "nation": "havens", "zone": 2.5, "desc": "A nordeste de Ellora, onde ficava a Baía Camaleão. Explorado no Livro 2." } },
-      "refs": ["Avatar: Sete Refúgios"]
+      "eras": {
+        "havens": {
+          "nation": "havens",
+          "zone": 3,
+          "desc": "A nordeste de Ellora, onde ficava a Baía Camaleão. A posição exata das ilhas na baía é uma estimativa. Exploradas no Livro 2."
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
     },
     {
-      "id": "akasha", "name": "Akasha", "type": "haven", "lon": -25, "lat": 37, "rank": 1, "conf": "baixa", "canon": "serie",
-      "desc": "O refúgio mais avançado, que sobrevive dominando a tecnologia do Velho Mundo.",
-      "eras": { "havens": { "nation": "havens", "zone": 3, "desc": "Vizinho do Refúgio Perdido. A posição no mapa é uma estimativa: a série ainda não mostrou onde fica." } },
-      "refs": ["Avatar: Sete Refúgios"]
+      "id": "akasha",
+      "name": "Akasha",
+      "type": "haven",
+      "lon": -33,
+      "lat": 47,
+      "rank": 1,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Refúgio do Grande Continente conhecido pela habilidade técnica: sobrevive com tecnologias anteriores ao Cataclismo.",
+      "eras": {
+        "havens": {
+          "nation": "havens",
+          "zone": 3,
+          "desc": "Vizinho do Refúgio Perdido. A posição no mapa é uma estimativa: a série ainda não mostrou onde fica."
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
     },
     {
-      "id": "floresta-republica", "name": "Floresta da República", "aka": ["Refúgio Perdido"], "type": "haven", "lon": -32, "lat": 45.5, "rank": 1, "conf": "baixa", "canon": "serie",
+      "id": "floresta-republica",
+      "name": "Floresta da República",
+      "aka": [
+        "Refúgio Perdido"
+      ],
+      "type": "haven",
+      "lon": -21,
+      "lat": 43,
+      "rank": 1,
+      "conf": "baixa",
+      "canon": "serie",
       "desc": "O \"Refúgio Perdido\", que cortou contato com o resto do mundo.",
-      "eras": { "havens": { "nation": "havens", "zone": 3.5, "desc": "Provavelmente no antigo território da República Unida. A posição no mapa é uma estimativa." } },
-      "refs": ["Avatar: Sete Refúgios"]
+      "eras": {
+        "havens": {
+          "nation": "havens",
+          "zone": 3.5,
+          "desc": "Provavelmente no antigo território da República Unida; imagens oficiais da série mostram a Cidade República tomada pela vegetação. A posição no mapa é uma estimativa."
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
+    },
+    {
+      "id": "arquipelago-do-sul",
+      "name": "Arquipélago do Sul",
+      "type": "region",
+      "lon": -25,
+      "lat": -52,
+      "rank": 2,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Ilhas montanhosas do sul, território tradicional dos Nômades do Ar, onde ficam a Cordilheira Patola e a Ilha Rabo-de-Baleia.",
+      "eras": {
+        "aang": {
+          "nation": "air"
+        },
+        "korra": {
+          "nation": "air"
+        }
+      },
+      "refs": [
+        "Avatar: A Lenda de Aang"
+      ]
+    },
+    {
+      "id": "montanhas-taihua",
+      "name": "Montanhas Taihua",
+      "type": "region",
+      "lon": 30,
+      "lat": 60,
+      "rank": 3,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Grande cadeia de montanhas no norte do Grande Continente, do sul de Ba Sing Se até o Templo do Ar do Norte.",
+      "eras": {
+        "aang": {
+          "nation": "earth"
+        },
+        "korra": {
+          "nation": "earth"
+        },
+        "havens": {
+          "nation": "none"
+        }
+      },
+      "refs": [
+        "Avatar: A Lenda de Aang"
+      ]
+    },
+    {
+      "id": "cordilheira-kolau",
+      "name": "Cordilheira Kolau",
+      "type": "region",
+      "lon": 21,
+      "lat": -9,
+      "rank": 3,
+      "conf": "media",
+      "canon": "serie",
+      "desc": "Cordilheira do sudoeste do Reino da Terra onde ficam Omashu e a Caverna dos Dois Amantes; tida como o berço da dobra de terra.",
+      "eras": {
+        "aang": {
+          "nation": "earth"
+        },
+        "korra": {
+          "nation": "earth"
+        }
+      },
+      "refs": [
+        "ATLA L2: The Cave of Two Lovers"
+      ]
     }
   ]
 }
