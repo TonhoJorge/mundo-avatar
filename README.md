@@ -8,6 +8,8 @@ Globo interativo do mundo de *Avatar*, no estilo Google Earth: gire o planeta, a
 | Korra | 170–174 DG | A Lenda de Korra |
 | Pavi e Nisha | ≈ 399 DG | Avatar: Sete Refúgios |
 
+**Site no ar:** https://tonhojorge.github.io/mundo-avatar/
+
 > Projeto de fã, **sem fins lucrativos**. *Avatar* e seus personagens são marcas da Nickelodeon/Paramount. A pintura do mapa incluída aqui é procedural e original. A arte oficial pode ser usada no seu próprio servidor (veja [docs/ARTE-OFICIAL.md](docs/ARTE-OFICIAL.md)).
 
 ## O que tem
@@ -56,6 +58,10 @@ npm run dev
 ```
 
 `tiles:rapido` gera o mapa até o zoom 3 em cerca de 1 minuto. Para a qualidade final, use `npm run tiles`: zoom 6, alguns minutos.
+
+## Publicar no GitHub Pages (automático)
+
+Cada push na `main` dispara o workflow [.github/workflows/pages.yml](.github/workflows/pages.yml): ele gera o mapa (zoom 6, com cache), faz o build do app e publica em https://tonhojorge.github.io/mundo-avatar/. Não precisa de servidor. O primeiro build demora uns 15–25 minutos; depois, mudanças só no app saem em 2–3 minutos.
 
 ## Publicar no servidor (instância isolada com Docker)
 

@@ -1,5 +1,7 @@
 # Publicar na sua VM, passo a passo
 
+> **O site oficial já está no ar pelo GitHub Pages:** https://tonhojorge.github.io/mundo-avatar/ (publicação automática a cada push na `main`, ver o README). Este guia só é necessário se você quiser uma cópia na sua própria VM, por exemplo com a arte oficial, que não pode ir para o GitHub.
+
 Este guia supõe uma VM Linux (Ubuntu ou Debian) que você acessa por SSH. O site roda num **container Docker isolado**: uma "caixinha" só dele, com rede própria, sem acesso de administrador e com limite de CPU e memória. Ele não interfere no resto da VM.
 
 ## 1. Instalar o Docker (uma vez só)

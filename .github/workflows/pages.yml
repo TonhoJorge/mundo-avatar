@@ -1,0 +1,69 @@
+# Publica o Mundo Avatar no GitHub Pages a cada push na main.
+# O mapa (tiles) é a etapa pesada: fica em cache e só é regerado quando a
+# geografia, o catálogo de lugares, a arte ou as ferramentas mudam.
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      MAX_ZOOM: 6
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Cache do mapa
+        id: tiles
+        uses: actions/cache@v4
+        with:
+          path: out-tiles
+          key: tiles-z${{ env.MAX_ZOOM }}-${{ hashFiles('world/**', 'arte/**', 'tools/render-world.mjs', 'tools/import-art.mjs', 'public/data/places.json', 'package-lock.json') }}
+
+      - name: Gerar o mapa
+        if: steps.tiles.outputs.cache-hit != 'true'
+        run: |
+          node tools/render-world.mjs --max-zoom "$MAX_ZOOM" --out out-tiles
+          node tools/import-art.mjs --auto --out out-tiles
+
+      - run: npm run build
+
+      - name: Juntar app e mapa
+        run: |
+          cp -r out-tiles/. dist/
+          printf 'ok\n' > dist/healthz
+          du -sh dist
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
