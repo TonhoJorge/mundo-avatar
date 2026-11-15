@@ -13,6 +13,27 @@ const DEFAULTS = {
   report_strikes: 3, report_block_days: 90, zero_recover_days: 180, zero_recover_to: 2,
 };
 const MENTION = /@([A-Za-z0-9_]{3,20})/g;
+
+// mídias: tipos aceitos, limites (MB) e ícones
+const ACCEPT = {
+  image: ['image/jpeg', 'image/png', 'image/webp'],
+  gif: ['image/gif'],
+  audio: ['audio/mpeg', 'audio/mp4', 'audio/x-m4a', 'audio/aac', 'audio/ogg', 'audio/webm', 'audio/wav'],
+  video: ['video/mp4', 'video/webm', 'video/quicktime'],
+};
+const LIMIT_MB = { gif: 5, audio: 5, video: 20 }; // fotos são reduzidas antes de enviar
+const MEDIA_ICON = { image: '🖼️', gif: '🎞️', audio: '🎵', video: '🎬', embed: '▶️' };
+const mediaType = (f) => Object.keys(ACCEPT).find((k) => ACCEPT[k].includes(f.type))
+  ?? (/\.(m4a|mp3|ogg|wav|aac)$/i.test(f.name) ? 'audio' : /\.(mp4|webm|mov)$/i.test(f.name) ? 'video' : null);
+
+/** Link do YouTube ou do Vimeo -> endereço do player (sem rastreio) e capa. */
+function toEmbed(url) {
+  const yt = /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/|youtube-nocookie\.com\/embed\/)([A-Za-z0-9_-]{6,20})/.exec(url);
+  if (yt) return { url: `https://www.youtube-nocookie.com/embed/${yt[1]}`, thumb: `https://i.ytimg.com/vi/${yt[1]}/hqdefault.jpg` };
+  const vm = /(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)(\d{3,12})/.exec(url);
+  if (vm) return { url: `https://player.vimeo.com/video/${vm[1]}`, thumb: null };
+  return null;
+}
 const USERNAME = /^[a-z0-9_]{3,20}$/;
 
 export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace, placeName, headerEl }) {
@@ -666,12 +687,7 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
           h('time', { datetime: c.created_at, title: fmtDate(c.created_at) }, ago(c.created_at)),
           c.era && !depth ? h('span', { class: 'chip chip-mini' }, c.era) : null),
         h('p', { class: 'texto' }, richText(c.body)),
-        c.image_url && c.kind === 'foto' ? h('a', { href: c.image_url, target: '_blank', rel: 'noopener noreferrer' },
-          h('img', {
-            src: c.image_url, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer', class: 'foto-contrib',
-            // link que não é imagem (ex.: página do Instagram): mostra o link em vez de um quadro quebrado
-            onerror: (ev) => ev.target.replaceWith(h('span', { class: 'link-externo' }, `🔗 ${t('com.openLink')}`)),
-          })) : null,
+        mediaGrid(c),
         h('footer', {},
           h('span', { class: 'placar' }, `✔ ${c.approvals} · ✖ ${c.refutes}`), ' ',
           h('span', { class: 'estado' }, t(c.outcome > 0 ? 'com.stApproved' : c.outcome < 0 ? 'com.stRefuted' : 'com.stTie')),
@@ -705,83 +721,156 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
 
   function contributeForm(place, done) {
     if (user.banned) return h('p', { class: 'dica' }, t('com.bannedNote'));
-    const kind = h('select', { name: 'kind', 'aria-label': t('com.kind') }, ['info', 'correcao', 'foto'].map((k) => h('option', { value: k }, t(`kind.${k}`))));
+    const kind = h('select', { name: 'kind', 'aria-label': t('com.kind') }, ['info', 'correcao'].map((k) => h('option', { value: k }, t(`kind.${k}`))));
     const era = h('select', { name: 'era', 'aria-label': t('com.eraLabel') },
       h('option', { value: getEra() }, t('com.thisEra')), h('option', { value: '' }, t('com.allEras')));
     const body = h('textarea', { name: 'body', rows: '3', minlength: '3', maxlength: '2000', required: true, placeholder: t('com.bodyPlaceholder') });
-    // foto: arquivo do computador/celular (principal) ou link de uma imagem
-    const img = h('input', { type: 'url', name: 'img', placeholder: 'https://…', pattern: 'https://.*', 'aria-label': t('com.imageUrl') });
-    const fileId = `foto-${place.id}`;
-    const file = h('input', { type: 'file', id: fileId, accept: 'image/png,image/jpeg,image/webp', class: 'sr' });
-    const preview = h('div', { class: 'previa', hidden: true });
-    const pickLabel = h('label', { for: fileId, class: 'botao-arquivo', tabindex: '0', role: 'button',
-      onkeydown: (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); file.click(); } } }, `📷 ${t('com.photoFile')}`);
-    let chosen = null;
-    let previewUrl = null;
-    const clearFile = () => {
-      chosen = null;
-      file.value = '';
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-      previewUrl = null;
-      preview.hidden = true;
-      preview.replaceChildren();
+
+    // ---- mídias: arquivos (foto, GIF, áudio, vídeo curto) e links (YouTube, Vimeo, imagem)
+    const items = []; // { type, file?, url?, preview? }
+    const fileId = `midia-${place.id}`;
+    const file = h('input', { type: 'file', id: fileId, multiple: true, class: 'sr', accept: [...ACCEPT.image, ...ACCEPT.gif, ...ACCEPT.audio, ...ACCEPT.video].join(',') });
+    const list = h('ul', { class: 'lista-midias', 'aria-live': 'polite' });
+    const linkInput = h('input', { type: 'url', placeholder: 'https://…', 'aria-label': t('com.addLink') });
+    const count = h('span', { class: 'dica' });
+    const render = () => {
+      list.replaceChildren(...items.map((m, i) => h('li', { class: `midia-item midia-${m.type}` },
+        m.preview ? h('img', { src: m.preview, alt: '' }) : h('span', { class: 'midia-icone', 'aria-hidden': 'true' }, MEDIA_ICON[m.type]),
+        h('span', { class: 'midia-nome' }, h('strong', {}, t(`media.${m.type}`)), h('br'), m.file?.name ?? m.url),
+        h('button', { type: 'button', class: 'link', onclick: () => { if (m.preview?.startsWith('blob:')) URL.revokeObjectURL(m.preview); items.splice(i, 1); render(); } }, t('editor.remove')))));
+      count.textContent = items.length ? `${items.length}/6` : '';
+    };
+    const addItem = (m) => {
+      if (items.length >= 6) { toast(t('com.mediaMax')); return false; }
+      items.push(m);
+      render();
+      return true;
     };
     file.addEventListener('change', () => {
-      const f = file.files?.[0];
-      if (!f) return;
-      clearFile();
-      chosen = f;
-      previewUrl = URL.createObjectURL(f);
-      preview.replaceChildren(h('img', { src: previewUrl, alt: t('com.photoPreview') }),
-        h('button', { type: 'button', class: 'link', onclick: clearFile }, t('editor.remove')));
-      preview.hidden = false;
-      img.value = '';
+      for (const f of file.files ?? []) {
+        const type = mediaType(f);
+        if (!type) { toast(t('com.badType', { name: f.name })); continue; }
+        const mb = LIMIT_MB[type];
+        if (mb && f.size > mb * 1048576) { toast(t('com.tooBig', { name: f.name, mb })); continue; }
+        if (!addItem({ type, file: f, preview: type === 'image' || type === 'gif' ? URL.createObjectURL(f) : null })) break;
+      }
+      file.value = '';
     });
-    const photoBox = h('div', { class: 'campo-foto', hidden: true },
-      h('div', { class: 'linha' }, pickLabel, file), preview,
-      h('label', { class: 'dica' }, t('com.photoOrLink'), img));
-    kind.addEventListener('change', () => { photoBox.hidden = kind.value !== 'foto'; });
+    const addLink = async () => {
+      const raw = linkInput.value.trim();
+      if (!raw) return;
+      const embed = toEmbed(raw);
+      if (embed) {
+        if (addItem({ type: 'embed', url: embed.url, preview: embed.thumb })) linkInput.value = '';
+        return;
+      }
+      if (/^https:\/\//.test(raw) && await isImage(raw)) {
+        if (addItem({ type: /\.gif(\?|$)/i.test(raw) ? 'gif' : 'image', url: raw, preview: raw })) linkInput.value = '';
+        return;
+      }
+      toast(t('com.badLink'));
+      linkInput.focus();
+    };
+    linkInput.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') { ev.preventDefault(); addLink(); } });
+    const pick = h('label', {
+      for: fileId, class: 'botao-arquivo', tabindex: '0', role: 'button',
+      onkeydown: (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); file.click(); } },
+    }, `➕ ${t('com.addFile')}`);
+    const mediaBox = h('details', { class: 'campo-midias' },
+      h('summary', {}, `🖼️ ${t('com.addMedia')} `, count),
+      h('div', { class: 'linha' }, pick, file),
+      h('div', { class: 'linha' }, h('label', { class: 'dica rotulo-link' }, t('com.addLink'), linkInput),
+        h('button', { type: 'button', onclick: addLink }, t('com.add'))),
+      list,
+      h('p', { class: 'dica' }, t('com.mediaHint')));
     const send = h('button', { type: 'submit' }, t('com.send'));
 
     return h('form', {
       class: 'coluna nova', onsubmit: async (ev) => {
         ev.preventDefault();
-        if (kind.value === 'foto' && !chosen && !img.value) { toast(t('com.photoRequired')); return; }
         send.disabled = true;
-        let uploaded = null;
+        const uploaded = [];
         try {
-          let url = kind.value === 'foto' ? img.value || null : null;
-          // link colado: confere se é mesmo uma imagem (não uma página do Instagram, YouTube…)
-          if (url && !chosen && !(await isImage(url))) {
-            toast(t('com.notImage'));
-            img.focus();
-            send.disabled = false;
-            return;
+          const media = [];
+          for (const [i, m] of items.entries()) {
+            if (!m.file) { media.push({ type: m.type, url: m.url }); continue; }
+            send.textContent = t('com.uploadingN', { i: i + 1, n: items.length });
+            const blob = m.type === 'image' ? await fitWebp(m.file, 1600) : m.file;
+            const ext = m.type === 'image' ? 'webp' : (m.file.name.split('.').pop() || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const path = `${user.id}/${Date.now()}-${i}.${ext}`;
+            const { error } = await sb.storage.from('midia').upload(path, blob, { contentType: m.type === 'image' ? 'image/webp' : m.file.type });
+            if (error) throw Object.assign(error, { message: 'photo_upload' });
+            uploaded.push(path);
+            media.push({ type: m.type, url: sb.storage.from('midia').getPublicUrl(path).data.publicUrl });
           }
-          if (kind.value === 'foto' && chosen) {
-            send.textContent = t('com.uploading');
-            const blob = await fitWebp(chosen, 1600);
-            uploaded = `${user.id}/${Date.now()}.webp`;
-            const { error } = await sb.storage.from('fotos').upload(uploaded, blob, { contentType: 'image/webp' });
-            if (error) { uploaded = null; throw Object.assign(error, { message: 'photo_upload' }); }
-            url = sb.storage.from('fotos').getPublicUrl(uploaded).data.publicUrl;
-          }
-          await rpc('contribute', { p_place: place.id, p_era: era.value, p_kind: kind.value, p_body: body.value, p_image: url });
-          clearFile();
+          await rpc('contribute', { p_place: place.id, p_era: era.value, p_kind: kind.value, p_body: body.value, p_image: null, p_media: media });
+          for (const m of items) if (m.preview?.startsWith('blob:')) URL.revokeObjectURL(m.preview);
           toast(t('com.sent'));
           done();
         } catch (e) {
-          // a foto subiu mas a contribuição foi recusada (limite, login…): não deixa arquivo órfão
-          if (uploaded) sb.storage.from('fotos').remove([uploaded]).catch(() => {});
+          // algo falhou: apaga o que já tinha subido para não deixar arquivo órfão
+          if (uploaded.length) sb.storage.from('midia').remove(uploaded).catch(() => {});
           toast(errText(e));
           send.disabled = false;
           send.textContent = t('com.send');
         }
       },
-    }, h('h4', {}, t('com.new')), h('div', { class: 'linha' }, kind, era), withMentions(body), photoBox,
+    }, h('h4', {}, t('com.new')), h('div', { class: 'linha' }, kind, era), withMentions(body), mediaBox,
     h('p', { class: 'dica' }, t('com.youHave', { c: fmtCred(user.credibility) }), ' ', limitsNote(), ' ', t('com.mentionHint')),
     send);
   }
+
+  // ---- exibição das mídias de uma publicação
+  function mediaGrid(c) {
+    const media = [...(c.media ?? [])];
+    if (c.image_url) media.unshift({ type: 'image', url: c.image_url }); // publicações antigas (campo único)
+    if (!media.length) return null;
+    const pics = media.filter((m) => m.type === 'image' || m.type === 'gif');
+    return h('div', { class: `midias qtd-${Math.min(pics.length, 4)}` }, media.map((m) => {
+      if (m.type === 'image' || m.type === 'gif') {
+        return h('button', { type: 'button', class: 'midia-foto', 'aria-label': t('com.enlarge'), onclick: () => viewer(pics, pics.indexOf(m)) },
+          h('img', {
+            src: m.url, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer',
+            onerror: (ev) => ev.target.closest('button').replaceWith(h('a', { href: m.url, target: '_blank', rel: 'noopener noreferrer', class: 'link-externo' }, `🔗 ${t('com.openLink')}`)),
+          }),
+          m.type === 'gif' ? h('span', { class: 'selo' }, 'GIF') : null);
+      }
+      if (m.type === 'audio') return h('audio', { src: m.url, controls: true, preload: 'none', class: 'midia-audio' });
+      if (m.type === 'video') return h('video', { src: m.url, controls: true, preload: 'metadata', playsinline: true, class: 'midia-video' });
+      // embed: mostra a capa e só carrega o player do YouTube/Vimeo quando a pessoa clica
+      const thumb = toEmbed(m.url)?.thumb;
+      const box = h('div', { class: 'midia-embed' });
+      box.append(h('button', {
+        type: 'button', class: 'embed-capa', 'aria-label': t('com.play'),
+        onclick: () => box.replaceChildren(h('iframe', {
+          src: `${m.url}${m.url.includes('?') ? '&' : '?'}autoplay=1`, title: t('media.embed'), loading: 'lazy',
+          allow: 'autoplay; encrypted-media; picture-in-picture; fullscreen', allowfullscreen: true, referrerpolicy: 'strict-origin-when-cross-origin',
+        })),
+      }, thumb ? h('img', { src: thumb, alt: '', loading: 'lazy' }) : null, h('span', { class: 'play', 'aria-hidden': 'true' }, '▶')));
+      return box;
+    }));
+  }
+
+  /** Visualizador de fotos em tela cheia (Esc fecha, setas trocam). */
+  function viewer(pics, start) {
+    let i = start;
+    const img = h('img', { alt: '' });
+    const show = () => { img.src = pics[i].url; counter.textContent = pics.length > 1 ? `${i + 1} / ${pics.length}` : ''; };
+    const counter = h('span', { class: 'contagem' });
+    const step = (d) => { i = (i + d + pics.length) % pics.length; show(); };
+    const dlg = h('dialog', { class: 'visualizador', 'aria-label': t('com.enlarge') },
+      img, counter,
+      pics.length > 1 ? h('button', { type: 'button', class: 'nav ant', 'aria-label': '←', onclick: () => step(-1) }, '‹') : null,
+      pics.length > 1 ? h('button', { type: 'button', class: 'nav prox', 'aria-label': '→', onclick: () => step(1) }, '›') : null,
+      h('button', { type: 'button', class: 'fechar-vis', 'aria-label': t('com.close'), onclick: () => dlg.close() }, '×'));
+    dlg.addEventListener('keydown', (ev) => { if (ev.key === 'ArrowLeft') step(-1); if (ev.key === 'ArrowRight') step(1); });
+    dlg.addEventListener('click', (ev) => { if (ev.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => dlg.remove());
+    document.body.append(dlg);
+    show();
+    dlg.showModal();
+  }
+
 
   /** true se o endereço carrega como imagem em até 8 s. */
   function isImage(url) {

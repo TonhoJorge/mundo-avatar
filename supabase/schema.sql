@@ -127,6 +127,24 @@ create index if not exists contributions_place on public.contributions (place_id
 create index if not exists contributions_parent on public.contributions (parent_id);
 create index if not exists contributions_author on public.contributions (author);
 
+-- Mídias de uma publicação: lista de até 6 itens {"type": "...", "url": "https://..."}.
+-- Tipos: image, gif, audio, video (arquivos enviados) e embed (YouTube/Vimeo).
+create or replace function public.valid_media(m jsonb) returns boolean
+language sql immutable as $$
+  select jsonb_typeof(m) = 'array' and jsonb_array_length(m) <= 6 and not exists (
+    select 1 from jsonb_array_elements(m) e
+    where jsonb_typeof(e) <> 'object'
+       or coalesce(e ->> 'type', '') not in ('image', 'gif', 'audio', 'video', 'embed')
+       or coalesce(e ->> 'url', '') !~ '^https://'
+       or char_length(e ->> 'url') > 500
+       or (e ->> 'type' = 'embed' and e ->> 'url' !~ '^https://(www\.youtube-nocookie\.com/embed/[A-Za-z0-9_-]{6,20}|player\.vimeo\.com/video/[0-9]{3,12})$'))
+$$;
+
+alter table public.contributions add column if not exists media jsonb not null default '[]'::jsonb;
+do $$ begin
+  alter table public.contributions add constraint contributions_media_valid check (valid_media(media));
+exception when duplicate_object then null; end $$;
+
 -- ================================================================== votos
 -- value = 1 aprova, -1 refuta (refutar exige uma justificativa, que é uma
 -- contribuição do tipo 'justificativa' e também pode ser votada).
@@ -236,7 +254,7 @@ create or replace view public.public_profiles with (security_invoker = on) as
 create or replace view public.contribution_list with (security_invoker = on) as
   select c.id, c.author, p.name as author_name, c.place_id, c.era, c.kind, c.parent_id, c.body, c.image_url,
          c.created_at, t.approvals, t.refutes, sign(t.approvals - t.refutes)::int as outcome,
-         p.username as author_username, p.avatar_url as author_avatar
+         p.username as author_username, p.avatar_url as author_avatar, c.media
   from contributions c join profiles p on p.id = c.author, lateral tally(c.id) t;
 
 -- resultado público das denúncias (sem o texto e sem quem denunciou)
@@ -254,11 +272,15 @@ begin
   return uid;
 end $$;
 
-create or replace function public.contribute(p_place text, p_era text, p_kind text, p_body text, p_image text default null)
+-- versão antiga (sem mídias) sai para não haver duas funções com o mesmo nome
+drop function if exists public.contribute(text, text, text, text, text);
+create or replace function public.contribute(p_place text, p_era text, p_kind text, p_body text,
+                                             p_image text default null, p_media jsonb default '[]'::jsonb)
 returns bigint language plpgsql security definer set search_path = public as $$
 declare uid uuid := require_user(); cred numeric := credibility(uid); new_id bigint;
 begin
   if p_kind not in ('info', 'correcao', 'foto') then raise exception 'bad_kind'; end if;
+  if not valid_media(coalesce(p_media, '[]'::jsonb)) then raise exception 'bad_media'; end if;
   perform refresh_cred(uid); -- aplica o recomeço se o prazo em zero já passou
   cred := credibility(uid);
   if cred <= 0 then raise exception 'cred_zero'; end if;
@@ -266,8 +288,8 @@ begin
       and created_at > now() - make_interval(days => cfg('limit2_days')::int)) then raise exception 'limit2'; end if;
   if cred < cfg('limit1_below') and exists (select 1 from contributions where author = uid and kind <> 'justificativa'
       and created_at > now() - make_interval(days => cfg('limit1_days')::int)) then raise exception 'limit1'; end if;
-  insert into contributions (author, place_id, era, kind, body, image_url)
-    values (uid, p_place, nullif(p_era, ''), p_kind, trim(p_body), nullif(trim(coalesce(p_image, '')), ''))
+  insert into contributions (author, place_id, era, kind, body, image_url, media)
+    values (uid, p_place, nullif(p_era, ''), p_kind, trim(p_body), nullif(trim(coalesce(p_image, '')), ''), coalesce(p_media, '[]'::jsonb))
     returning id into new_id;
   return new_id;
 end $$;
@@ -455,17 +477,23 @@ do $$ begin
     create policy "avatar proprio apaga" on storage.objects for delete to authenticated
       using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
 
-    -- fotos enviadas nas contribuições (o site reduz antes de enviar; limite de 2 MB)
+    -- mídias das publicações: fotos (o site reduz antes), GIF e áudio até 5 MB,
+    -- vídeo curto até 20 MB (limites por tipo conferidos no site; aqui, o teto geral)
     insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-      values ('fotos', 'fotos', true, 2097152, array['image/webp', 'image/png', 'image/jpeg'])
-      on conflict (id) do nothing;
+      values ('midia', 'midia', true, 20971520, array[
+        'image/webp', 'image/png', 'image/jpeg', 'image/gif',
+        'audio/mpeg', 'audio/mp4', 'audio/x-m4a', 'audio/aac', 'audio/ogg', 'audio/webm', 'audio/wav',
+        'video/mp4', 'video/webm', 'video/quicktime'])
+      on conflict (id) do update set file_size_limit = excluded.file_size_limit, allowed_mime_types = excluded.allowed_mime_types;
     drop policy if exists "foto propria insere" on storage.objects;
-    create policy "foto propria insere" on storage.objects for insert to authenticated
-      with check (bucket_id = 'fotos' and (storage.foldername(name))[1] = auth.uid()::text
-                  and not exists (select 1 from public.profiles where id = auth.uid() and banned_at is not null));
     drop policy if exists "foto propria apaga" on storage.objects;
-    create policy "foto propria apaga" on storage.objects for delete to authenticated
-      using (bucket_id = 'fotos' and (storage.foldername(name))[1] = auth.uid()::text);
+    drop policy if exists "midia propria insere" on storage.objects;
+    create policy "midia propria insere" on storage.objects for insert to authenticated
+      with check (bucket_id = 'midia' and (storage.foldername(name))[1] = auth.uid()::text
+                  and not exists (select 1 from public.profiles where id = auth.uid() and banned_at is not null));
+    drop policy if exists "midia propria apaga" on storage.objects;
+    create policy "midia propria apaga" on storage.objects for delete to authenticated
+      using (bucket_id = 'midia' and (storage.foldername(name))[1] = auth.uid()::text);
   end if;
 end $$;
 

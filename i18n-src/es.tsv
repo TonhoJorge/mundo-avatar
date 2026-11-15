@@ -475,3 +475,21 @@ eeb35d1	Escribe @ para mencionar a alguien.
 2f2eed9	La foto es demasiado grande incluso reducida. Prueba con otra imagen.
 a9100f3	Ese enlace no es una imagen (Instagram, YouTube y las redes sociales no funcionan). Sube el archivo de la foto o usa el enlace directo de la imagen.
 c845e3e	Abrir enlace
+5368572	Añadir multimedia
+2e612ff	Archivo (foto, GIF, audio o vídeo)
+2d38463	Enlace de YouTube, de Vimeo o de una imagen
+fadcf2d	Añadir
+fd94b44	Hasta 6 por publicación. Las fotos se reducen automáticamente; GIF y audio hasta 5 MB; vídeo hasta 20 MB (para vídeos más largos, usa un enlace de YouTube).
+ee84785	Como máximo 6 archivos por publicación.
+af4920d	{name} supera el límite de {mb} MB.
+b5a7641	Tipo de archivo no aceptado: {name}
+b0ec8ab	Ese enlace no es de YouTube, de Vimeo ni de una imagen. Para fotos de redes sociales, guarda la foto y sube el archivo.
+8c0fb2d	Subiendo archivo {i} de {n}…
+c872889	Reproducir vídeo
+66bd126	Ver foto ampliada
+7b2006f	Cerrar
+758f6c9	GIF
+54a83df	Audio
+03e7e13	Vídeo
+236f685	Vídeo (enlace)
+bc19e7d	Algún archivo no es aceptado. Quítalo y vuelve a intentarlo.

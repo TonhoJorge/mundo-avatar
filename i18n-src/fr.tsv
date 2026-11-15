@@ -475,3 +475,21 @@ eeb35d1	Tapez @ pour mentionner quelqu'un.
 2f2eed9	La photo est trop lourde même réduite. Essayez une autre image.
 a9100f3	Ce lien n'est pas une image (Instagram, YouTube et les réseaux sociaux ne fonctionnent pas). Envoyez le fichier de la photo ou utilisez le lien direct de l'image.
 c845e3e	Ouvrir le lien
+5368572	Ajouter un média
+2e612ff	Fichier (photo, GIF, audio ou vidéo)
+2d38463	Lien YouTube, Vimeo ou d'une image
+fadcf2d	Ajouter
+fd94b44	Jusqu'à 6 par publication. Les photos sont réduites automatiquement ; GIF et audio jusqu'à 5 Mo ; vidéo jusqu'à 20 Mo (pour les vidéos plus longues, utilisez un lien YouTube).
+ee84785	6 médias au maximum par publication.
+af4920d	{name} dépasse la limite de {mb} Mo.
+b5a7641	Type de fichier non accepté : {name}
+b0ec8ab	Ce lien ne vient pas de YouTube, de Vimeo ni d'une image. Pour les photos des réseaux sociaux, enregistrez la photo et envoyez le fichier.
+8c0fb2d	Envoi du média {i} sur {n}…
+c872889	Lire la vidéo
+66bd126	Voir la photo en grand
+7b2006f	Fermer
+758f6c9	GIF
+54a83df	Audio
+03e7e13	Vidéo
+236f685	Vidéo (lien)
+bc19e7d	Un média n'est pas accepté. Retirez-le et réessayez.

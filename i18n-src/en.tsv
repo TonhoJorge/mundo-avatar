@@ -482,3 +482,21 @@ eeb35d1	Type @ to mention someone.
 2f2eed9	The photo is too large even after shrinking. Try another image.
 a9100f3	That link is not an image (Instagram, YouTube and social networks don't work). Upload the photo file or use the image's direct link.
 c845e3e	Open link
+5368572	Add media
+2e612ff	File (photo, GIF, audio or video)
+2d38463	YouTube, Vimeo or image link
+fadcf2d	Add
+fd94b44	Up to 6 per post. Photos are shrunk automatically; GIF and audio up to 5 MB; video up to 20 MB (for longer videos, use a YouTube link).
+ee84785	At most 6 media items per post.
+af4920d	{name} is over the {mb} MB limit.
+b5a7641	File type not accepted: {name}
+b0ec8ab	That link is not from YouTube, Vimeo or an image. For photos from social networks, save the photo and upload the file.
+8c0fb2d	Uploading media {i} of {n}…
+c872889	Play video
+66bd126	View enlarged photo
+7b2006f	Close
+758f6c9	GIF
+54a83df	Audio
+03e7e13	Video
+236f685	Video (link)
+bc19e7d	Some media item is not accepted. Remove it and try again.

@@ -3,7 +3,8 @@ import { defineConfig } from 'vite';
 // Política de segurança aplicada no build (no dev atrapalharia o HMR).
 // Imagens: qualquer https (fotos do Avatar Wiki, fotos de perfil do GitHub e
 // do Supabase, imagens enviadas nas contribuições). Conexões: só o Supabase
-// (dados, login e notificações em tempo real).
+// (dados, login e notificações em tempo real). Áudio/vídeo: Supabase.
+// Players embutidos: só YouTube (sem rastreio) e Vimeo.
 const CSP = [
   "default-src 'self'",
   "img-src 'self' data: blob: https:",
@@ -11,6 +12,8 @@ const CSP = [
   "script-src 'self'",
   "worker-src 'self' blob:",
   "connect-src 'self' blob: data: https://*.supabase.co wss://*.supabase.co",
+  "media-src 'self' blob: https://*.supabase.co",
+  "frame-src https://www.youtube-nocookie.com https://player.vimeo.com",
   "font-src 'self' data:",
   "object-src 'none'",
   "base-uri 'self'",

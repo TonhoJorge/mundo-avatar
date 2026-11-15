@@ -475,3 +475,21 @@ eeb35d1	Tippe @, um jemanden zu erwähnen.
 2f2eed9	Das Foto ist auch verkleinert zu groß. Versuche ein anderes Bild.
 a9100f3	Dieser Link ist kein Bild (Instagram, YouTube und soziale Netzwerke funktionieren nicht). Lade die Bilddatei hoch oder nutze den direkten Bildlink.
 c845e3e	Link öffnen
+5368572	Medien hinzufügen
+2e612ff	Datei (Foto, GIF, Audio oder Video)
+2d38463	Link zu YouTube, Vimeo oder einem Bild
+fadcf2d	Hinzufügen
+fd94b44	Bis zu 6 pro Beitrag. Fotos werden automatisch verkleinert; GIF und Audio bis 5 MB; Video bis 20 MB (für längere Videos einen YouTube-Link verwenden).
+ee84785	Höchstens 6 Medien pro Beitrag.
+af4920d	{name} überschreitet die Grenze von {mb} MB.
+b5a7641	Dateityp nicht erlaubt: {name}
+b0ec8ab	Dieser Link ist weder von YouTube oder Vimeo noch ein Bild. Fotos aus sozialen Netzwerken bitte speichern und als Datei hochladen.
+8c0fb2d	Medium {i} von {n} wird hochgeladen…
+c872889	Video abspielen
+66bd126	Foto vergrößert ansehen
+7b2006f	Schließen
+758f6c9	GIF
+54a83df	Audio
+03e7e13	Video
+236f685	Video (Link)
+bc19e7d	Ein Medium wird nicht akzeptiert. Entferne es und versuche es erneut.
