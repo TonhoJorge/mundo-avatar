@@ -667,7 +667,11 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
           c.era && !depth ? h('span', { class: 'chip chip-mini' }, c.era) : null),
         h('p', { class: 'texto' }, richText(c.body)),
         c.image_url && c.kind === 'foto' ? h('a', { href: c.image_url, target: '_blank', rel: 'noopener noreferrer' },
-          h('img', { src: c.image_url, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer', class: 'foto-contrib' })) : null,
+          h('img', {
+            src: c.image_url, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer', class: 'foto-contrib',
+            // link que não é imagem (ex.: página do Instagram): mostra o link em vez de um quadro quebrado
+            onerror: (ev) => ev.target.replaceWith(h('span', { class: 'link-externo' }, `🔗 ${t('com.openLink')}`)),
+          })) : null,
         h('footer', {},
           h('span', { class: 'placar' }, `✔ ${c.approvals} · ✖ ${c.refutes}`), ' ',
           h('span', { class: 'estado' }, t(c.outcome > 0 ? 'com.stApproved' : c.outcome < 0 ? 'com.stRefuted' : 'com.stTie')),
@@ -747,6 +751,13 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
         let uploaded = null;
         try {
           let url = kind.value === 'foto' ? img.value || null : null;
+          // link colado: confere se é mesmo uma imagem (não uma página do Instagram, YouTube…)
+          if (url && !chosen && !(await isImage(url))) {
+            toast(t('com.notImage'));
+            img.focus();
+            send.disabled = false;
+            return;
+          }
           if (kind.value === 'foto' && chosen) {
             send.textContent = t('com.uploading');
             const blob = await fitWebp(chosen, 1600);
@@ -770,6 +781,18 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
     }, h('h4', {}, t('com.new')), h('div', { class: 'linha' }, kind, era), withMentions(body), photoBox,
     h('p', { class: 'dica' }, t('com.youHave', { c: fmtCred(user.credibility) }), ' ', limitsNote(), ' ', t('com.mentionHint')),
     send);
+  }
+
+  /** true se o endereço carrega como imagem em até 8 s. */
+  function isImage(url) {
+    return new Promise((ok) => {
+      const i = new Image();
+      const timer = setTimeout(() => ok(false), 8000);
+      i.onload = () => { clearTimeout(timer); ok(i.naturalWidth > 0); };
+      i.onerror = () => { clearTimeout(timer); ok(false); };
+      i.referrerPolicy = 'no-referrer';
+      i.src = url;
+    });
   }
 
   /** Reduz a imagem para no máximo `max` px no lado maior e converte para WebP. */

@@ -294,6 +294,8 @@ export const PT = {
   'com.photoOrLink': 'ou cole o link de uma imagem',
   'com.photoRequired': 'Escolha uma foto ou cole o link de uma imagem.',
   'com.uploading': 'Enviando a foto…',
+  'com.notImage': 'Esse link não é de uma imagem (Instagram, YouTube e redes sociais não funcionam). Envie o arquivo da foto ou use o link direto da imagem.',
+  'com.openLink': 'Abrir link',
   'err.photo_upload': 'Não foi possível enviar a foto. Tente outra imagem.',
   'err.photo_too_big': 'A foto é grande demais, mesmo reduzida. Tente outra imagem.',
   'err.report_blocked': 'Você teve {report_strikes} denúncias arquivadas seguidas e está temporariamente sem poder denunciar.',

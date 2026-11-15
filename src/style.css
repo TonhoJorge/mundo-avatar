@@ -505,3 +505,5 @@ button { cursor: pointer; }
 .previa { display: flex; gap: 8px; align-items: end; }
 .previa img { max-width: 160px; max-height: 120px; border-radius: 6px; border: 1px solid var(--borda); object-fit: cover; }
 .campo-foto label.dica { display: grid; gap: 3px; }
+
+.link-externo { display: inline-block; font: 13px var(--ui); padding: 4px 0; }
