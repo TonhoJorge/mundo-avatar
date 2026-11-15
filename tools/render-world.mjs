@@ -28,7 +28,7 @@ const ERAS = ['aang', 'korra', 'havens'];
 const NATIONS = ['none', 'earth', 'fire', 'water', 'air', 'republic', 'havens'];
 const D2R = Math.PI / 180;
 // força da tinta de cada nação sobre o mapa (Ar quase branco, como no mapa oficial)
-const TINT_WEIGHT = { air: 0.62, fire: 0.32, water: 0.3, earth: 0.22, republic: 0.26, havens: 0.2 };
+const TINT_WEIGHT = { air: 0.62, fire: 0.32, water: 0.62, earth: 0.22, republic: 0.26, havens: 0.2 };
 const LAND_TYPES = new Set(['capital', 'city', 'village', 'temple', 'haven', 'landmark', 'spirit']);
 const RIPPLES = [[4, 0.34], [8.5, 0.24], [14, 0.15]]; // linhas paralelas à costa: [px, intensidade]
 
@@ -358,7 +358,8 @@ function shade(C, era, lon, lat, pxDeg, X, Y) {
     }
     const mt = smooth(0.18, 0.7, e);
     r = mix(r, 156, mt * 0.75); g = mix(g, 128, mt * 0.75); b = mix(b, 96, mt * 0.75);
-    const snow = clamp01(smooth(0.8, 1.0, e) * 0.85 + smooth(62, 70, alat + 4 * fbm(40, 3, 29)));
+    // neve por latitude: com os moldes oficiais, as terras polares (Tribos da Água) ficam azul-gelo, como no mapa oficial
+    const snow = clamp01(smooth(0.8, 1.0, e) * 0.85 + (C.warp ? smooth(62, 70, alat + 4 * fbm(40, 3, 29)) : 0.25 * smooth(60, 70, alat)));
     r = mix(r, 240, snow); g = mix(g, 243, snow); b = mix(b, 245, snow);
     const sh = mix(1, Math.max(0.55, Math.min(1.25, light)), 0.55 + mt * 0.45);
     r *= sh; g *= sh; b *= sh;
@@ -424,7 +425,7 @@ function shade(C, era, lon, lat, pxDeg, X, Y) {
       if (w < 1.2) { const k = a * (1 - w / 1.2); r = mix(r, 64, k); g = mix(g, 98, k); b = mix(b, 116, k); }
     }
     // gelo marinho só perto dos polos verdadeiros (no mapa oficial em Mercator as terras polares ficam por volta de 65–75°)
-    const ice = C.warp ? smooth(62, 72, alat + 5 * fbm(120, 3, 37)) : smooth(80, 86, alat + 3 * fbm(120, 3, 37));
+    const ice = C.warp ? smooth(62, 72, alat + 5 * fbm(120, 3, 37)) : smooth(85, 89, alat + 2 * fbm(120, 3, 37));
     r = mix(r, 214, ice * 0.7); g = mix(g, 230, ice * 0.7); b = mix(b, 236, ice * 0.7);
     if (era === 'havens') {
       const lum = 0.3 * r + 0.59 * g + 0.11 * b;

@@ -198,7 +198,7 @@ export const walls = [
 export const nationColors = {
   fire: [190, 78, 40],
   earth: [178, 150, 98],
-  water: [120, 160, 200],
+  water: [168, 196, 222], // azul-gelo do mapa oficial
   air: [236, 233, 226],
   republic: [150, 104, 60],
   havens: [200, 170, 90],
