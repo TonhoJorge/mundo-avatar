@@ -45,11 +45,9 @@ Não foi encontrado nenhum repositório aberto com o mundo Avatar já georrefere
 
 ## Como as posições foram definidas
 
-1. **Disposição geral:** o mapa-múndi oficial da série (*Avatar world map*, publicado no Avatar Wiki) foi usado **só como referência de posição**. Nenhuma parte da arte foi copiada para o projeto. A conversão do mapa plano para o globo foi:
-   - longitude = (x% − 50) × 5,8
-   - latitude = 139,2 − 2,821 × y%
-
-   Sendo x% e y% a posição na imagem do mapa. Ela mantém as proporções do mapa nas latitudes médias e põe as terras das Tribos da Água sobre os polos. Os contornos em `world/geography.mjs` são simplificações desenhadas à mão sobre essa grade.
+1. **Contornos:** extraídos automaticamente, pixel a pixel, do mapa-múndi oficial (*Avatar world map.jpeg*, 3840×2160, Avatar Wiki) por `tools/trace-official.mjs`. O programa separa mar, terra, a cor de cada nação, os rios e os traços de relevo, ignora os elementos decorativos (medalhões, placas, quadro de detalhe, fumaça dos vulcões) e grava só **máscaras** em `world/trace/`. A pintura do site é nova e procedural, feita dentro desses limites; a imagem oficial não vai para o repositório (fica em `arte/`, fora do git).
+   - **Projeção:** o mapa oficial é tratado como um mapa de **Mercator** (`world/projection.mjs`). No modo plano do site (Web Mercator) a geometria é idêntica à do mapa oficial; no globo, cada ponto vai para a esfera pela inversa exata de Mercator, `φ = 2·atan(eʸ) − π/2`. Escala: 360° de longitude ocupam 62,07% da largura da imagem, com o equador a 49,35% da altura. As terras polares ficam por volta de 65–75° de latitude.
+   - A calibração antiga (linear, `latitude = 139,2 − 2,821 × y%`) foi convertida para Mercator mantendo cada lugar no mesmo ponto da imagem oficial; seis lugares que caíam na água por menos de 1° foram levados à terra mais próxima.
 2. **Localização de cada lugar:** campo *location* da página de cada lugar no **Avatar Wiki** (`avatar.fandom.com`, consultado em 14/11/2026). Exemplos:
    - Ba Sing Se, Passagem da Serpente e Baía Camaleão ficam no nordeste do Reino da Terra;
    - Omashu e a Caverna dos Dois Amantes ficam na Cordilheira Kolau (sudoeste);
@@ -59,7 +57,7 @@ Não foi encontrado nenhum repositório aberto com o mundo Avatar já georrefere
    - Ellora fica no sudeste do Grande Continente; Nova Ba Sing Se, onde era Ba Sing Se.
 3. **Cores das nações:** seguem o mapa oficial: Fogo laranja-avermelhado, Terra bege, Água azul-gelo, Ar branco-acinzentado.
 4. **Era de Pavi e Nisha:** as tempestades violáceas seguem a arte oficial *Seven Havens from space* (Avatar Wiki), que mostra o planeta coberto de tempestades com sete refúgios brilhando. A página *Seven Havens* do wiki diz onde fica cada cor: violeta perto da antiga Cidade República, azul na costa oeste do Grande Continente, verde no sudoeste e anil nas Ilhas do Fogo. Para estimar as posições, ajustamos uma projeção de globo a essa arte usando os quatro refúgios de lugar conhecido (Cidade República, Nova Ba Sing Se, Ilhas Flutuantes e Ellora). A ligação entre nome e cor (Akasha azul, Montanha da Pena verde) vem das roupas dos enviados e é inferência; por isso esses lugares estão com confiança `baixa`. A teoria de fãs "Akasha = Zaofu" foi descartada: o mapa interativo do wiki (`Map:Avatar_world_map`) põe Zaofu no interior do sudoeste, longe do brilho azul.
-5. **Conferência automática:** o gerador avisa se algum lugar terrestre cair na água. Posições `baixa` devem ser revisadas com o **modo editor** sobre a arte oficial (veja [ARTE-OFICIAL.md](ARTE-OFICIAL.md)).
+5. **Conferência automática:** o gerador avisa se algum lugar terrestre cair na água ou colado na costa. Posições `baixa` devem ser revisadas com o **modo editor** sobre a arte oficial (veja [ARTE-OFICIAL.md](ARTE-OFICIAL.md)).
 
 ## Ainda falta consultar
 

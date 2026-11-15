@@ -20,6 +20,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 import os from 'node:os';
 import * as G from '../world/geography.mjs';
+import { oldLatToMercator } from '../world/projection.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), '..');
@@ -157,35 +158,75 @@ function lineField(W, H, lines) {
 
 const share = (a) => { const s = new Float32Array(new SharedArrayBuffer(a.length * 4)); s.set(a); return s; };
 
-function buildInputs(places, FW, FH) {
+// Moldes extraídos do mapa oficial (tools/trace-official.mjs): contornos, rios,
+// montanhas e nações exatos. Sem eles, usa a geografia desenhada à mão.
+async function loadTrace() {
+  const dir = path.join(ROOT, 'world/trace');
+  const names = ['land', 'river', 'mount', 'nation'];
+  if (!names.every((n) => fs.existsSync(path.join(dir, `${n}.png`)))) return null;
+  const { default: sharp } = await import('sharp');
+  const T = {};
+  for (const n of names) {
+    const { data, info } = await sharp(path.join(dir, `${n}.png`)).greyscale().raw().toBuffer({ resolveWithObject: true });
+    if (info.width !== 4096 || info.height !== 2048) throw new Error(`world/trace/${n}.png deve ter 4096x2048`);
+    T[n] = n === 'nation' ? Uint8Array.from(data) : Float32Array.from(data, (v) => v / 255);
+  }
+  return T;
+}
+// coordenadas da geografia à mão estão na calibração antiga: convertidas para Mercator
+const cvPoly = (poly) => poly.map(([lo, la]) => [lo, oldLatToMercator(la)]);
+const cvLines = (list) => list.map((L) => ({ ...L, line: cvPoly(L.line) }));
+const halve = (a, W, H) => { // média 2×2
+  const o = new Float32Array((W / 2) * (H / 2));
+  for (let y = 0; y < H / 2; y++) for (let x = 0; x < W / 2; x++) {
+    const i = 2 * y * W + 2 * x;
+    o[y * (W / 2) + x] = (a[i] + a[i + 1] + a[i + W] + a[i + W + 1]) / 4;
+  }
+  return o;
+};
+
+function buildInputs(places, FW, FH, T = null) {
   const LW = 4096, LH = 2048, BW = 2048, BH = 1024, TW = 1024, TH = 512;
-  const landM = new Float32Array(LW * LH), lakeM = new Float32Array(LW * LH);
-  for (const l of G.land) fillPoly(landM, LW, LH, l.poly, 1);
-  for (const l of G.lakes) fillPoly(lakeM, LW, LH, l.poly, 1);
+  const landM = T ? T.land : new Float32Array(LW * LH), lakeM = new Float32Array(LW * LH);
+  if (!T) {
+    for (const l of G.land) fillPoly(landM, LW, LH, l.poly, 1);
+    for (const l of G.lakes) fillPoly(lakeM, LW, LH, l.poly, 1);
+  }
   // âncoras: garantem terra sob cada lugar terrestre do catálogo
   const anchorM = new Float32Array(LW * LH);
   for (const p of places) {
     if (!LAND_TYPES.has(p.type) || p.water) continue;
     const ring = [];
-    for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; ring.push([p.lon + 1.1 * Math.cos(a) / Math.max(0.2, Math.cos(p.lat * D2R)), p.lat + 1.1 * Math.sin(a)]); }
+    const ar = T ? 0.35 : 1.1; // com moldes exatos, a âncora só garante o marcador em terra
+    for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; ring.push([p.lon + ar * Math.cos(a) / Math.max(0.2, Math.cos(p.lat * D2R)), p.lat + ar * Math.sin(a)]); }
     fillPoly(anchorM, LW, LH, ring, 1);
   }
   const grids = {
-    land: { W: LW, H: LH, a: share(boxBlur(landM, LW, LH, 9, 3)) },
+    land: { W: LW, H: LH, a: share(boxBlur(landM, LW, LH, T ? 1 : 9, T ? 1 : 3)) },
     lake: { W: LW, H: LH, a: share(boxBlur(lakeM, LW, LH, 3, 3)) },
     anchor: { W: LW, H: LH, a: share(boxBlur(anchorM, LW, LH, 3, 2)) },
-    mount: { W: BW, H: BH, a: share(lineField(BW, BH, G.mountains)) },
-    canyon: { W: BW, H: BH, a: share(lineField(BW, BH, G.canyons)) },
+    mount: { W: BW, H: BH, a: share(T ? boxBlur(halve(T.mount, LW, LH).map((v) => Math.min(1, v * 1.6)), BW, BH, 2, 2) : lineField(BW, BH, G.mountains)) },
+    canyon: { W: BW, H: BH, a: share(lineField(BW, BH, T ? cvLines(G.canyons) : G.canyons)) },
   };
+  if (T) grids.river = { W: LW, H: LH, a: share(boxBlur(T.river, LW, LH, 1, 1)) };
   for (const [k, list] of Object.entries(G.biomes)) {
     const m = new Float32Array(BW * BH);
-    for (const b of list) fillPoly(m, BW, BH, b.poly, 1);
+    for (const b of list) fillPoly(m, BW, BH, T ? cvPoly(b.poly) : b.poly, 1);
     grids[k] = { W: BW, H: BH, a: share(boxBlur(m, BW, BH, 6, 3)) };
   }
   const tints = {};
+  // códigos do molde de nações: 1 Terra, 2 colônias, 3 Fogo, 4 Ar, 5 Água
+  const TRACE_NATION = { aang: [0, 'earth', 'fire', 'fire', 'air', 'water'], korra: [0, 'earth', 'republic', 'fire', 'air', 'water'], havens: null };
   for (const era of ERAS) {
     const idx = new Float32Array(TW * TH);
-    for (const t of G.territories[era]) {
+    if (T && TRACE_NATION[era]) {
+      for (let y = 0; y < TH; y++) for (let x = 0; x < TW; x++) {
+        const code = T.nation[(y * 4 + 2) * LW + x * 4 + 2];
+        const n = TRACE_NATION[era][code];
+        if (n) idx[y * TW + x] = NATIONS.indexOf(n);
+      }
+    }
+    for (const t of T ? [] : G.territories[era]) {
       const polys = t.poly ? [t.poly] : t.polyRef ? [G.landById(t.polyRef).poly] : t.polyRefs.map((r) => G.landById(r).poly);
       for (const p of polys) fillPoly(idx, TW, TH, p, NATIONS.indexOf(t.nation));
     }
@@ -200,12 +241,13 @@ function buildInputs(places, FW, FH) {
   const segs = {};
   for (const era of ERAS) {
     const s = [];
-    for (const line of G.borders[era] || []) for (let i = 0; i + 1 < line.length; i++) s.push(...line[i], ...line[i + 1]);
+    for (const line of T ? [] : G.borders[era] || []) for (let i = 0; i + 1 < line.length; i++) s.push(...line[i], ...line[i + 1]);
     segs[era] = s;
   }
   const zone = (era, key) => places.filter((p) => p.eras?.[era]?.[key]).map((p) => ({ lon: p.lon, lat: p.lat, r: p.eras[era][key] }));
   return {
-    grids, tints, segs, walls: G.walls,
+    grids, tints, segs, warp: T ? 0 : 3,
+    walls: T ? G.walls.map((w) => ({ ...w, center: [w.center[0], oldLatToMercator(w.center[1])], ry: oldLatToMercator(w.center[1] + w.ry) - oldLatToMercator(w.center[1]) })) : G.walls,
     havens: zone('havens', 'zone'), spirits: zone('korra', 'spirit'),
     F: { W: FW, H: FH, a: new Float32Array(new SharedArrayBuffer(FW * FH * 4)) },
     E: { W: FW, H: FH, a: new Float32Array(new SharedArrayBuffer(FW * FH * 4)) },
@@ -235,7 +277,7 @@ function makeContext(D) {
     S, sF: sampler(D.F), sE: sampler(D.E), F: D.F, E: D.E,
     du: 1 / D.F.W, dv: 1 / D.F.H, dLon: 360 / D.F.W, dLat: 180 / D.F.H,
     tint: Object.fromEntries(Object.entries(D.tints).map(([e, ch]) => [e, ch.map(sampler)])),
-    segs: D.segs, walls: D.walls, havens: D.havens, spirits: D.spirits,
+    segs: D.segs, walls: D.walls, havens: D.havens, spirits: D.spirits, warp: D.warp ?? 3,
     rgb: new Float64Array(3),
   };
   return C;
@@ -249,7 +291,7 @@ function fieldsJob(C, { y0, y1 }) {
       const u = (x + 0.5) / W;
       setP(u * 360 - 180, lat);
       // distorção de domínio (baías e penínsulas) + rugosidade só perto da costa (sem ilhas soltas no oceano)
-      const wu = (3 * fbm(5, 4, 101)) / 360, wv = (3 * fbm(5, 4, 202)) / 180;
+      const wu = (C.warp * fbm(5, 4, 101)) / 360, wv = (C.warp * fbm(5, 4, 202)) / 180; // sem distorção com moldes exatos
       const lb = Math.max(S.land(u + wu, v - wv), S.anchor(u, v));
       let f = lb - 0.5 + fbm(16, 7, 11, 0.6) * (0.08 + 2.6 * lb * (1 - lb));
       const lk = S.lake(u, v) - 0.5 + 0.12 * fbm(60, 4, 77);
@@ -327,6 +369,10 @@ function shade(C, era, lon, lat, pxDeg, X, Y) {
       const k = T[4](u, v) * (1 - snow * 0.6);
       r = mix(r, T[0](u, v) / ta, k); g = mix(g, T[1](u, v) / ta, k); b = mix(b, T[2](u, v) / ta, k);
     }
+    if (S.river) { // rios do mapa oficial
+      const rv = S.river(u, v);
+      if (rv > 0.28) { const k = smooth(0.28, 0.7, rv) * (era === 'havens' ? 0.45 : 0.85); r = mix(r, 88, k); g = mix(g, 134, k); b = mix(b, 164, k); }
+    }
     const sg = C.segs[era];
     if (sg.length) {
       let dmin = Infinity;
@@ -377,7 +423,8 @@ function shade(C, era, lon, lat, pxDeg, X, Y) {
       const w = Math.abs(-dist - t);
       if (w < 1.2) { const k = a * (1 - w / 1.2); r = mix(r, 64, k); g = mix(g, 98, k); b = mix(b, 116, k); }
     }
-    const ice = smooth(62, 72, alat + 5 * fbm(120, 3, 37));
+    // gelo marinho só perto dos polos verdadeiros (no mapa oficial em Mercator as terras polares ficam por volta de 65–75°)
+    const ice = C.warp ? smooth(62, 72, alat + 5 * fbm(120, 3, 37)) : smooth(80, 86, alat + 3 * fbm(120, 3, 37));
     r = mix(r, 214, ice * 0.7); g = mix(g, 230, ice * 0.7); b = mix(b, 236, ice * 0.7);
     if (era === 'havens') {
       const lum = 0.3 * r + 0.59 * g + 0.11 * b;
@@ -521,7 +568,9 @@ async function main() {
 
   const places = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/places.json'), 'utf8')).places;
   console.log(`Mundo Avatar — zoom 0–${maxZoom}, campos ${FW}x${FH}, eras: ${eras.join(', ')}`);
-  const inputs = buildInputs(places, FW, FH);
+  const trace = await loadTrace();
+  console.log(trace ? 'Usando os moldes do mapa oficial (world/trace).' : 'Sem moldes: usando a geografia desenhada à mão.');
+  const inputs = buildInputs(places, FW, FH, trace);
 
   const rows = [];
   for (let y = 0; y < FH; y += 16) rows.push({ kind: 'fields', y0: y, y1: Math.min(FH, y + 16) });
