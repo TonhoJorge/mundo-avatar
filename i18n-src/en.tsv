@@ -425,3 +425,51 @@ c808dfe	The indigo haven. The series has only shown that it is in the Fire Islan
 006aa08	Your credibility has reached zero: you cannot contribute for now. After {zero_recover_days} days at zero, it goes back to {zero_recover_to}.
 a1ea579	Zero credibility: cannot contribute. After {zero_recover_days} days (about 6 months) at zero, credibility goes back to {zero_recover_to} and old contributions stop counting.
 296cf49	Zero credibility: you can only contribute again after {zero_recover_days} days at zero.
+188a1de	Invalid username: use 3 to 20 lowercase letters, numbers or _.
+e38e2da	That username is already taken.
+ccd58df	Invalid photo address.
+2650298	Account menu
+e9c967c	Notifications
+28c5e5a	{n} unread
+742e3d0	My profile
+ee0acca	You are signed in as @{u}.
+fb9df2e	Could not sign in: {msg}
+7764c6d	You signed out.
+5f51f95	Change photo
+9a54249	Photo updated
+3ccb778	Could not upload the photo. Use JPG, PNG or WebP.
+646c4ac	Username
+2732d05	3 to 20 characters: lowercase letters, numbers or _. People use it to mention you.
+d2f7e84	✓ Available
+4c7f4f6	✗ Already taken
+5fb5c5b	Use 3 to 20 lowercase letters, numbers or _
+8d4b249	of {max}
+b632876	Notify me when…
+67c2bc3	someone approves something I wrote
+a95b68a	someone refutes something I wrote
+520a757	someone mentions me with @
+c1076fe	Activity
+b3bafc8	All
+3847926	Posts
+3a78f88	Approvals
+d070d31	Refutations
+b8039c6	No activity here yet.
+16ae6bd	Posted about {place}
+416a5cb	Justified a refutation on {place}
+0c519ed	Approved a contribution about {place}
+0a06a8c	Refuted a contribution about {place}
+84ebe09	Mark all as read
+1c6c36e	New
+e859e9d	Earlier
+d9c00a8	No notifications yet. When someone approves, refutes or mentions you, it shows up here.
+ccc3b7a	Choose which notifications to get
+e1c28fb	{actor} approved what you wrote about {place}
+63c32d3	{actor} refuted what you wrote about {place}
+2fc47a1	{actor} mentioned you on {place}
+94d060d	You have a new notification.
+e1ba201	Unread
+811bbd6	Nobody with that username.
+f937495	Contribution type
+f37a89c	Era
+d05009e	Image address
+eeb35d1	Type @ to mention someone.

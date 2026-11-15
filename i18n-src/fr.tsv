@@ -418,3 +418,51 @@ c808dfe	Le refuge indigo. La série a seulement montré qu'il est dans les îles
 006aa08	Votre crédibilité est tombée à zéro : vous ne pouvez pas contribuer pour l'instant. Après {zero_recover_days} jours à zéro, elle remonte à {zero_recover_to}.
 a1ea579	Crédibilité nulle : ne peut pas contribuer. Après {zero_recover_days} jours (environ 6 mois) à zéro, la crédibilité remonte à {zero_recover_to} et les anciennes contributions ne comptent plus.
 296cf49	Crédibilité nulle : vous ne pourrez contribuer qu'après {zero_recover_days} jours à zéro.
+188a1de	Nom d'utilisateur invalide : utilisez 3 à 20 lettres minuscules, chiffres ou _.
+e38e2da	Ce nom d'utilisateur est déjà pris.
+ccd58df	Adresse de photo invalide.
+2650298	Menu du compte
+e9c967c	Notifications
+28c5e5a	{n} non lues
+742e3d0	Mon profil
+ee0acca	Vous êtes connecté en tant que @{u}.
+fb9df2e	Connexion impossible : {msg}
+7764c6d	Vous êtes déconnecté.
+5f51f95	Changer de photo
+9a54249	Photo mise à jour
+3ccb778	Impossible d'envoyer la photo. Utilisez JPG, PNG ou WebP.
+646c4ac	Nom d'utilisateur
+2732d05	3 à 20 caractères : lettres minuscules, chiffres ou _. C'est avec lui qu'on vous mentionne.
+d2f7e84	✓ Disponible
+4c7f4f6	✗ Déjà pris
+5fb5c5b	Utilisez 3 à 20 lettres minuscules, chiffres ou _
+8d4b249	sur {max}
+b632876	Me prévenir quand…
+67c2bc3	quelqu'un approuve ce que j'ai écrit
+a95b68a	quelqu'un réfute ce que j'ai écrit
+520a757	quelqu'un me mentionne avec @
+c1076fe	Activité
+b3bafc8	Tout
+3847926	Publications
+3a78f88	Approbations
+d070d31	Réfutations
+b8039c6	Aucune activité ici pour l'instant.
+16ae6bd	A publié sur {place}
+416a5cb	A justifié une réfutation sur {place}
+0c519ed	A approuvé une contribution sur {place}
+0a06a8c	A réfuté une contribution sur {place}
+84ebe09	Tout marquer comme lu
+1c6c36e	Nouvelles
+e859e9d	Plus anciennes
+d9c00a8	Aucune notification pour l'instant. Quand quelqu'un vous approuve, vous réfute ou vous mentionne, cela apparaît ici.
+ccc3b7a	Choisir les notifications à recevoir
+e1c28fb	{actor} a approuvé ce que vous avez écrit sur {place}
+63c32d3	{actor} a réfuté ce que vous avez écrit sur {place}
+2fc47a1	{actor} vous a mentionné sur {place}
+94d060d	Vous avez une nouvelle notification.
+e1ba201	Non lue
+811bbd6	Personne avec ce nom d'utilisateur.
+f937495	Type de contribution
+f37a89c	Ère
+d05009e	Adresse de l'image
+eeb35d1	Tapez @ pour mentionner quelqu'un.

@@ -418,3 +418,51 @@ c808dfe	El refugio añil. La serie solo mostró que está en las Islas del Fuego
 006aa08	Tu credibilidad llegó a cero: por ahora no puedes contribuir. Tras {zero_recover_days} días en cero, vuelve a {zero_recover_to}.
 a1ea579	Credibilidad cero: no puede contribuir. Tras {zero_recover_days} días (unos 6 meses) en cero, la credibilidad vuelve a {zero_recover_to} y las contribuciones antiguas dejan de contar.
 296cf49	Credibilidad cero: solo vuelves a contribuir tras {zero_recover_days} días en cero.
+188a1de	Nombre de usuario no válido: usa de 3 a 20 letras minúsculas, números o _.
+e38e2da	Ese nombre de usuario ya está en uso.
+ccd58df	Dirección de foto no válida.
+2650298	Menú de la cuenta
+e9c967c	Notificaciones
+28c5e5a	{n} sin leer
+742e3d0	Mi perfil
+ee0acca	Entraste como @{u}.
+fb9df2e	No se pudo entrar: {msg}
+7764c6d	Cerraste la sesión.
+5f51f95	Cambiar foto
+9a54249	Foto actualizada
+3ccb778	No se pudo subir la foto. Usa JPG, PNG o WebP.
+646c4ac	Nombre de usuario
+2732d05	De 3 a 20 caracteres: letras minúsculas, números o _. Con él te mencionan los demás.
+d2f7e84	✓ Disponible
+4c7f4f6	✗ Ya está en uso
+5fb5c5b	Usa de 3 a 20 letras minúsculas, números o _
+8d4b249	de {max}
+b632876	Avisarme cuando…
+67c2bc3	aprueben algo que escribí
+a95b68a	refuten algo que escribí
+520a757	me mencionen con @
+c1076fe	Actividad
+b3bafc8	Todo
+3847926	Publicaciones
+3a78f88	Aprobaciones
+d070d31	Refutaciones
+b8039c6	Todavía no hay actividad aquí.
+16ae6bd	Publicó sobre {place}
+416a5cb	Justificó una refutación en {place}
+0c519ed	Aprobó una contribución sobre {place}
+0a06a8c	Refutó una contribución sobre {place}
+84ebe09	Marcar todo como leído
+1c6c36e	Nuevas
+e859e9d	Anteriores
+d9c00a8	Aún no hay notificaciones. Cuando alguien apruebe, refute o te mencione, aparecerá aquí.
+ccc3b7a	Elegir qué notificaciones recibir
+e1c28fb	{actor} aprobó lo que escribiste sobre {place}
+63c32d3	{actor} refutó lo que escribiste sobre {place}
+2fc47a1	{actor} te mencionó en {place}
+94d060d	Tienes una notificación nueva.
+e1ba201	Sin leer
+811bbd6	Nadie con ese nombre de usuario.
+f937495	Tipo de contribución
+f37a89c	Era
+d05009e	Dirección de la imagen
+eeb35d1	Escribe @ para mencionar a alguien.

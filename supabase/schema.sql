@@ -55,15 +55,53 @@ alter table public.profiles add column if not exists zero_since timestamptz;
 alter table public.profiles add column if not exists cred_reset_at timestamptz;
 alter table public.profiles add column if not exists cred_base numeric;
 
+-- Perfil público: @nome único (para menções), foto e preferências de notificação.
+alter table public.profiles add column if not exists username text;
+alter table public.profiles add column if not exists avatar_url text;
+alter table public.profiles add column if not exists notify_approve boolean not null default true;
+alter table public.profiles add column if not exists notify_refute boolean not null default true;
+alter table public.profiles add column if not exists notify_mention boolean not null default true;
+do $$ begin
+  alter table public.profiles add constraint profiles_username_format check (username ~ '^[a-z0-9_]{3,20}$');
+exception when duplicate_object then null; end $$;
+do $$ begin
+  alter table public.profiles add constraint profiles_avatar_https check (avatar_url is null or (avatar_url ~ '^https://' and char_length(avatar_url) <= 500));
+exception when duplicate_object then null; end $$;
+create unique index if not exists profiles_username_unique on public.profiles (username);
+
+-- Gera um @nome livre a partir de um texto qualquer (ex.: o login do GitHub).
+create or replace function public.make_username(base text) returns text
+language plpgsql volatile set search_path = public as $$
+declare clean text; candidate text; n int := 0;
+begin
+  clean := left(regexp_replace(lower(coalesce(base, '')), '[^a-z0-9_]', '', 'g'), 16);
+  if char_length(clean) < 3 then clean := 'viajante'; end if;
+  candidate := clean;
+  while exists (select 1 from profiles where username = candidate) loop
+    n := n + 1;
+    candidate := clean || n;
+  end loop;
+  return candidate;
+end $$;
+
+-- quem entrou antes desta versão ganha um @nome automático
+update public.profiles set username = make_username(name) where username is null;
+update public.profiles p set avatar_url = u.raw_user_meta_data ->> 'avatar_url'
+  from auth.users u
+  where u.id = p.id and p.avatar_url is null and (u.raw_user_meta_data ->> 'avatar_url') ~ '^https://';
+
 create or replace function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$
+declare meta jsonb := coalesce(new.raw_user_meta_data, '{}'::jsonb);
 begin
-  insert into profiles (id, name) values (
+  insert into profiles (id, name, username, avatar_url) values (
     new.id,
     coalesce(
-      nullif(left(trim(new.raw_user_meta_data ->> 'user_name'), 40), ''),
-      nullif(left(trim(new.raw_user_meta_data ->> 'name'), 40), ''),
-      'Viajante ' || substr(new.id::text, 1, 6)))
+      nullif(left(trim(meta ->> 'user_name'), 40), ''),
+      nullif(left(trim(meta ->> 'name'), 40), ''),
+      'Viajante ' || substr(new.id::text, 1, 6)),
+    make_username(coalesce(meta ->> 'user_name', meta ->> 'name', split_part(new.id::text, '-', 1))),
+    case when (meta ->> 'avatar_url') ~ '^https://' then left(meta ->> 'avatar_url', 500) end)
   on conflict (id) do nothing;
   return new;
 end $$;
@@ -192,12 +230,13 @@ create table if not exists public.reports (
 -- ================================================================= vistas
 create or replace view public.public_profiles with (security_invoker = on) as
   select id, name, created_at, banned_at is not null as banned, ban_reason, credibility(id) as credibility,
-         zero_since, cred_reset_at
+         zero_since, cred_reset_at, username, avatar_url
   from profiles;
 
 create or replace view public.contribution_list with (security_invoker = on) as
   select c.id, c.author, p.name as author_name, c.place_id, c.era, c.kind, c.parent_id, c.body, c.image_url,
-         c.created_at, t.approvals, t.refutes, sign(t.approvals - t.refutes)::int as outcome
+         c.created_at, t.approvals, t.refutes, sign(t.approvals - t.refutes)::int as outcome,
+         p.username as author_username, p.avatar_url as author_avatar
   from contributions c join profiles p on p.id = c.author, lateral tally(c.id) t;
 
 -- resultado público das denúncias (sem o texto e sem quem denunciou)
@@ -311,6 +350,121 @@ begin
   return jsonb_build_object('id', rid, 'confirmed', ok, 'total_refutes', n_total, 'on_reporter', n_on, 'reverted', n_rev);
 end $$;
 
+-- ================================================ perfil e notificações
+create table if not exists public.notifications (
+  id bigint generated always as identity primary key,
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  kind text not null check (kind in ('approve', 'refute', 'mention')),
+  actor uuid not null references public.profiles (id) on delete cascade,
+  contribution_id bigint not null references public.contributions (id) on delete cascade,
+  created_at timestamptz not null default now(),
+  read_at timestamptz
+);
+create index if not exists notifications_user on public.notifications (user_id, created_at desc);
+
+-- Atividade pública de cada pessoa: publicações, aprovações e refutações.
+create or replace view public.activity with (security_invoker = on) as
+  select c.author as user_id, case when c.kind = 'justificativa' then 'refute_text' else 'post' end as kind,
+         c.id as contribution_id, c.place_id, c.body, c.created_at
+  from contributions c
+  union all
+  select v.voter, case when v.value = 1 then 'approve' else 'refute' end,
+         v.contribution_id, c.place_id, c.body, v.created_at
+  from votes v join contributions c on c.id = v.contribution_id
+  where v.annulled_at is null;
+
+-- avisa o autor quando alguém aprova ou refuta o que ele escreveu
+create or replace function public.notify_vote() returns trigger
+language plpgsql security definer set search_path = public as $$
+declare a profiles; c contributions;
+begin
+  if tg_op = 'UPDATE' and new.value = old.value then return new; end if;
+  select * into c from contributions where id = new.contribution_id;
+  select * into a from profiles where id = c.author;
+  if a.id is null or a.id = new.voter then return new; end if;
+  if (new.value = 1 and a.notify_approve) or (new.value = -1 and a.notify_refute) then
+    insert into notifications (user_id, kind, actor, contribution_id)
+      values (a.id, case when new.value = 1 then 'approve' else 'refute' end, new.voter, c.id);
+  end if;
+  return new;
+end $$;
+drop trigger if exists votes_notify on public.votes;
+create trigger votes_notify after insert or update of value on public.votes
+  for each row execute function public.notify_vote();
+
+-- avisa quem foi mencionado com @nome numa publicação ou justificativa
+create or replace function public.notify_mentions() returns trigger
+language plpgsql security definer set search_path = public as $$
+begin
+  insert into notifications (user_id, kind, actor, contribution_id)
+    select distinct p.id, 'mention', new.author, new.id
+    from regexp_matches(new.body, '@([A-Za-z0-9_]{3,20})', 'g') m
+    join profiles p on p.username = lower(m[1])
+    where p.id <> new.author and p.notify_mention
+    limit 20;
+  return new;
+end $$;
+drop trigger if exists contributions_mentions on public.contributions;
+create trigger contributions_mentions after insert on public.contributions
+  for each row execute function public.notify_mentions();
+
+create or replace function public.username_available(p_username text) returns boolean
+language sql stable security definer set search_path = public as $$
+  select lower(p_username) ~ '^[a-z0-9_]{3,20}$'
+     and not exists (select 1 from profiles where username = lower(p_username) and id is distinct from auth.uid())
+$$;
+
+create or replace function public.set_profile(p_name text, p_username text, p_avatar text default null)
+returns void language plpgsql security definer set search_path = public as $$
+declare uid uuid := require_user(); u text := lower(trim(p_username));
+begin
+  if u !~ '^[a-z0-9_]{3,20}$' then raise exception 'username_invalid'; end if;
+  if exists (select 1 from profiles where username = u and id <> uid) then raise exception 'username_taken'; end if;
+  if p_avatar is not null and p_avatar !~ '^https://' then raise exception 'avatar_invalid'; end if;
+  update profiles set name = trim(p_name), username = u, avatar_url = coalesce(nullif(p_avatar, ''), avatar_url) where id = uid;
+end $$;
+
+create or replace function public.set_notify(p_approve boolean, p_refute boolean, p_mention boolean)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  update profiles set notify_approve = p_approve, notify_refute = p_refute, notify_mention = p_mention
+    where id = require_user();
+end $$;
+
+-- marca como lidas as notificações indicadas (ou todas, se p_ids for nulo)
+create or replace function public.mark_read(p_ids bigint[] default null) returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  update notifications set read_at = now()
+    where user_id = auth.uid() and read_at is null and (p_ids is null or id = any (p_ids));
+end $$;
+
+-- fotos de perfil (Supabase Storage): cada pessoa só mexe na própria pasta
+do $$ begin
+  if exists (select 1 from pg_namespace where nspname = 'storage') then
+    insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+      values ('avatars', 'avatars', true, 524288, array['image/webp', 'image/png', 'image/jpeg'])
+      on conflict (id) do nothing;
+    drop policy if exists "avatar proprio insere" on storage.objects;
+    create policy "avatar proprio insere" on storage.objects for insert to authenticated
+      with check (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+    drop policy if exists "avatar proprio atualiza" on storage.objects;
+    create policy "avatar proprio atualiza" on storage.objects for update to authenticated
+      using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+    drop policy if exists "avatar proprio apaga" on storage.objects;
+    create policy "avatar proprio apaga" on storage.objects for delete to authenticated
+      using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+  end if;
+end $$;
+
+-- notificações chegam na hora (Supabase Realtime), sem precisar recarregar
+do $$ begin
+  if exists (select 1 from pg_publication where pubname = 'supabase_realtime')
+     and not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and tablename = 'notifications') then
+    alter publication supabase_realtime add table public.notifications;
+  end if;
+end $$;
+
 -- ================================================ permissões e segurança
 alter table public.config enable row level security;
 alter table public.profiles enable row level security;
@@ -339,3 +493,13 @@ revoke execute on function public.contribute, public.vote, public.unvote, public
 grant execute on function public.contribute, public.vote, public.unvote, public.set_name, public.report to authenticated;
 grant execute on function public.cfg, public.tally, public.outcome, public.credibility, public.raw_credibility to anon, authenticated;
 revoke execute on function public.refresh_cred, public.refresh_chain from public, anon, authenticated;
+
+alter table public.notifications enable row level security;
+drop policy if exists "so as proprias" on public.notifications;
+create policy "so as proprias" on public.notifications for select using (user_id = auth.uid());
+grant select on public.notifications to authenticated;
+grant select on public.activity to anon, authenticated;
+revoke execute on function public.set_profile, public.set_notify, public.mark_read from public, anon;
+grant execute on function public.set_profile, public.set_notify, public.mark_read to authenticated;
+grant execute on function public.username_available to anon, authenticated;
+revoke execute on function public.make_username, public.notify_vote, public.notify_mentions from public, anon, authenticated;

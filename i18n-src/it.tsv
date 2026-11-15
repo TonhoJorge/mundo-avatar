@@ -418,3 +418,51 @@ c808dfe	Il rifugio indaco. La serie ha mostrato solo che è nelle Isole del Fuoc
 006aa08	La tua credibilità è arrivata a zero: per ora non puoi contribuire. Dopo {zero_recover_days} giorni a zero, torna a {zero_recover_to}.
 a1ea579	Credibilità zero: non può contribuire. Dopo {zero_recover_days} giorni (circa 6 mesi) a zero, la credibilità torna a {zero_recover_to} e i vecchi contributi smettono di contare.
 296cf49	Credibilità zero: potrai contribuire di nuovo solo dopo {zero_recover_days} giorni a zero.
+188a1de	Nome utente non valido: usa da 3 a 20 lettere minuscole, numeri o _.
+e38e2da	Questo nome utente è già in uso.
+ccd58df	Indirizzo della foto non valido.
+2650298	Menu dell'account
+e9c967c	Notifiche
+28c5e5a	{n} non lette
+742e3d0	Il mio profilo
+ee0acca	Hai effettuato l'accesso come @{u}.
+fb9df2e	Impossibile accedere: {msg}
+7764c6d	Sei uscito dall'account.
+5f51f95	Cambia foto
+9a54249	Foto aggiornata
+3ccb778	Impossibile caricare la foto. Usa JPG, PNG o WebP.
+646c4ac	Nome utente
+2732d05	Da 3 a 20 caratteri: lettere minuscole, numeri o _. È così che gli altri ti menzionano.
+d2f7e84	✓ Disponibile
+4c7f4f6	✗ Già in uso
+5fb5c5b	Usa da 3 a 20 lettere minuscole, numeri o _
+8d4b249	su {max}
+b632876	Avvisami quando…
+67c2bc3	qualcuno approva qualcosa che ho scritto
+a95b68a	qualcuno confuta qualcosa che ho scritto
+520a757	qualcuno mi menziona con @
+c1076fe	Attività
+b3bafc8	Tutto
+3847926	Pubblicazioni
+3a78f88	Approvazioni
+d070d31	Confutazioni
+b8039c6	Ancora nessuna attività qui.
+16ae6bd	Ha pubblicato su {place}
+416a5cb	Ha motivato una confutazione su {place}
+0c519ed	Ha approvato un contributo su {place}
+0a06a8c	Ha confutato un contributo su {place}
+84ebe09	Segna tutto come letto
+1c6c36e	Nuove
+e859e9d	Precedenti
+d9c00a8	Nessuna notifica per ora. Quando qualcuno ti approva, ti confuta o ti menziona, compare qui.
+ccc3b7a	Scegli quali notifiche ricevere
+e1c28fb	{actor} ha approvato ciò che hai scritto su {place}
+63c32d3	{actor} ha confutato ciò che hai scritto su {place}
+2fc47a1	{actor} ti ha menzionato in {place}
+94d060d	Hai una nuova notifica.
+e1ba201	Non letta
+811bbd6	Nessuno con questo nome utente.
+f937495	Tipo di contributo
+f37a89c	Era
+d05009e	Indirizzo dell'immagine
+eeb35d1	Digita @ per menzionare qualcuno.

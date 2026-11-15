@@ -214,7 +214,9 @@ async function boot() {
     getEra: () => state.era,
     onSelectPlace: (id) => select(id, { fly: true }),
     placeName: (id) => byId(id)?.name ?? id,
+    headerEl: $('#conta'),
   });
+  state.community.boot();
   $('#btn-conta').addEventListener('click', () => state.community.openAccount());
   getJSON(`${BASE}data/photos.json`).then((p) => {
     state.photos = p;

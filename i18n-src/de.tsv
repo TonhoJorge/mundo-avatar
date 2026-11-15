@@ -418,3 +418,51 @@ c808dfe	Der indigoblaue Zufluchtsort. Die Serie zeigte nur, dass er auf den Feue
 006aa08	Deine Glaubwürdigkeit ist auf null gefallen: du kannst vorerst nicht beitragen. Nach {zero_recover_days} Tagen bei null steigt sie wieder auf {zero_recover_to}.
 a1ea579	Glaubwürdigkeit null: kann nicht beitragen. Nach {zero_recover_days} Tagen (etwa 6 Monaten) bei null steigt die Glaubwürdigkeit wieder auf {zero_recover_to}, und alte Beiträge zählen nicht mehr.
 296cf49	Glaubwürdigkeit null: du kannst erst nach {zero_recover_days} Tagen bei null wieder beitragen.
+188a1de	Ungültiger Benutzername: verwende 3 bis 20 Kleinbuchstaben, Ziffern oder _.
+e38e2da	Dieser Benutzername ist bereits vergeben.
+ccd58df	Ungültige Fotoadresse.
+2650298	Kontomenü
+e9c967c	Benachrichtigungen
+28c5e5a	{n} ungelesen
+742e3d0	Mein Profil
+ee0acca	Du bist als @{u} angemeldet.
+fb9df2e	Anmeldung fehlgeschlagen: {msg}
+7764c6d	Du hast dich abgemeldet.
+5f51f95	Foto ändern
+9a54249	Foto aktualisiert
+3ccb778	Das Foto konnte nicht hochgeladen werden. Verwende JPG, PNG oder WebP.
+646c4ac	Benutzername
+2732d05	3 bis 20 Zeichen: Kleinbuchstaben, Ziffern oder _. Damit erwähnen dich andere.
+d2f7e84	✓ Verfügbar
+4c7f4f6	✗ Bereits vergeben
+5fb5c5b	Verwende 3 bis 20 Kleinbuchstaben, Ziffern oder _
+8d4b249	von {max}
+b632876	Benachrichtige mich, wenn…
+67c2bc3	jemand etwas bestätigt, das ich geschrieben habe
+a95b68a	jemand etwas widerlegt, das ich geschrieben habe
+520a757	mich jemand mit @ erwähnt
+c1076fe	Aktivität
+b3bafc8	Alles
+3847926	Beiträge
+3a78f88	Bestätigungen
+d070d31	Widerlegungen
+b8039c6	Hier gibt es noch keine Aktivität.
+16ae6bd	Hat über {place} geschrieben
+416a5cb	Hat eine Widerlegung zu {place} begründet
+0c519ed	Hat einen Beitrag über {place} bestätigt
+0a06a8c	Hat einen Beitrag über {place} widerlegt
+84ebe09	Alle als gelesen markieren
+1c6c36e	Neu
+e859e9d	Früher
+d9c00a8	Noch keine Benachrichtigungen. Wenn dich jemand bestätigt, widerlegt oder erwähnt, erscheint es hier.
+ccc3b7a	Benachrichtigungen auswählen
+e1c28fb	{actor} hat bestätigt, was du über {place} geschrieben hast
+63c32d3	{actor} hat widerlegt, was du über {place} geschrieben hast
+2fc47a1	{actor} hat dich bei {place} erwähnt
+94d060d	Du hast eine neue Benachrichtigung.
+e1ba201	Ungelesen
+811bbd6	Niemand mit diesem Benutzernamen.
+f937495	Art des Beitrags
+f37a89c	Epoche
+d05009e	Bildadresse
+eeb35d1	Tippe @, um jemanden zu erwähnen.
