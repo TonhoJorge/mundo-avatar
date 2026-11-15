@@ -295,11 +295,11 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
     const top = items.filter((c) => !c.parent_id);
     const visible = top.filter((c) => c.outcome >= 0);
     const refuted = top.filter((c) => c.outcome < 0);
-    box.replaceChildren(head,
+    box.replaceChildren(...[head,
       visible.length ? visible.map((c) => item(c)) : h('p', { class: 'dica' }, t('com.empty')),
       refuted.length ? h('details', { class: 'refutadas' }, h('summary', {}, t('com.refutedList', { n: refuted.length })), refuted.map((c) => item(c))) : null,
       user ? contributeForm(place, rerender) : h('p', { class: 'dica' }, t('com.loginToContribute'), ' ', link(t('com.login'), openAccount)),
-      h('p', { class: 'dica' }, link(t('com.rules'), openRules)));
+      h('p', { class: 'dica' }, link(t('com.rules'), openRules))].flat().filter(Boolean)); // replaceChildren não aceita listas nem null
   }
 
   function contributeForm(place, done) {

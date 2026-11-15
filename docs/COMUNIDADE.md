@@ -15,15 +15,12 @@ banco de dados. Até lá, o site mostra "abre em breve" e as regras.
 4. (Recomendado) Em **Authentication > Providers**, ligue **GitHub**. O login
    por e-mail já funciona, mas o plano grátis do Supabase envia poucos e-mails
    por hora.
-5. Em **Project Settings > API**, copie a *Project URL* e a chave *anon public*
-   para [`public/data/community.json`](../public/data/community.json):
+5. Mande para quem cuida do site (ou cole em [`public/data/community.json`](../public/data/community.json)):
+   - o endereço do projeto (`https://<código>.supabase.co`; o código aparece no link do painel, depois de `/project/`);
+   - a **Publishable key** (`sb_publishable_...`), em **Project Settings > API Keys**.
 
-   ```json
-   { "url": "https://xxxx.supabase.co", "anonKey": "eyJ...", "providers": ["github"], "email": true }
-   ```
-
-   A chave *anon* é pública por natureza: as regras do banco (RLS e funções)
-   é que protegem os dados. **Nunca** coloque a chave *service_role* aqui.
+   A chave publicável é pública por natureza: as regras do banco (RLS e funções)
+   é que protegem os dados. **Nunca** use a *Secret key* (`sb_secret_...`) no site.
 
 ## Mudar as regras
 
