@@ -49,7 +49,7 @@ function gallery(info) {
   return h('figure', { class: 'galeria' },
     h('div', { class: 'fotos' }, info.fotos.map((f) => link(f.file,
       h('img', {
-        src: f.src, alt: '', loading: 'lazy', decoding: 'async', referrerpolicy: 'no-referrer',
+        src: f.src, alt: '', loading: 'lazy', decoding: 'async', // o Wiki exige saber de qual site vem o pedido (sem isso responde 403)
         onerror: (ev) => ev.target.closest('a')?.remove(),
       })))),
     h('figcaption', {}, t('photos.credit'), ' ', link(info.wiki, t('photos.source'))));
