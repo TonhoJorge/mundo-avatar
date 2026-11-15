@@ -51,8 +51,10 @@ function gallery(info) {
       h('img', {
         src: f.src, alt: '', loading: 'lazy', decoding: 'async', // o Wiki exige saber de qual site vem o pedido (sem isso responde 403)
         onerror: (ev) => ev.target.closest('a')?.remove(),
+        onload: (ev) => ev.target.closest('figure')?.classList.add('com-fotos'),
       })))),
     h('figcaption', {}, t('photos.credit'), ' ', link(info.wiki, t('photos.source'))));
+  // Se o Wiki não deixar mostrar as imagens aqui, fica só o link para a página dele.
 }
 
 /** Painel genérico (comunidade, regras, perfis…). */

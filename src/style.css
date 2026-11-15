@@ -393,3 +393,5 @@ button { cursor: pointer; }
 .sugestoes { list-style: none; padding: 0; margin: 0; }
 .denuncias { padding-left: 18px; font-family: var(--ui); font-size: 13px; }
 .denuncias li[data-status='confirmada'] strong { color: #7a2418; }
+
+.galeria:not(.com-fotos) .fotos { display: none; }
