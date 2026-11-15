@@ -216,7 +216,10 @@ async function boot() {
     placeName: (id) => byId(id)?.name ?? id,
   });
   $('#btn-conta').addEventListener('click', () => state.community.openAccount());
-  getJSON(`${BASE}data/photos.json`).then((p) => { state.photos = p; }).catch(() => {});
+  getJSON(`${BASE}data/photos.json`).then((p) => {
+    state.photos = p;
+    if (state.panel === 'place' && state.selected && p[state.selected]) select(state.selected); // painel aberto antes das fotos chegarem
+  }).catch(() => {});
   let meta, data;
   try {
     [meta, data] = await Promise.all([getJSON(`${BASE}tiles/meta.json`), getJSON(`${BASE}data/places.json`)]);
