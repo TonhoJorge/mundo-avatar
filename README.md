@@ -19,6 +19,10 @@ Globo interativo do mundo de *Avatar*, no estilo Google Earth: gire o planeta, a
   - Nações com cores próprias, fronteira das colônias, muralhas de Ba Sing Se.
   - Vinhas espirituais na era de Korra.
   - Terras Duras e refúgios brilhando na era de Pavi e Nisha.
+- **10 idiomas** com tradução completa (português, inglês, espanhol, francês, alemão, italiano, russo, japonês, chinês e coreano) e mais 28 pela tradução automática do navegador (Chrome no computador). Traduções em `i18n-src/`, geradas com `node tools/i18n-strings.mjs build`.
+- **Fotos** de cada lugar, vindas do Avatar Wiki com crédito e link (`node tools/fetch-photos.mjs`).
+- **Cidades em 3D**: prédios estilizados ao aproximar e inclinar (muralhas de Ba Sing Se, pirâmide de Omashu, cúpulas de Zaofu, arranha-céus da Cidade República…).
+- **Comunidade**: login, contribuições por lugar, votação com credibilidade de 0 a 10, ouvidoria contra perseguição e trilha de desenvolvedores aprovada automaticamente pelo GitHub. Regras no banco (`supabase/schema.sql`); veja [docs/COMUNIDADE.md](docs/COMUNIDADE.md) para ligar.
 - Busca com sugestões, painel de detalhes por era, links compartilháveis (`?era=korra&lugar=zaofu`) e nuvens ou tempestades opcionais.
 - Modo editor, para calibrar as posições:
   - arrastar marcadores;

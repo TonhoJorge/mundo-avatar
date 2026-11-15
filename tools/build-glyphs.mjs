@@ -12,12 +12,15 @@ import fs from 'node:fs/promises';
 
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// Cada fonte junta o arquivo latino e o cirílico (rótulos em russo). A Marcellus
+// não tem cirílico: nesses glifos o navegador cai para a Alegreya.
+const AL = '@fontsource/alegreya/files/alegreya';
 const FONTS = [
-  { id: 'marcellus-sc', file: '@fontsource/marcellus-sc/files/marcellus-sc-latin-400-normal.woff2', style: 'normal' },
-  { id: 'alegreya-regular', file: '@fontsource/alegreya/files/alegreya-latin-400-normal.woff2', style: 'normal' },
-  { id: 'alegreya-italic', file: '@fontsource/alegreya/files/alegreya-latin-400-italic.woff2', style: 'italic' },
+  { id: 'marcellus-sc', style: 'normal', files: ['@fontsource/marcellus-sc/files/marcellus-sc-latin-400-normal.woff2'], fallback: 'alegreya-regular' },
+  { id: 'alegreya-regular', style: 'normal', files: [`${AL}-latin-400-normal.woff2`, `${AL}-cyrillic-400-normal.woff2`] },
+  { id: 'alegreya-italic', style: 'italic', files: [`${AL}-latin-400-italic.woff2`, `${AL}-cyrillic-400-italic.woff2`] },
 ];
-const RANGES = [[0, 255], [8192, 8447]];
+const RANGES = [[0, 255], [1024, 1279], [8192, 8447]];
 
 // --- protobuf mínimo (formato glyphs.proto do MapLibre/Mapbox) ---
 function varint(out, n) {
@@ -57,8 +60,10 @@ async function main() {
 
   let css = '';
   for (const f of FONTS) {
-    const b64 = (await fs.readFile(path.join(ROOT, 'node_modules', f.file))).toString('base64');
-    css += `@font-face{font-family:"${f.id}";font-style:${f.style};src:url(data:font/woff2;base64,${b64})}`;
+    for (const file of f.files) {
+      const b64 = (await fs.readFile(path.join(ROOT, 'node_modules', file))).toString('base64');
+      css += `@font-face{font-family:"${f.id}";font-style:${f.style};src:url(data:font/woff2;base64,${b64})}`;
+    }
   }
   const browser = await chromium.launch();
   try {
@@ -66,10 +71,12 @@ async function main() {
     await page.setContent(`<style>${css}</style>`);
     await page.addScriptTag({ content: sdfSrc });
     for (const f of FONTS) {
-      await page.evaluate(async ([id, style]) => { await document.fonts.load(`${style} 24px "${id}"`); }, [f.id, f.style]);
+      await page.evaluate(async ([id, style]) => { await document.fonts.load(`${style} 24px "${id}"`, 'aЖ'); }, [f.id, f.style]);
+      if (f.fallback) await page.evaluate(async (id) => { await document.fonts.load(`24px "${id}"`, 'Ж'); }, f.fallback);
+      const family = f.fallback ? `"${f.id}","${f.fallback}"` : `"${f.id}"`;
       for (const [a, b] of RANGES) {
-        const glyphs = await page.evaluate(([id, style, a, b]) => {
-          const sdf = new window.TinySDF({ fontSize: 24, buffer: 3, radius: 8, cutoff: 0.25, fontFamily: `"${id}"`, fontStyle: style });
+        const glyphs = await page.evaluate(([family, style, a, b]) => {
+          const sdf = new window.TinySDF({ fontSize: 24, buffer: 3, radius: 8, cutoff: 0.25, fontFamily: family, fontStyle: style });
           const out = [];
           for (let cp = a; cp <= b; cp++) {
             if (cp < 32 || (cp >= 127 && cp < 160)) continue;
@@ -87,7 +94,7 @@ async function main() {
             });
           }
           return out;
-        }, [f.id, f.style, a, b]);
+        }, [family, f.style, a, b]);
         const dir = path.join(ROOT, 'public/fonts', f.id);
         await fs.mkdir(dir, { recursive: true });
         await fs.writeFile(path.join(dir, `${a}-${b}.pbf`), encodeRange(f.id, `${a}-${b}`, glyphs));

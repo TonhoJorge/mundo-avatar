@@ -1,0 +1,416 @@
+aabaf39	Avatar-Welt
+d27da5a	Interaktiver Globus der Avatar-Welt in drei Epochen: Aang, Korra sowie Pavi und Nisha. Nicht-kommerzielles Fanprojekt.
+72d8171	Globus der Avatar-Welt
+eed5257	Nicht-kommerzielles Fanprojekt · Avatar © Nickelodeon/Paramount
+64bf6c0	Die Karte konnte nicht geladen werden. Wenn du die Seite betreibst, erzeuge die Kacheln mit "npm run tiles".
+bd6d718	Dein Browser konnte den 3D-Globus nicht starten (WebGL nicht verfügbar oder deaktiviert).
+cadd46e	Orte suchen…
+8861940	Suchergebnisse
+3696d2b	Keine Orte gefunden
+0ef88a5	Epoche der Karte
+e9f6d56	Über die Epoche
+7d752b6	Ebenen
+3cc52f9	Community
+0094338	Sprache
+983ef77	Ortsnamen
+0103729	Städte in 3D
+36662cd	(heranzoomen und neigen)
+ffa9f9e	Wolken und Stürme
+ae0e4da	Orte der alten Welt
+6afa3d2	(Epoche von Pavi und Nisha)
+69e5ed8	Entwicklermodus
+3bc28f9	(Positionen bearbeiten und kalibrieren)
+e1f57a9	Automatische Browser-Übersetzung
+9be0fad	Übersetzung wird vorbereitet…
+bb271b6	Dein Browser übersetzt nicht in diese Sprache; Anzeige auf Englisch.
+fdd43a9	Bereich schließen
+8027534	Bilder: Avatar Wiki (Fandom) · © Nickelodeon/Paramount ·
+fc359a8	Quellseite ansehen
+8afd789	Ort der alten Welt. Seine Lage in dieser Epoche wurde in der Serie noch nicht enthüllt.
+c772729	Dieser Ort kommt in dieser Epoche nicht vor.
+a515b37	Auch: {names}
+d27e85e	In anderer Epoche ansehen
+9fd964b	Position
+d8ecad8	Quelle
+2b2eeda	Kommt vor in
+6f72b78	Zentrieren
+0076334	Link kopieren
+8540569	Link kopiert
+f5a45d6	Link konnte nicht kopiert werden
+13c1d20	NSOW
+e63f82b	Über diese Epoche
+b4ffdda	Noch nicht auf der Karte
+8c17f16	Quellen
+47e8a0d	Nicht-kommerzielles Fanprojekt. Avatar – Der Herr der Elemente, Die Legende von Korra und Avatar: Sieben Zufluchtsorte sind Marken von Nickelodeon/Paramount. Die Kartenmalerei ist prozedural und eigenständig (außer der Betreiber nutzt andere Kunst); als geschätzt markierte Positionen sind Näherungen.
+2bd8d26	Hauptstadt
+1a32850	Stadt
+5f4d475	Dorf
+af00a53	Tempel
+3b1cf74	Zufluchtsort
+a72c928	Sehenswürdigkeit
+d72d78e	Spiritueller Ort
+22febcc	Region
+fd60fac	Gewässer
+08422a2	Alte Welt
+bbb2d04	Erdkönigreich
+5d00136	Feuernation
+d36f5d7	Wasserstämme
+bfa3979	Luftnomaden
+48c88ff	Vereinigte Republik
+d099f8c	Sieben Zufluchtsorte
+66d8c63	Keine Nation
+61a9920	Verlässliche Position
+326fc4c	Ungefähre Position
+2eb8244	Geschätzte Position
+cf9e76e	Zeichentrickserie
+0c3840b	Comics
+57006b8	Romane
+c26805a	Spekulation
+57c10ce	Ziehe die Markierungen, um Positionen zu korrigieren. Klicke auf die Karte, um eine Koordinate zu kopieren. Änderungen bleiben nur in diesem Browser, bis du sie sendest oder exportierst.
+0c37232	Bearbeitete Orte:
+11a56ab	An GitHub senden
+0c86290	places.json exportieren
+6bd9706	Änderungen verwerfen
+7cdb5a2	Alle lokalen Änderungen verwerfen?
+148cf98	Zu viele Änderungen für eine Einsendung; exportiere places.json und öffne einen Pull Request.
+ebd61d1	Keine Änderungen zum Senden
+f8fb47c	Entwicklerbeitrag: {n} Position(en)
+6f6f267	Einsendungen über GitHub werden von zugelassenen Entwicklern angenommen.
+4692f62	Entwicklerzugang beantragen
+c14d606	Kalibrierungs-Overlay
+61312c4	Lade ein Kartenbild (flache Projektion, ganze Welt) und richte seine Grenzen in Grad aus.
+3a8505f	West
+f36bb3f	Süd
+4559336	Ost
+5eeed3d	Nord
+7c0996c	Deckkraft
+4ac3b31	Anwenden
+4bd4ea8	Entfernen
+cfd6810	Wähle zuerst ein Bild
+e06db75	Ungültige Grenzen
+f7a8cb5	Bild konnte nicht gelesen werden
+b0f41a3	Overlay konnte nicht erstellt werden
+25b8a50	Overlay angewendet
+8e67be3	Kopiert: lon, lat = {text}
+5f070f8	Information
+1e916f0	Korrektur
+0f5e4f0	Foto
+9a6f17c	Begründung einer Widerlegung
+9f287df	Widerlegung
+0f64573	Beiträge der Community
+bf494db	Der Bereich für Beiträge wird vorbereitet und öffnet bald. Die Regeln sind bereits veröffentlicht.
+bca482b	Wird geladen…
+343e099	Community-Regeln
+a7ec17c	Ombudsstelle
+e9128d5	Mein Verlauf
+3ffa2a9	Abmelden
+7573ba8	Anmelden
+8c56921	Mit {provider} anmelden
+6ae5050	Zum Mitmachen musst du dich anmelden. Alle starten mit Glaubwürdigkeit {cred_start} (von 0 bis {cred_max}).
+5e46739	Oder erhalte einen Anmeldelink per E-Mail
+09ed4ea	Link senden
+fffa1ca	Link gesendet. Öffne deine E-Mails, um dich anzumelden.
+72768f4	Öffentlicher Name
+93bf2d3	Speichern
+d569ac8	Gespeichert
+e1d9cb1	Glaubwürdigkeit (0 bis 10)
+85d8211	Öffentliches Profil
+080ae15	Mitglied seit {date}
+4c838c3	Jede Zeile zeigt die aktuelle Wirkung auf die Glaubwürdigkeit, die sich ändert, wenn sich die Abstimmung ändert.
+9cd63d0	Wann
+6639f5f	Was
+0ab3a08	Stimmen
+2ec2e9c	Wirkung
+24218f5	Noch keine Beiträge.
+9abeaf0	Belästigung melden
+273ba18	Konto gesperrt.
+3d1a70d	Dieses Konto wurde von der Ombudsstelle gesperrt und kann nicht mehr beitragen oder abstimmen.
+3c41e71	Deine Glaubwürdigkeit ist auf null gefallen: du kannst nicht mehr beitragen.
+c7557f7	Glaubwürdigkeit unter {limit2_below}: ein Beitrag alle {limit2_days} Tage.
+ea408cd	Glaubwürdigkeit unter {limit1_below}: ein Beitrag alle {limit1_days} Tage.
+2a3d5dc	Du kannst frei beitragen. Zum Abstimmen brauchst du Glaubwürdigkeit {vote_min_cred} oder mehr.
+c294f5f	Du kannst frei beitragen und abstimmen.
+d6b6a4c	Zu diesem Ort hat noch niemand beigetragen. Sei die erste Person!
+999dd72	Von der Community widerlegt ({n})
+bc113f6	Melde dich an, um beizutragen oder abzustimmen.
+586a1f8	Melde dich an, um eine Meldung zu machen.
+bd9c26b	Bestätigen
+c44289c	Widerlegen
+853043a	Warum ist es falsch? Eine Begründung ist Pflicht und kann ebenfalls bewertet werden.
+dcf6652	Mit dieser Begründung widerlegen
+dc14d07	Du hast bestätigt.
+d6b0bbb	Du hast widerlegt.
+3a3f71d	Stimme zurückziehen
+5c9d526	Von der Mehrheit bestätigt
+4801a94	Gleichstand: bleibt sichtbar
+fab3c9f	Von der Mehrheit widerlegt
+ceec918	Neuer Beitrag
+fbddc8f	Nur in dieser Epoche
+cd2d2e8	Alle Epochen
+d7fe8e8	Was weißt du über diesen Ort? Nenne wenn möglich die Folge oder Quelle.
+9df643f	Veröffentlichen
+6d7b43c	Veröffentlicht! Bleibt sichtbar, solange er nicht widerlegt wird.
+89f0264	Deine Glaubwürdigkeit: {c}.
+b8b7b17	Nutze die Ombudsstelle, wenn jemand deine Beiträge widerlegt, um dich zu belästigen. Die Prüfung ist automatisch und nutzt nur öffentliche Daten der letzten {perse_window_days} Tage.
+fbe77ad	Wer belästigt dich?
+436331f	Öffentlichen Namen eingeben
+73974f2	Erzähl, was passiert ist (bleibt privat)
+34602c3	Beschreibe den Fall
+f7c770c	Meldung senden
+50f3a76	Wähle die Person aus der Liste
+09a28ec	Belästigung bestätigt: Das Konto wurde gesperrt und seine Widerlegungen gegen dich wurden annulliert.
+c754b35	Meldung abgelegt: Die Daten haben kein Belästigungsmuster bestätigt.
+7d5f279	Öffentliche Ergebnisse
+a6b78ee	Bisher keine Meldungen.
+abdd60e	Bestätigt
+692ec2b	Abgelegt
+3d77df8	{on_reporter} Widerlegungen gegen die meldende Person, von {total_refutes} insgesamt; {reverted} rückgängig gemacht
+a60f653	Diese Regeln gelten für alle und werden automatisch von der Datenbank durchgesetzt: Niemand, auch nicht die Verwaltung, kann sie anders anwenden, ohne Spuren zu hinterlassen. Die Zahlen unten werden live aus der Konfiguration gelesen.
+dd85154	Glaubwürdigkeit
+6b8a123	Zum Mitmachen musst du dich anmelden. Die Glaubwürdigkeit reicht von 0 bis {cred_max}, alle starten mit {cred_start}.
+1846c43	Von der Mehrheit bestätigter Beitrag: +{gain_approved}. Bloßes Posten bringt keine Punkte.
+110ac8b	Von der Mehrheit widerlegter Beitrag: −{loss_refuted}. Wird die Widerlegung rückgängig gemacht, kommen die Punkte zurück.
+9f4fa28	Wer widerlegt, muss eine Begründung schreiben. Die Begründung kann ebenfalls bestätigt oder widerlegt werden und zählt ±{gain_just} für ihre Verfasser.
+a2a2c3d	Die Glaubwürdigkeit wird immer aus dem aktuellen Abstimmungsergebnis neu berechnet, daher kann jede Person die Rechnung prüfen.
+c1cced3	Abstimmung
+0d4c1a4	Es gilt die einfache Mehrheit; vorerst reicht eine einzige Stimme.
+0dd8a7e	Das Ergebnis folgt immer der aktuellen Mehrheit. Bei Gleichstand (auch 0 zu 0) bleibt der Beitrag sichtbar, bringt aber erst Punkte, wenn es mehr Bestätigungen als Widerlegungen gibt.
+dffd4b5	Eine Widerlegung zählt nur, solange ihre Begründung nicht von der Mehrheit widerlegt wurde (Repliken und Gegenrepliken folgen derselben Regel).
+c62f199	Niemand stimmt über das ab, was er selbst geschrieben hat.
+8fc3ddb	Zum Abstimmen brauchst du Glaubwürdigkeit {vote_min_cred} oder mehr und ein mindestens {vote_min_days} Tage altes Konto.
+0ff9bf9	Grenzen
+365e41c	Glaubwürdigkeit null: kann nicht mehr beitragen.
+1bf707d	Ombudsstelle (Belästigung)
+a02be28	Jede Person kann eine andere wegen Belästigung melden. Das System gleicht die Daten der letzten {perse_window_days} Tage ab und bestätigt Belästigung, wenn alle drei Bedingungen gleichzeitig zutreffen:
+7107e12	Fokus auf eine Person: Die beschuldigte Person hat mindestens {perse_min_refutes} Beiträge der meldenden Person widerlegt.
+b81d735	Unverhältnismäßigkeit: Mehr als die Hälfte aller Widerlegungen der beschuldigten Person in diesem Zeitraum richtete sich gegen die meldende Person.
+863fe98	Unfaire Widerlegungen: Die Mehrheit dieser Widerlegungen wurde von der Community rückgängig gemacht.
+573f35b	Bei Bestätigung: Das Konto der beschuldigten Person wird gesperrt und alle ihre Widerlegungen gegen die meldende Person werden annulliert (verlorene Glaubwürdigkeit kommt zurück).
+b09b8f5	Ohne Bestätigung: Die Meldung wird abgelegt und die meldende Person sieht, welche Zahlen fehlten.
+07e957c	Wer {report_strikes} abgelegte Meldungen in Folge hat, kann {report_block_days} Tage lang nicht melden.
+d1abf45	Entwickler
+5898d4f	Ein eigener Weg ohne Glaubwürdigkeit: Der Antrag läuft über GitHub und wird automatisch genehmigt.
+3406347	Voraussetzungen: ein GitHub-Konto, das mindestens 6 Monate alt ist, und mindestens 30 Beiträge in den letzten 90 Tagen (auch am selben Tag).
+66d72b3	Und mindestens 1 angenommener Pull Request in einem fremden Projekt.
+b2740a6	Wer die Kriterien nicht erfüllt, sieht genau, was fehlte, und kann es später erneut beantragen.
+1e0843d	Transparenz
+cb2f514	Jedes Profil hat einen öffentlichen Verlauf mit jedem Gewinn und Verlust samt Grund.
+972006b	Das Ergebnis jeder Meldung ist öffentlich, mit den verwendeten Zahlen (Text und meldende Person bleiben privat).
+6a6f668	Der Code der Seite und der Regeln ist offen auf GitHub.
+e3fabfa	Etwas ist schiefgelaufen. Bitte versuche es erneut.
+73464e7	Melde dich dafür an.
+b25aa58	Dieses Konto wurde von der Ombudsstelle gesperrt.
+94eb84b	Glaubwürdigkeit null: du kannst nicht mehr beitragen.
+b6ad36f	Glaubwürdigkeit unter {limit1_below}: nur ein Beitrag alle {limit1_days} Tage.
+36ace5a	Glaubwürdigkeit unter {limit2_below}: nur ein Beitrag alle {limit2_days} Tage.
+715ee87	Du kannst nicht über deinen eigenen Beitrag abstimmen.
+a6b0db5	Zum Abstimmen brauchst du Glaubwürdigkeit {vote_min_cred} oder mehr.
+4fcc9a3	Konten, die jünger als {vote_min_days} Tage sind, können noch nicht abstimmen.
+049c043	Schreibe eine Begründung (mindestens 10 Zeichen).
+ad82780	Nicht gefunden.
+674d9d1	Du kannst dich nicht selbst melden.
+44820f5	Du hattest {report_strikes} abgelegte Meldungen in Folge und kannst vorübergehend nicht melden.
+609d925	Die größte Nation der Welt, die fast den ganzen Großen Kontinent einnimmt. Vielfältig und dezentral, mit örtlichen Königen und Statthaltern unter der Autorität von Ba Sing Se.
+5ed7906	Avatar – Der Herr der Elemente
+a927fc3	Die Legende von Korra
+3986ecc	Seit hundert Jahren im Krieg mit der Feuernation; im Westen verlor es Gebiete an die Feuerkolonien.
+412538f	Erschüttert vom Sturz der Erdkönigin; Kuvira vereint es gewaltsam zum Erdimperium, bis Korra sie aufhält.
+533c5c5	Vulkanischer Archipel westlich des Großen Kontinents, regiert vom Feuerlord aus der Hauptstadt.
+e2ed816	Industrie- und Militärmacht, die seit Sozins Angriff auf die Luftnomaden den Hundertjährigen Krieg führt.
+9ef8ae0	Eine Nation im Frieden, regiert von Feuerlady Izumi, Zukos Tochter.
+56ce211	Nördlicher Wasserstamm
+0acad2f	Nördliches Polargebiet, Heimat des größten der Wasserstämme.
+cf6e0ab	Südlicher Wasserstamm
+25680b0	Südliches Polargebiet, Heimat des Südlichen Wasserstamms.
+8ab5670	Feuerkolonien
+d4fb51a	Ein Streifen im Nordwesten des Großen Kontinents, den die Feuernation im Krieg kolonisierte.
+7f76b40	Gemischte Städte aus Feuer- und Erdvolk, manche über ein Jahrhundert alt.
+d5894d7	Vereinigte Republik der Nationen
+e16df67	Die früheren Kolonien bilden die Vereinigte Republik der Nationen, gegründet von Aang und Zuko nach der Bewegung zur Wiederherstellung der Harmonie.
+e35df07	Ödlande
+b687795	Name für die verwüstete Welt außerhalb der Zufluchtsorte, die nach dem Kataklysmus von Stürmen gepeitscht wird.
+d0d2c66	Harshlands
+9531dc9	Avatar: Sieben Zufluchtsorte
+411253f	Si-Wong-Wüste
+c05b9bc	Riesige Wüste im Herzen des Erdkönigreichs, durchquert von Sandnomaden auf Sandseglern.
+4f634cf	Appa wird hier von Sandnomaden gefangen.
+8bd492f	Nebelsumpf
+71ffef5	Ein lebender Sumpf im Südwesten des Erdkönigreichs, verbunden durch die Wurzeln eines einzigen riesigen Baumes. Heimat eines abgeschiedenen Stammes von Wasserbändigern.
+8a679fc	Foggy Swamp
+6acad21	LoK Buch 4
+c170110	Team Avatar verirrt sich hier und hat Visionen von geliebten Menschen.
+04c4100	Toph Beifong lebt als Einsiedlerin im Sumpf und hilft Korra bei der Genesung.
+d2b389a	Mo-Ce-Meer
+f972fae	Meer zwischen der Feuernation und dem Großen Kontinent.
+006777a	Yue-Bucht
+22f8ea6	Bucht, an der Republica City gebaut wurde; benannt nach Prinzessin Yue.
+4632c7d	Östlicher See
+497239e	See, den die Fähren mit Flüchtlingen nach Ba Sing Se überqueren.
+fe12e52	Vollmondbucht
+39cf327	Versteckter Hafen in der Mitte des Erdkönigreichs, von dem die Flüchtlingsfähren nach Ba Sing Se ablegen.
+3bc56dd	Chamäleonbucht
+3ab07f1	Große Bucht an der Ostküste des Großen Kontinents. Lage auf der Karte geschätzt.
+26c20b7	ATLA Buch 2
+f288ea4	Treffpunkt der Flotte des Südlichen Wasserstamms unter Hakoda.
+6758cdd	Südlicher Lufttempel
+c8fe91b	Einer der vier Tempel der Luftnomaden, im Patola-Gebirge im Südlichen Archipel.
+cffca19	LoK Buch 2
+0553a8e	Heimat von Aang und Mönch Gyatso. Seit Sozins Angriff vor hundert Jahren verlassen; Aang kehrt hierher zurück und erfährt das Schicksal seines Volkes.
+95a9601	In Ruinen
+f46e722	Von den Luft-Akolythen gepflegt und von Tenzins Familie besucht.
+9e3f072	Nördlicher Lufttempel
+60700d9	Tempel der Luftnomaden am äußersten Westende des Taihua-Gebirges im Norden des Großen Kontinents.
+690412d	LoK Buch 3
+71c5371	Von Flüchtlingen unter dem Mechaniker bewohnt, die ihn mit dampfbetriebenen Apparaten füllten.
+5bbe084	Sitz der neuen Luftnation: Tenzin bildet hier die neuen Luftbändiger aus, bis zum Angriff des Roten Lotus.
+eac8490	Westlicher Lufttempel
+0d8149f	Ein kopfüber in eine Felswand gebauter Tempel in einem Gebirge nördlich der Feuerinseln.
+8bf26dc	Zuflucht von Team Avatar nach dem Tag der schwarzen Sonne; hier schließt sich Zuko der Gruppe an.
+24d8289	Verlassen
+b61bca6	Östlicher Lufttempel
+6a12782	Alter Tempel der Nonnen der Luftnomaden in einem Gebirge im Südosten des Erdkönigreichs.
+fe09e88	Aang trainiert mit Guru Pathik, um den Avatarzustand durch das Öffnen seiner Chakren zu meistern.
+9604521	Lufttempelinsel
+409c95a	Insel in der Yue-Bucht gegenüber von Republica City.
+0ac2d96	Heimat von Tenzin, seiner Familie und den Luft-Akolythen; hier lernt Korra Luftbändigen.
+70c3fbf	Hauptstadt der Feuernation
+86ad187	Hauptstadt im Krater eines erloschenen Vulkans, Sitz des Königspalasts.
+8020b9e	Hauptstadt
+b65319b	Ziel der Invasion am Tag der schwarzen Sonne; Schauplatz des letzten Agni Kai zwischen Zuko und Azula.
+dc158e1	Regierungssitz von Feuerlady Izumi.
+2fcb9d5	Ember-Insel
+22741d9	Ferieninsel des Feueradels mit Stränden und dem Strandhaus der Königsfamilie.
+d673798	Team Avatar versteckt sich hier und sieht das Stück der Ember-Insel-Schauspieler.
+4a5c786	Halbmondinsel
+47f83dc	Vulkaninsel im Osten der Feuernation mit dem Feuertempel von Avatar Roku.
+4a03f46	Aang spricht zur Wintersonnenwende mit Avatar Roku; der Tempel wird beim Ausbruch zerstört.
+90506ee	Rokus Insel
+be32a14	Heimatinsel von Avatar Roku im Osten der Feuernation.
+c64ff4d	Vor etwa 70 Jahren durch einen Ausbruch verwüstet; Roku starb beim Versuch, ihn aufzuhalten.
+3f066fd	Zerstört
+9911793	Kochender Fels
+3020729	Hochsicherheitsgefängnis auf einer Insel inmitten eines kochenden Sees.
+f1b7ca4	Boiling Rock
+e6b5446	Sokka und Zuko dringen in das Gefängnis ein, um Hakoda und Suki zu befreien.
+f6c5654	Ruinen der Sonnenkrieger
+ba862e2	Antike Stadt auf den nördlichen Inseln der Feuernation, Heimat der Zivilisation, die das Feuerbändigen von den Drachen lernte.
+f097b5d	Zuko und Aang treffen die Drachen Ran und Shaw und entdecken den wahren Sinn des Feuers neu.
+18b9254	Feuerbrunnenstadt
+6c655a7	Hafenstadt mit einer riesigen feuerspeienden Brunnenstatue.
+1f4b349	Toph und Sokka ziehen hier Betrügereien ab, bis sie auf Steckbriefen landen.
+1e568a2	Shu Jing
+ffa723e	Insel der Feuernation.
+8033318	Katara stellt Yon Rha zur Rede, der für den Tod ihrer Mutter verantwortlich ist.
+78b9603	Agna Qel'a
+226f991	Stadt aus Eis und Kanälen, Hauptstadt des Nördlichen Wasserstamms.
+6dbefc8	Hält der Belagerung durch Admiral Zhao stand; Prinzessin Yue wird zum Mondgeist.
+6d0faae	Regiert von Unalaq, später von Desna und Eska.
+e80e632	Geisteroase
+a035435	Warmer heiliger Teich, in dem Tui und La, die Geister von Mond und Ozean, als Koi-Fische schwimmen.
+6113964	Nördliches Geisterportal
+e403c8f	Durchgang zwischen der physischen Welt und der Geisterwelt am Nordpol.
+89f4343	Von Korra am Ende von Buch 2 geöffnet.
+329004b	Volk des Südpols.
+9d4163d	Das kleine Dorf von Katara und Sokka, wo Aang in einem Eisberg gefunden wird.
+a89c787	Zu einer Hafenstadt gewachsen; Heimat von Korra und Schauplatz des Bürgerkriegs der Wasserstämme.
+bca0c7c	Südliches Geisterportal
+2c056d7	Durchgang zur Geisterwelt am Südpol, umgeben von der Geisterwildnis.
+ca7270f	Von Korra während der Harmonischen Konvergenz wieder geöffnet.
+7850428	Ba Sing Se
+7cc528d	Hauptstadt des Erdkönigreichs, umgeben von konzentrischen Mauern.
+ba1aae6	Undurchdringliche Stadt
+82a588b	LoK Bücher 3 und 4
+8b5ecad	Heimlich vom Dai Li kontrolliert; fällt am Ende von Buch 2 an Azula und wird vom Orden des Weißen Lotus befreit.
+fa0b84e	Erdkönigin Hou-Ting wird von Zaheer getötet; danach fällt die Stadt an Kuviras Erdimperium.
+63e1881	Neu-Ba-Sing-Se
+a958420	Zufluchtsort im Nordosten des Großen Kontinents, errichtet, wo die alte Hauptstadt des Erdkönigreichs stand; der Name bewahrt die Verbindung zur Alten Welt. Er schätzt alte Traditionen und Bräuche. Auch "Neu-Ba" genannt.
+c25e757	Laogai-See
+a7672da	See innerhalb der Mauern von Ba Sing Se.
+72cfbc5	Verbirgt die geheime Basis des Dai Li, in der Appa gefangen gehalten wurde.
+eb90776	Omashu
+23fbcb0	Große Stadt auf einem Berg des Kolau-Gebirges im Südwesten des Erdkönigreichs; berühmt für ihre Lieferrutschen.
+448fb42	Regiert vom exzentrischen König Bumi; von der Feuernation besetzt und in Neu-Ozai umbenannt, bis zur Befreiung während der Sonnenfinsternis.
+73f62b3	Höhle der zwei Liebenden
+64bdd32	Unterirdisches Labyrinth, geschaffen von Oma und Shu, den ersten Erdbändigern, das nach Omashu führt.
+9704efb	Gaoling
+3b99e68	Stadt im Süden des Erdkönigreichs, Heimat der reichen Familie Beifong.
+e3f7a67	Tophs Heimatstadt, wo sie heimlich im Earth-Rumble-Turnier kämpfte.
+55a9b47	Kyoshi-Insel
+62741fd	Insel, die Avatar Kyoshi schuf, als sie ihre Heimat vom Festland trennte; Heimat der Kyoshi-Kriegerinnen.
+9c98445	Team Avatar lernt Suki und die Kyoshi-Kriegerinnen kennen.
+66f090b	Dorf Chin
+75dda08	Küstendorf, das den "Avatar-Tag" feiert.
+67069c2	Aang wird für Kyoshis angebliches Verbrechen an Chin dem Eroberer vor Gericht gestellt.
+51f78b8	Dorf Senlin
+6aa564f	Dorf am Waldrand im Süden der früheren Kolonien (später Vereinigte Republik), heimgesucht vom Geist Hei Bai.
+ba6dc2d	Aang beruhigt Hei Bai und reist zum ersten Mal in die Geisterwelt.
+ee795b2	Makapu
+3374801	Dorf in einem Tal am Fuß eines Vulkans im Nordosten der früheren Kolonien (später Vereinigte Republik); Heimat der Wahrsagerin Tante Wu.
+9c5d480	Aang und Katara retten das Dorf vor einem Ausbruch.
+a637930	Die Große Schlucht
+036f727	Der größte Canyon der Welt.
+e0a8c6a	Aang führt zwei verfeindete Stämme durch den Canyon.
+8d34fdf	Oase der Nebelpalmen
+33adb27	Heruntergekommene Oase am Rand der Si-Wong-Wüste.
+8d655d5	Team Avatar trifft Professor Zei, der die verlorene Bibliothek sucht.
+8c36864	Bibliothek von Wan Shi Tong
+60799ca	Bibliothek des Geistes des Wissens, versteckt im Wüstensand.
+0ee7898	Sokka entdeckt das Datum der Sonnenfinsternis; die Bibliothek versinkt im Sand und kehrt in die Geisterwelt zurück.
+0c5c7c3	Der Schlangenpass
+7a9e848	Schmaler Landstreifen im Nordosten des Erdkönigreichs zwischen dem Östlichen See und dem Meer: ein gefährlicher Weg nach Ba Sing Se.
+170e45f	Aang stellt sich der Seeschlange, die den Pass bewacht.
+43e15f1	Wulong-Wald
+9721b24	Wald an der Westküste der früheren Kolonien (später Vereinigte Republik).
+528f901	Schauplatz des letzten Kampfes zwischen Aang und Ozai während Sozins Komet.
+c9af3df	Yu Dao
+302b5b1	Die älteste Kolonie der Feuernation.
+9b47609	Zentrum der Krise um die Bewegung zur Wiederherstellung der Harmonie, kurz nach dem Krieg.
+cbb7d58	Republica City
+cf58242	Hauptstadt der Vereinigten Republik der Nationen, eine Metropole, in der Menschen aller Nationen leben.
+f5f3361	Hauptschauplatz von Die Legende von Korra. Nach dem Kampf gegen Kuvira entsteht im Stadtzentrum ein Geisterportal.
+5817484	Zaofu
+fd7abe3	Metallstadt, gegründet von Suyin Beifong, geschützt von blütenblattförmigen Kuppeln.
+cffd596	Heimat des Metallclans; in Buch 4 von Kuvira eingenommen.
+c617764	Ellora
+1f4ccac	Wichtigster Zufluchtsort der Serie und Heimat der Zwillinge Pavi und Nisha.
+90203c0	Elora
+1c274be	Zufluchtsort von Wind und Sand
+2d26661	Kosmopolitische Metropole mit über einer Million Einwohnern im Südosten des Großen Kontinents, angelegt als achteckiges Mandala. Ein System enger Schluchten schützt sie vor den Sandstürmen und Tornados der Ödlande.
+3e0f308	Schwimmende Inseln
+20a26dd	Ein Zufluchtsort auf dem Wasser, nahe der Küste.
+08e96a7	Nordöstlich von Ellora, wo früher die Chamäleonbucht lag. Die genaue Lage der Inseln in der Bucht ist geschätzt. In Buch 2 erkundet.
+e50a9ac	Akasha
+6544b47	Wald der Republik
+06a3694	Verlorener Zufluchtsort
+aa0003d	Südlicher Archipel
+a10f2fc	Gebirgige Inseln im Süden, traditionelles Gebiet der Luftnomaden, mit dem Patola-Gebirge und der Walschwanzinsel.
+9c2a7a0	Taihua-Gebirge
+a3f817c	Große Gebirgskette im Norden des Großen Kontinents, von südlich Ba Sing Se bis zum Nördlichen Lufttempel.
+87d52e8	Kolau-Gebirge
+e96307a	Gebirge im Südwesten des Erdkönigreichs mit Omashu und der Höhle der zwei Liebenden; gilt als Wiege des Erdbändigens.
+ee2d10d	Aangs Epoche
+e5f3d44	Aang
+ca9b082	99–100 n. G.
+34f8a75	Der Hundertjährige Krieg geht zu Ende. Die Feuernation beherrscht Kolonien im Westen des Erdkönigreichs, und die Luftnomaden wurden vor einem Jahrhundert ausgelöscht. Aang, der letzte Luftbändiger, erwacht aus einem Eisberg und muss vor Sozins Komet die vier Elemente meistern.
+8303653	Avatar – Der Herr der Elemente (2005–2008) und die Fortsetzungscomics.
+599fc6f	Korras Epoche
+fd727c4	Korra
+8cb833f	170–174 n. G.
+364784a	Siebzig Jahre nach dem Krieg bilden die früheren Kolonien die Vereinigte Republik der Nationen mit dem modernen Republica City. Korra öffnet die Geisterportale wieder, stellt sich dem Roten Lotus und stoppt Kuviras Erdimperium.
+71575e4	Die Legende von Korra (2012–2014) und die Fortsetzungscomics.
+db2c3cd	Epoche von Pavi und Nisha
+a22a922	Pavi und Nisha
+126dd5c	≈ 399 n. G.
+2bc3dd2	Etwa 225 Jahre nach Korra brachte ein Kataklysmus die Vier Nationen zu Fall. Die Menschheit überlebt in sieben abgeschiedenen Zufluchtsorten, umgeben von den Ödlanden und von Stürmen gepeitscht. Die Zwillinge Pavi und Nisha aus Ellora stehen im Mittelpunkt des Streits darüber, wer der wahre Avatar ist.
+3bbc787	Zufluchtsort des Großen Kontinents, bekannt für sein technisches Können: Er überlebt mit Technologien aus der Zeit vor dem Kataklysmus, etwa Motorfahrzeugen.
+8b224fb	Die Serie sagt nur, dass er auf dem Großen Kontinent liegt. Die Lage ist geschätzt: Akasha dürfte der blaue Zufluchtsort sein (die Farbe von Ikaikas Kleidung), den der Vorspann an der Westküste des Kontinents zeigt. Die Fan-Theorie, es sei das frühere Zaofu, passt nicht zur offiziellen Kunst, denn Zaofu lag im Landesinneren des Südwestens.
+7492b8e	Der "Verlorene Zufluchtsort", der sich lange vor 399 n. G. vom Rest der Welt abschottete. Die Gesichtslosen glauben, dass es dort keine Stürme gibt und Bändiger und Nichtbändiger in Frieden leben.
+e91bd20	Der violette Zufluchtsort im Nordwesten des Großen Kontinents, ungefähr dort, wo Republica City lag. Auf offiziellen Bildern der Serie ist die Stadt von Pflanzen überwuchert.
+ab55f7d	Federberg
+8600cf8	Ein Zufluchtsort unter Kaiserin Yeshe, der die Traditionen der Luftnomaden bewahrt: Pfeiltätowierungen, fliegende Bisons und freiwilliger Dienst der Bändiger.
+4b29d91	Feather Mountain
+f894b9e	Die Serie hat noch nicht verraten, wo er liegt. Die Lage ist geschätzt: Es dürfte der grüne Zufluchtsort sein (die Farbe von Yeshes Kleidung), den der Vorspann im Südwesten des Großen Kontinents zeigt. Fans tippen auf den früheren Ort von Omashu.
+7e90bd6	Zufluchtsort der Feuerinseln
+c1ed92e	Der siebte Zufluchtsort, dessen Name noch nicht enthüllt wurde. Er liegt auf den früheren Feuerinseln und ist der abgeschiedenste von allen.
+c808dfe	Der indigoblaue Zufluchtsort. Die Serie zeigte nur, dass er auf den Feuerinseln liegt. Er ist auf der früheren Ember-Insel markiert, dem Tipp der Fans, aber die genaue Insel wurde nicht enthüllt.
+6538b65	Avatar: Sieben Zufluchtsorte (2026–). Laufende Serie: Informationen und Positionen können sich noch ändern. Akasha, der Federberg und der Zufluchtsort der Feuerinseln stehen an Positionen, die aus der offiziellen Kunst der sieben Zufluchtsorte aus dem All geschätzt wurden.

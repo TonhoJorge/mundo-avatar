@@ -1,0 +1,416 @@
+aabaf39	Monde d'Avatar
+d27da5a	Globe interactif du monde d'Avatar en trois ères : Aang, Korra, et Pavi et Nisha. Projet de fans à but non lucratif.
+72d8171	Globe du monde d'Avatar
+eed5257	Projet de fans à but non lucratif · Avatar © Nickelodeon/Paramount
+64bf6c0	Impossible de charger la carte. Si vous gérez le site, générez les tuiles avec "npm run tiles".
+bd6d718	Votre navigateur n'a pas pu lancer le globe 3D (WebGL indisponible ou désactivé).
+cadd46e	Rechercher des lieux…
+8861940	Résultats de recherche
+3696d2b	Aucun lieu trouvé
+0ef88a5	Époque de la carte
+e9f6d56	À propos de l'ère
+7d752b6	Calques
+3cc52f9	Communauté
+0094338	Langue
+983ef77	Noms des lieux
+0103729	Villes en 3D
+36662cd	(zoomez et inclinez)
+ffa9f9e	Nuages et tempêtes
+ae0e4da	Lieux de l'ancien monde
+6afa3d2	(ère de Pavi et Nisha)
+69e5ed8	Mode développeur
+3bc28f9	(modifier et calibrer les positions)
+e1f57a9	Traduction automatique du navigateur
+9be0fad	Préparation de la traduction…
+bb271b6	Votre navigateur ne traduit pas vers cette langue ; affichage en anglais.
+fdd43a9	Fermer le panneau
+8027534	Images : Avatar Wiki (Fandom) · © Nickelodeon/Paramount ·
+fc359a8	voir la page d'origine
+8afd789	Lieu de l'ancien monde. Sa situation à cette ère n'a pas encore été révélée dans la série.
+c772729	Ce lieu n'apparaît pas à cette ère.
+a515b37	Aussi : {names}
+d27e85e	Voir à une autre ère
+9fd964b	Position
+d8ecad8	Source
+2b2eeda	Apparaît dans
+6f72b78	Centrer
+0076334	Copier le lien
+8540569	Lien copié
+f5a45d6	Impossible de copier le lien
+13c1d20	NSEO
+e63f82b	À propos de cette ère
+b4ffdda	Pas encore sur la carte
+8c17f16	Sources
+47e8a0d	Projet de fans à but non lucratif. Avatar, le dernier maître de l'air, La Légende de Korra et Avatar : Sept Refuges sont des marques de Nickelodeon/Paramount. La peinture de la carte est procédurale et originale (sauf si l'administrateur du site utilise une autre illustration) ; les positions marquées comme estimées sont des approximations.
+2bd8d26	Capitale
+1a32850	Ville
+5f4d475	Village
+af00a53	Temple
+3b1cf74	Refuge
+a72c928	Lieu remarquable
+d72d78e	Lieu spirituel
+22febcc	Région
+fd60fac	Eaux
+08422a2	Ancien monde
+bbb2d04	Royaume de la Terre
+5d00136	Nation du Feu
+d36f5d7	Tribus de l'Eau
+bfa3979	Nomades de l'Air
+48c88ff	République unie
+d099f8c	Sept Refuges
+66d8c63	Sans nation
+61a9920	Position fiable
+326fc4c	Position approximative
+2eb8244	Position estimée
+cf9e76e	Série animée
+0c3840b	Bandes dessinées
+57006b8	Romans
+c26805a	Spéculation
+57c10ce	Faites glisser les marqueurs pour corriger les positions. Cliquez sur la carte pour copier une coordonnée. Les changements restent dans ce navigateur jusqu'à ce que vous les envoyiez ou les exportiez.
+0c37232	Lieux modifiés :
+11a56ab	Envoyer sur GitHub
+0c86290	Exporter places.json
+6bd9706	Annuler les modifications
+7cdb5a2	Annuler toutes les modifications locales ?
+148cf98	Trop de modifications pour un seul envoi ; exportez places.json et ouvrez une pull request.
+ebd61d1	Aucune modification à envoyer
+f8fb47c	Contribution de développeur : {n} position(s)
+6f6f267	Les envois via GitHub sont acceptés des développeurs approuvés.
+4692f62	Demander l'accès développeur
+c14d606	Superposition de calibrage
+61312c4	Chargez une image de carte (projection plate, monde entier) et alignez ses limites en degrés.
+3a8505f	Ouest
+f36bb3f	Sud
+4559336	Est
+5eeed3d	Nord
+7c0996c	Opacité
+4ac3b31	Appliquer
+4bd4ea8	Retirer
+cfd6810	Choisissez d'abord une image
+e06db75	Limites invalides
+f7a8cb5	Impossible de lire l'image
+b0f41a3	Échec de la création de la superposition
+25b8a50	Superposition appliquée
+8e67be3	Copié : lon, lat = {text}
+5f070f8	Information
+1e916f0	Correction
+0f5e4f0	Photo
+9a6f17c	Justification de réfutation
+9f287df	Réfutation
+0f64573	Contributions de la communauté
+bf494db	L'espace des contributions est en préparation et ouvrira bientôt. Les règles sont déjà publiées.
+bca482b	Chargement…
+343e099	Règles de la communauté
+a7ec17c	Médiation
+e9128d5	Mon historique
+3ffa2a9	Se déconnecter
+7573ba8	Se connecter
+8c56921	Se connecter avec {provider}
+6ae5050	Il faut se connecter pour contribuer. Tout le monde commence avec une crédibilité de {cred_start} (de 0 à {cred_max}).
+5e46739	Ou recevez un lien de connexion par e-mail
+09ed4ea	Envoyer le lien
+fffa1ca	Lien envoyé. Ouvrez vos e-mails pour vous connecter.
+72768f4	Nom public
+93bf2d3	Enregistrer
+d569ac8	Enregistré
+e1d9cb1	Crédibilité (0 à 10)
+85d8211	Profil public
+080ae15	Membre depuis {date}
+4c838c3	Chaque ligne montre l'effet actuel sur la crédibilité, qui change si le vote change.
+9cd63d0	Quand
+6639f5f	Quoi
+0ab3a08	Votes
+2ec2e9c	Effet
+24218f5	Aucune contribution pour l'instant.
+9abeaf0	Signaler un harcèlement
+273ba18	Compte banni.
+3d1a70d	Ce compte a été banni par la médiation et ne peut plus contribuer ni voter.
+3c41e71	Votre crédibilité est tombée à zéro : vous ne pouvez plus contribuer.
+c7557f7	Crédibilité inférieure à {limit2_below} : une contribution tous les {limit2_days} jours.
+ea408cd	Crédibilité inférieure à {limit1_below} : une contribution tous les {limit1_days} jours.
+2a3d5dc	Vous pouvez contribuer librement. Pour voter, il faut une crédibilité de {vote_min_cred} ou plus.
+c294f5f	Vous pouvez contribuer et voter librement.
+d6b6a4c	Personne n'a encore contribué sur ce lieu. Soyez la première personne !
+999dd72	Réfutées par la communauté ({n})
+bc113f6	Connectez-vous pour contribuer ou voter.
+586a1f8	Connectez-vous pour faire un signalement.
+bd9c26b	Approuver
+c44289c	Réfuter
+853043a	Pourquoi est-ce faux ? La justification est obligatoire et peut aussi être votée.
+dcf6652	Réfuter avec cette justification
+dc14d07	Vous avez approuvé.
+d6b0bbb	Vous avez réfuté.
+3a3f71d	Retirer le vote
+5c9d526	Approuvée par la majorité
+4801a94	Égalité : reste en ligne
+fab3c9f	Réfutée par la majorité
+ceec918	Nouvelle contribution
+fbddc8f	Seulement à cette ère
+cd2d2e8	Toutes les ères
+d7fe8e8	Que savez-vous de ce lieu ? Citez l'épisode ou la source si possible.
+9df643f	Publier
+6d7b43c	Publié ! Reste en ligne tant qu'il n'est pas réfuté.
+89f0264	Votre crédibilité : {c}.
+b8b7b17	Utilisez la médiation si quelqu'un réfute vos contributions pour vous harceler. L'analyse est automatique et n'utilise que des données publiques des {perse_window_days} derniers jours.
+fbe77ad	Qui vous harcèle ?
+436331f	Tapez le nom public
+73974f2	Racontez ce qui s'est passé (reste privé)
+34602c3	Décrivez le cas
+f7c770c	Envoyer le signalement
+50f3a76	Choisissez la personne dans la liste
+09a28ec	Harcèlement confirmé : le compte a été banni et ses réfutations contre vous ont été annulées.
+c754b35	Signalement classé : les données n'ont pas confirmé de schéma de harcèlement.
+7d5f279	Résultats publics
+a6b78ee	Aucun signalement pour l'instant.
+abdd60e	Confirmé
+692ec2b	Classé
+3d77df8	{on_reporter} réfutations contre l'auteur du signalement, sur {total_refutes} au total ; {reverted} annulées
+a60f653	Ces règles s'appliquent à tous et sont appliquées automatiquement par la base de données : personne, pas même l'administration, ne peut les appliquer autrement sans laisser de trace. Les chiffres ci-dessous sont lus en direct dans la configuration.
+dd85154	Crédibilité
+6b8a123	Il faut se connecter pour contribuer. La crédibilité va de 0 à {cred_max} et tout le monde commence avec {cred_start}.
+1846c43	Contribution approuvée par la majorité : +{gain_approved}. Publier seul ne rapporte rien.
+110ac8b	Contribution réfutée par la majorité : −{loss_refuted}. Si la réfutation est annulée, les points reviennent.
+9f4fa28	Qui réfute doit écrire une justification. La justification peut aussi être approuvée ou réfutée et vaut ±{gain_just} pour son auteur.
+a2a2c3d	La crédibilité est toujours recalculée à partir du résultat actuel des votes, donc tout le monde peut vérifier le calcul.
+c1cced3	Vote
+0d4c1a4	La majorité simple l'emporte ; pour l'instant, un seul vote suffit.
+0dd8a7e	Le résultat suit toujours la majorité du moment. En cas d'égalité (y compris 0 à 0), la contribution reste en ligne, mais ne rapporte des points que s'il y a plus d'approbations que de réfutations.
+dffd4b5	Une réfutation ne compte que tant que sa justification n'a pas été réfutée par la majorité (répliques et contre-répliques suivent la même règle).
+c62f199	Personne ne vote sur ce qu'il a écrit.
+8fc3ddb	Pour voter, il faut une crédibilité de {vote_min_cred} ou plus et un compte d'au moins {vote_min_days} jours.
+0ff9bf9	Limites
+365e41c	Crédibilité nulle : ne peut plus contribuer.
+1bf707d	Médiation (harcèlement)
+a02be28	Tout le monde peut signaler une autre personne pour harcèlement. Le système croise les données des {perse_window_days} derniers jours et confirme le harcèlement si les trois conditions sont vraies en même temps :
+7107e12	Cible unique : l'accusé a réfuté au moins {perse_min_refutes} contributions de l'auteur du signalement.
+b81d735	Disproportion : plus de la moitié de toutes les réfutations de l'accusé sur la période visaient l'auteur du signalement.
+863fe98	Réfutations injustes : la plupart de ces réfutations ont été annulées par la communauté.
+573f35b	Si c'est confirmé : le compte de l'accusé est banni et toutes ses réfutations contre l'auteur du signalement sont annulées (la crédibilité perdue revient).
+b09b8f5	Si ce n'est pas confirmé : le signalement est classé et son auteur voit quels chiffres manquaient.
+07e957c	Quiconque a {report_strikes} signalements classés d'affilée ne peut plus signaler pendant {report_block_days} jours.
+d1abf45	Développeurs
+5898d4f	C'est une voie à part, sans crédibilité : la demande se fait via GitHub et est approuvée automatiquement.
+3406347	Conditions : un compte GitHub d'au moins 6 mois et au moins 30 contributions sur les 90 derniers jours (elles peuvent être le même jour).
+66d72b3	Et au moins 1 pull request acceptée dans le projet de quelqu'un d'autre.
+b2740a6	Qui ne remplit pas les conditions voit exactement ce qui manquait et peut redemander plus tard.
+1e0843d	Transparence
+cb2f514	Chaque profil a un historique public de chaque gain et perte avec sa raison.
+972006b	Le résultat de chaque signalement est public, avec les chiffres utilisés (le texte et son auteur restent privés).
+6a6f668	Le code du site et des règles est ouvert sur GitHub.
+e3fabfa	Une erreur s'est produite. Réessayez.
+73464e7	Connectez-vous pour faire cela.
+b25aa58	Ce compte a été banni par la médiation.
+94eb84b	Crédibilité nulle : vous ne pouvez plus contribuer.
+b6ad36f	Crédibilité inférieure à {limit1_below} : une seule contribution tous les {limit1_days} jours.
+36ace5a	Crédibilité inférieure à {limit2_below} : une seule contribution tous les {limit2_days} jours.
+715ee87	Vous ne pouvez pas voter sur ce que vous avez écrit.
+a6b0db5	Pour voter, il faut une crédibilité de {vote_min_cred} ou plus.
+4fcc9a3	Les comptes de moins de {vote_min_days} jours ne votent pas encore.
+049c043	Écrivez une justification (au moins 10 caractères).
+ad82780	Introuvable.
+674d9d1	Vous ne pouvez pas vous signaler vous-même.
+44820f5	Vous avez eu {report_strikes} signalements classés d'affilée et ne pouvez temporairement plus signaler.
+609d925	La plus grande nation du monde, qui couvre presque tout le Grand Continent. Diverse et décentralisée, avec des rois et gouverneurs locaux sous l'autorité de Ba Sing Se.
+5ed7906	Avatar, le dernier maître de l'air
+a927fc3	La Légende de Korra
+3986ecc	En guerre contre la Nation du Feu depuis cent ans ; il a perdu des territoires à l'ouest au profit des colonies du Feu.
+412538f	Ébranlé par la chute de la Reine de la Terre ; Kuvira le réunifie de force en Empire de la Terre, jusqu'à ce que Korra l'arrête.
+533c5c5	Archipel volcanique à l'ouest du Grand Continent, gouverné par le Seigneur du Feu depuis la Capitale.
+e2ed816	Puissance industrielle et militaire qui mène la Guerre de Cent Ans depuis l'attaque de Sozin contre les Nomades de l'Air.
+9ef8ae0	Nation en paix, gouvernée par la Dame du Feu Izumi, fille de Zuko.
+56ce211	Tribu de l'Eau du Nord
+0acad2f	Territoire polaire du nord, foyer de la plus grande des Tribus de l'Eau.
+cf6e0ab	Tribu de l'Eau du Sud
+25680b0	Territoire polaire du sud, foyer de la Tribu de l'Eau du Sud.
+8ab5670	Colonies du Feu
+d4fb51a	Bande au nord-ouest du Grand Continent colonisée par la Nation du Feu pendant la guerre.
+7f76b40	Villes mixtes de gens du Feu et de la Terre, certaines vieilles de plus d'un siècle.
+d5894d7	République unie des Nations
+e16df67	Les anciennes colonies forment la République unie des Nations, fondée par Aang et Zuko après le Mouvement de Restauration de l'Harmonie.
+e35df07	Terres Hostiles
+b687795	Nom donné au monde dévasté hors des refuges, frappé par les tempêtes après le Cataclysme.
+d0d2c66	Harshlands
+9531dc9	Avatar : Sept Refuges
+411253f	Désert de Si Wong
+c05b9bc	Immense désert au cœur du Royaume de la Terre, traversé par des nomades des sables à bord de voiliers des sables.
+4f634cf	Appa est capturé ici par des nomades des sables.
+8bd492f	Marais Brumeux
+71ffef5	Marais vivant au sud-ouest du Royaume de la Terre, relié par les racines d'un seul arbre géant. Il abrite une tribu isolée de maîtres de l'eau.
+8a679fc	Foggy Swamp
+6acad21	LoK Livre 4
+c170110	L'Équipe Avatar s'y perd et a des visions d'êtres chers.
+04c4100	Toph Beifong vit dans le marais en ermite et aide Korra à se rétablir.
+d2b389a	Mer Mo Ce
+f972fae	Mer entre la Nation du Feu et le Grand Continent.
+006777a	Baie de Yue
+22f8ea6	Baie où fut construite République City ; elle porte le nom de la princesse Yue.
+4632c7d	Lac de l'Est
+497239e	Lac traversé par les ferries qui emmènent les réfugiés à Ba Sing Se.
+fe12e52	Baie de la Pleine Lune
+39cf327	Port caché au centre du Royaume de la Terre, d'où partent les ferries de réfugiés vers Ba Sing Se.
+3bc56dd	Baie du Caméléon
+3ab07f1	Grande baie sur la côte est du Grand Continent. Identification sur la carte estimée.
+26c20b7	ATLA Livre 2
+f288ea4	Point de rendez-vous de la flotte de la Tribu de l'Eau du Sud menée par Hakoda.
+6758cdd	Temple de l'Air du Sud
+c8fe91b	L'un des quatre temples des Nomades de l'Air, dans la chaîne de Patola, dans l'Archipel du Sud.
+cffca19	LoK Livre 2
+0553a8e	Foyer d'Aang et du moine Gyatso. Abandonné depuis l'attaque de Sozin cent ans plus tôt ; Aang y revient et découvre le sort de son peuple.
+95a9601	En ruines
+f46e722	Entretenu par les Acolytes de l'Air et visité par la famille de Tenzin.
+9e3f072	Temple de l'Air du Nord
+60700d9	Temple des Nomades de l'Air à l'extrême ouest des monts Taihua, au nord du Grand Continent.
+690412d	LoK Livre 3
+71c5371	Occupé par des réfugiés menés par le Mécanicien, qui l'ont rempli d'engins à vapeur.
+5bbe084	Siège de la nouvelle Nation de l'Air : Tenzin y entraîne les nouveaux maîtres de l'air, jusqu'à l'attaque du Lotus Rouge.
+eac8490	Temple de l'Air de l'Ouest
+0d8149f	Temple construit à l'envers sur une paroi de falaise, dans une chaîne de montagnes au nord des îles du Feu.
+8bf26dc	Refuge de l'Équipe Avatar après le Jour du Soleil Noir ; c'est ici que Zuko rejoint le groupe.
+24d8289	Abandonné
+b61bca6	Temple de l'Air de l'Est
+6a12782	Ancien temple des nonnes des Nomades de l'Air, dans une chaîne de montagnes au sud-est du Royaume de la Terre.
+fe09e88	Aang s'entraîne avec le gourou Pathik pour maîtriser l'État d'Avatar en ouvrant ses chakras.
+9604521	Île du Temple de l'Air
+409c95a	Île de la baie de Yue, face à République City.
+0ac2d96	Foyer de Tenzin, de sa famille et des Acolytes de l'Air ; là où Korra apprend la maîtrise de l'air.
+70c3fbf	Capitale de la Nation du Feu
+86ad187	Capitale bâtie dans le cratère d'un volcan éteint, siège du Palais royal.
+8020b9e	Cité capitale
+b65319b	Cible de l'invasion du Jour du Soleil Noir ; théâtre de l'Agni Kai final entre Zuko et Azula.
+dc158e1	Siège du gouvernement de la Dame du Feu Izumi.
+2fcb9d5	Île d'Ember
+22741d9	Île de villégiature de la noblesse du Feu, avec des plages et la maison de plage de la famille royale.
+d673798	L'Équipe Avatar s'y cache et assiste à la pièce des Comédiens de l'île d'Ember.
+4a5c786	Île du Croissant
+47f83dc	Île volcanique à l'est de la Nation du Feu, où se trouve le Temple du Feu de l'Avatar Roku.
+4a03f46	Aang parle avec l'Avatar Roku au solstice d'hiver ; le temple est détruit par l'éruption.
+90506ee	Île de Roku
+be32a14	Île natale de l'Avatar Roku, à l'est de la Nation du Feu.
+c64ff4d	Dévastée par une éruption il y a environ 70 ans ; Roku est mort en essayant de la contenir.
+3f066fd	Détruite
+9911793	Rocher Bouillant
+3020729	Prison de haute sécurité sur une île au milieu d'un lac bouillant.
+f1b7ca4	Boiling Rock
+e6b5446	Sokka et Zuko s'infiltrent dans la prison pour sauver Hakoda et Suki.
+f6c5654	Ruines des Guerriers du Soleil
+ba862e2	Cité antique, dans les îles du nord de la Nation du Feu, de la civilisation qui a appris la maîtrise du feu des dragons.
+f097b5d	Zuko et Aang rencontrent les dragons Ran et Shaw et redécouvrent le vrai sens du feu.
+18b9254	Ville de la Fontaine de Feu
+6c655a7	Ville portuaire dotée d'une énorme statue-fontaine qui crache du feu.
+1f4b349	Toph et Sokka y font des arnaques jusqu'à finir sur des avis de recherche.
+1e568a2	Shu Jing
+ffa723e	Île de la Nation du Feu.
+8033318	Katara affronte Yon Rha, responsable de la mort de sa mère.
+78b9603	Agna Qel'a
+226f991	Cité de glace et de canaux, capitale de la Tribu de l'Eau du Nord.
+6dbefc8	Résiste au siège de l'amiral Zhao ; la princesse Yue devient l'esprit de la Lune.
+6d0faae	Gouvernée par Unalaq, puis par Desna et Eska.
+e80e632	Oasis des Esprits
+a035435	Bassin sacré et chaud où Tui et La, les esprits de la Lune et de l'Océan, nagent sous forme de carpes koï.
+6113964	Portail spirituel du Nord
+e403c8f	Passage entre le monde physique et le Monde des Esprits au pôle Nord.
+89f4343	Ouvert par Korra à la fin du Livre 2.
+329004b	Peuple du pôle Sud.
+9d4163d	Petit village de Katara et Sokka, où Aang est trouvé dans un iceberg.
+a89c787	Devenue une ville portuaire ; foyer de Korra et théâtre de la guerre civile des Tribus de l'Eau.
+bca0c7c	Portail spirituel du Sud
+2c056d7	Passage vers le Monde des Esprits au pôle Sud, entouré par les Terres sauvages des esprits.
+ca7270f	Rouvert par Korra pendant la Convergence harmonique.
+7850428	Ba Sing Se
+7cc528d	Capitale du Royaume de la Terre, entourée de murailles concentriques.
+ba1aae6	Cité impénétrable
+82a588b	LoK Livres 3 et 4
+8b5ecad	Contrôlée en secret par le Dai Li ; tombe aux mains d'Azula à la fin du Livre 2 et est libérée par l'Ordre du Lotus Blanc.
+fa0b84e	La Reine de la Terre Hou-Ting est tuée par Zaheer ; la ville passe ensuite à l'Empire de la Terre de Kuvira.
+63e1881	Nouvelle Ba Sing Se
+a958420	Refuge au nord-est du Grand Continent, bâti là où se trouvait l'ancienne capitale du Royaume de la Terre ; son nom préserve les liens avec l'Ancien Monde. Il valorise les traditions et coutumes anciennes. Aussi appelé « Nouvelle Ba ».
+c25e757	Lac Laogai
+a7672da	Lac à l'intérieur des murailles de Ba Sing Se.
+72cfbc5	Cache la base secrète du Dai Li, où Appa était retenu prisonnier.
+eb90776	Omashu
+23fbcb0	Grande ville bâtie sur une montagne de la chaîne de Kolau, au sud-ouest du Royaume de la Terre ; célèbre pour ses toboggans de livraison.
+448fb42	Gouvernée par l'excentrique roi Bumi ; occupée par la Nation du Feu et renommée Nouvelle Ozai, jusqu'à sa libération pendant l'éclipse.
+73f62b3	Grotte des Deux Amants
+64bdd32	Labyrinthe souterrain créé par Oma et Shu, les premiers maîtres de la terre, qui donne accès à Omashu.
+9704efb	Gaoling
+3b99e68	Ville du sud du Royaume de la Terre, foyer de la riche famille Beifong.
+e3f7a67	Ville natale de Toph, où elle combattait en secret dans le tournoi Earth Rumble.
+55a9b47	Île de Kyoshi
+62741fd	Île créée par l'Avatar Kyoshi en séparant sa terre natale du continent ; foyer des Guerrières de Kyoshi.
+9c98445	L'Équipe Avatar rencontre Suki et les Guerrières de Kyoshi.
+66f090b	Village de Chin
+75dda08	Village côtier qui célèbre le « Jour de l'Avatar ».
+67069c2	Aang est jugé pour le prétendu crime de Kyoshi contre Chin le Conquérant.
+51f78b8	Village de Senlin
+6aa564f	Village à l'orée de la forêt, au sud des anciennes colonies (plus tard République unie), tourmenté par l'esprit Hei Bai.
+ba6dc2d	Aang apaise Hei Bai et fait son premier voyage dans le Monde des Esprits.
+ee795b2	Makapu
+3374801	Village dans une vallée au pied d'un volcan, au nord-est des anciennes colonies (plus tard République unie) ; foyer de la diseuse de bonne aventure tante Wu.
+9c5d480	Aang et Katara sauvent le village d'une éruption.
+a637930	La Grande Faille
+036f727	Le plus grand canyon du monde.
+e0a8c6a	Aang guide deux tribus rivales à travers le canyon.
+8d34fdf	Oasis des Palmiers Brumeux
+33adb27	Oasis décrépite au bord du désert de Si Wong.
+8d655d5	L'Équipe Avatar rencontre le professeur Zei, qui cherche la bibliothèque perdue.
+8c36864	Bibliothèque de Wan Shi Tong
+60799ca	Bibliothèque de l'esprit du savoir, cachée dans les sables du désert.
+0ee7898	Sokka découvre la date de l'éclipse ; la bibliothèque s'enfonce dans le sable et retourne dans le Monde des Esprits.
+0c5c7c3	Le Col du Serpent
+7a9e848	Étroite bande de terre au nord-est du Royaume de la Terre, entre le lac de l'Est et la mer : route dangereuse vers Ba Sing Se.
+170e45f	Aang affronte le serpent de mer qui garde le passage.
+43e15f1	Forêt de Wulong
+9721b24	Forêt sur la côte ouest des anciennes colonies (plus tard République unie).
+528f901	Théâtre de la bataille finale entre Aang et Ozai pendant la Comète de Sozin.
+c9af3df	Yu Dao
+302b5b1	La plus ancienne colonie de la Nation du Feu.
+9b47609	Centre de la crise du Mouvement de Restauration de l'Harmonie, juste après la guerre.
+cbb7d58	République City
+cf58242	Capitale de la République unie des Nations, métropole où vivent des gens de toutes les nations.
+f5f3361	Décor principal de La Légende de Korra. Après la bataille contre Kuvira, un portail spirituel apparaît au centre de la ville.
+5817484	Zaofu
+fd7abe3	Cité de métal fondée par Suyin Beifong, protégée par des dômes en forme de pétales.
+cffd596	Foyer du Clan du Métal ; prise par Kuvira dans le Livre 4.
+c617764	Ellora
+1f4ccac	Refuge principal de la série et foyer des jumeaux Pavi et Nisha.
+90203c0	Elora
+1c274be	Refuge du Vent et du Sable
+2d26661	Métropole cosmopolite de plus d'un million d'habitants au sud-est du Grand Continent, au plan en forme de mandala octogonal. Un réseau de canyons étroits la protège des tempêtes de sable et des tornades des Terres Hostiles.
+3e0f308	Îles Flottantes
+20a26dd	Refuge construit sur l'eau, près de la côte.
+08e96a7	Au nord-est d'Ellora, là où se trouvait la baie du Caméléon. La position exacte des îles dans la baie est une estimation. Explorées dans le Livre 2.
+e50a9ac	Akasha
+6544b47	Forêt de la République
+06a3694	Refuge Perdu
+aa0003d	Archipel du Sud
+a10f2fc	Îles montagneuses du sud, territoire traditionnel des Nomades de l'Air, où se trouvent la chaîne de Patola et l'île de la Queue de Baleine.
+9c2a7a0	Monts Taihua
+a3f817c	Grande chaîne de montagnes au nord du Grand Continent, du sud de Ba Sing Se jusqu'au Temple de l'Air du Nord.
+87d52e8	Chaîne de Kolau
+e96307a	Chaîne de montagnes du sud-ouest du Royaume de la Terre où se trouvent Omashu et la Grotte des Deux Amants ; considérée comme le berceau de la maîtrise de la terre.
+ee2d10d	Ère d'Aang
+e5f3d44	Aang
+ca9b082	99–100 AG
+34f8a75	La Guerre de Cent Ans touche à sa fin. La Nation du Feu domine des colonies à l'ouest du Royaume de la Terre et les Nomades de l'Air ont été exterminés il y a un siècle. Aang, le dernier maître de l'air, se réveille d'un iceberg et doit maîtriser les quatre éléments avant la Comète de Sozin.
+8303653	Avatar, le dernier maître de l'air (2005–2008) et les bandes dessinées de la suite.
+599fc6f	Ère de Korra
+fd727c4	Korra
+8cb833f	170–174 AG
+364784a	Soixante-dix ans après la guerre, les anciennes colonies forment la République unie des Nations, avec la moderne République City. Korra rouvre les portails spirituels, affronte le Lotus Rouge et arrête l'Empire de la Terre de Kuvira.
+71575e4	La Légende de Korra (2012–2014) et les bandes dessinées de la suite.
+db2c3cd	Ère de Pavi et Nisha
+a22a922	Pavi et Nisha
+126dd5c	≈ 399 AG
+2bc3dd2	Environ 225 ans après Korra, un Cataclysme a fait tomber les Quatre Nations. L'humanité survit dans sept refuges isolés, entourés par les Terres Hostiles et frappés par les tempêtes. Les jumeaux Pavi et Nisha, d'Ellora, sont au cœur du débat sur l'identité du véritable Avatar.
+3bbc787	Refuge du Grand Continent connu pour son savoir-faire technique : il survit grâce à des technologies antérieures au Cataclysme, comme les véhicules à moteur.
+8b224fb	La série dit seulement qu'il se trouve sur le Grand Continent. La position est une estimation : Akasha devrait être le refuge bleu (la couleur des vêtements d'Ikaika), que le générique montre sur la côte ouest du continent. La théorie de fans selon laquelle ce serait l'ancienne Zaofu ne colle pas avec l'art officiel, car Zaofu était dans l'intérieur du sud-ouest.
+7492b8e	Le « Refuge Perdu », qui s'est isolé du reste du monde bien avant 399 AG. Les Sans-Visage croient qu'il n'y a pas de tempêtes là-bas et que maîtres et non-maîtres y vivent en paix.
+e91bd20	Le refuge violet, au nord-ouest du Grand Continent, à peu près là où se trouvait République City. La ville apparaît envahie par la végétation dans les images officielles de la série.
+ab55f7d	Montagne de la Plume
+8600cf8	Refuge gouverné par l'impératrice Yeshe, qui préserve les traditions des Nomades de l'Air : tatouages de flèche, bisons volants et service volontaire des maîtres.
+4b29d91	Feather Mountain
+f894b9e	La série n'a pas encore dit où il se trouve. La position est une estimation : ce devrait être le refuge vert (la couleur des vêtements de Yeshe), que le générique montre au sud-ouest du Grand Continent. Les fans parient qu'il est là où se trouvait Omashu.
+7e90bd6	Refuge des Îles du Feu
+c1ed92e	Le septième refuge, dont le nom n'a pas encore été révélé. Il se trouve dans les anciennes îles du Feu et c'est le plus isolé de tous.
+c808dfe	Le refuge indigo. La série a seulement montré qu'il est dans les îles du Feu. Il est placé sur l'ancienne île d'Ember, le pari des fans, mais l'île exacte n'a pas été révélée.
+6538b65	Avatar : Sept Refuges (2026–). Série en cours de diffusion : les informations et positions peuvent encore changer. Akasha, la Montagne de la Plume et le refuge des îles du Feu sont à des positions estimées d'après l'art officiel des sept refuges vus de l'espace.
