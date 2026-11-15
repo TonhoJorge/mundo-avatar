@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite';
 
 // Política de segurança aplicada no build (no dev atrapalharia o HMR).
+// Imagens: qualquer https (fotos do Avatar Wiki, fotos de perfil do GitHub e
+// do Supabase, imagens enviadas nas contribuições). Conexões: só o Supabase
+// (dados, login e notificações em tempo real).
 const CSP = [
   "default-src 'self'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https:",
   "style-src 'self' 'unsafe-inline'",
   "script-src 'self'",
   "worker-src 'self' blob:",
-  "connect-src 'self' blob: data:",
+  "connect-src 'self' blob: data: https://*.supabase.co wss://*.supabase.co",
   "font-src 'self' data:",
   "object-src 'none'",
   "base-uri 'self'",

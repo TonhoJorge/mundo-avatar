@@ -49,7 +49,7 @@ function gallery(info) {
   return h('figure', { class: 'galeria' },
     h('div', { class: 'fotos' }, info.fotos.map((f) => link(f.file,
       h('img', {
-        src: f.src, alt: '', loading: 'lazy', decoding: 'async', // o Wiki exige saber de qual site vem o pedido (sem isso responde 403)
+        src: f.src, alt: '', decoding: 'async', // sem lazy: a galeria fica oculta até a 1ª foto carregar; o Wiki exige saber de qual site vem o pedido (sem isso responde 403)
         onerror: (ev) => ev.target.closest('a')?.remove(),
         onload: (ev) => ev.target.closest('figure')?.classList.add('com-fotos'),
       })))),
