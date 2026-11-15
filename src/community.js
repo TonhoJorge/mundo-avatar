@@ -705,20 +705,87 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
     const era = h('select', { name: 'era', 'aria-label': t('com.eraLabel') },
       h('option', { value: getEra() }, t('com.thisEra')), h('option', { value: '' }, t('com.allEras')));
     const body = h('textarea', { name: 'body', rows: '3', minlength: '3', maxlength: '2000', required: true, placeholder: t('com.bodyPlaceholder') });
-    const img = h('input', { type: 'url', name: 'img', placeholder: 'https://…', pattern: 'https://.*', hidden: true, 'aria-label': t('com.imageUrl') });
-    kind.addEventListener('change', () => { img.hidden = kind.value !== 'foto'; img.required = kind.value === 'foto'; });
+    // foto: arquivo do computador/celular (principal) ou link de uma imagem
+    const img = h('input', { type: 'url', name: 'img', placeholder: 'https://…', pattern: 'https://.*', 'aria-label': t('com.imageUrl') });
+    const fileId = `foto-${place.id}`;
+    const file = h('input', { type: 'file', id: fileId, accept: 'image/png,image/jpeg,image/webp', class: 'sr' });
+    const preview = h('div', { class: 'previa', hidden: true });
+    const pickLabel = h('label', { for: fileId, class: 'botao-arquivo', tabindex: '0', role: 'button',
+      onkeydown: (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); file.click(); } } }, `📷 ${t('com.photoFile')}`);
+    let chosen = null;
+    let previewUrl = null;
+    const clearFile = () => {
+      chosen = null;
+      file.value = '';
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = null;
+      preview.hidden = true;
+      preview.replaceChildren();
+    };
+    file.addEventListener('change', () => {
+      const f = file.files?.[0];
+      if (!f) return;
+      clearFile();
+      chosen = f;
+      previewUrl = URL.createObjectURL(f);
+      preview.replaceChildren(h('img', { src: previewUrl, alt: t('com.photoPreview') }),
+        h('button', { type: 'button', class: 'link', onclick: clearFile }, t('editor.remove')));
+      preview.hidden = false;
+      img.value = '';
+    });
+    const photoBox = h('div', { class: 'campo-foto', hidden: true },
+      h('div', { class: 'linha' }, pickLabel, file), preview,
+      h('label', { class: 'dica' }, t('com.photoOrLink'), img));
+    kind.addEventListener('change', () => { photoBox.hidden = kind.value !== 'foto'; });
+    const send = h('button', { type: 'submit' }, t('com.send'));
+
     return h('form', {
       class: 'coluna nova', onsubmit: async (ev) => {
         ev.preventDefault();
+        if (kind.value === 'foto' && !chosen && !img.value) { toast(t('com.photoRequired')); return; }
+        send.disabled = true;
+        let uploaded = null;
         try {
-          await rpc('contribute', { p_place: place.id, p_era: era.value, p_kind: kind.value, p_body: body.value, p_image: img.value || null });
+          let url = kind.value === 'foto' ? img.value || null : null;
+          if (kind.value === 'foto' && chosen) {
+            send.textContent = t('com.uploading');
+            const blob = await fitWebp(chosen, 1600);
+            uploaded = `${user.id}/${Date.now()}.webp`;
+            const { error } = await sb.storage.from('fotos').upload(uploaded, blob, { contentType: 'image/webp' });
+            if (error) { uploaded = null; throw Object.assign(error, { message: 'photo_upload' }); }
+            url = sb.storage.from('fotos').getPublicUrl(uploaded).data.publicUrl;
+          }
+          await rpc('contribute', { p_place: place.id, p_era: era.value, p_kind: kind.value, p_body: body.value, p_image: url });
+          clearFile();
           toast(t('com.sent'));
           done();
-        } catch (e) { toast(errText(e)); }
+        } catch (e) {
+          // a foto subiu mas a contribuição foi recusada (limite, login…): não deixa arquivo órfão
+          if (uploaded) sb.storage.from('fotos').remove([uploaded]).catch(() => {});
+          toast(errText(e));
+          send.disabled = false;
+          send.textContent = t('com.send');
+        }
       },
-    }, h('h4', {}, t('com.new')), h('div', { class: 'linha' }, kind, era), withMentions(body), img,
+    }, h('h4', {}, t('com.new')), h('div', { class: 'linha' }, kind, era), withMentions(body), photoBox,
     h('p', { class: 'dica' }, t('com.youHave', { c: fmtCred(user.credibility) }), ' ', limitsNote(), ' ', t('com.mentionHint')),
-    h('button', { type: 'submit' }, t('com.send')));
+    send);
+  }
+
+  /** Reduz a imagem para no máximo `max` px no lado maior e converte para WebP. */
+  async function fitWebp(f, max) {
+    const bmp = await createImageBitmap(f);
+    const k = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas');
+    c.width = Math.round(bmp.width * k);
+    c.height = Math.round(bmp.height * k);
+    c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+    bmp.close();
+    for (const q of [0.85, 0.7, 0.55]) {
+      const blob = await new Promise((ok) => c.toBlob(ok, 'image/webp', q));
+      if (blob && blob.size <= 1900000) return blob;
+    }
+    throw new Error('photo_too_big');
   }
 
   return { boot, init, openAccount, openRules, openProfile, openOmbudsman, openNotifications, placeSection, closeMenu, hasSession: () => !!user };

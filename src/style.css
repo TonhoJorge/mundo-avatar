@@ -494,3 +494,14 @@ button { cursor: pointer; }
   .menu-conta { position: fixed; top: 56px; right: 8px; left: auto; }
 }
 @media (prefers-reduced-motion: reduce) { .contrib.destaque { animation: none; outline: 3px solid var(--acento); } }
+
+/* foto da contribuição: arquivo ou link */
+.campo-foto { display: grid; gap: 6px; }
+.botao-arquivo {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px dashed var(--acento);
+  border-radius: 14px; background: var(--papel); font: 13px var(--ui); cursor: pointer;
+}
+.botao-arquivo:hover, .botao-arquivo:focus-visible { background: var(--papel-2); }
+.previa { display: flex; gap: 8px; align-items: end; }
+.previa img { max-width: 160px; max-height: 120px; border-radius: 6px; border: 1px solid var(--borda); object-fit: cover; }
+.campo-foto label.dica { display: grid; gap: 3px; }

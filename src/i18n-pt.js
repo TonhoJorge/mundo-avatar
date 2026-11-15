@@ -289,5 +289,12 @@ export const PT = {
   'com.eraLabel': 'Era',
   'com.imageUrl': 'Endereço da imagem',
   'com.mentionHint': 'Digite @ para mencionar alguém.',
+  'com.photoFile': 'Escolher foto',
+  'com.photoPreview': 'Prévia da foto escolhida',
+  'com.photoOrLink': 'ou cole o link de uma imagem',
+  'com.photoRequired': 'Escolha uma foto ou cole o link de uma imagem.',
+  'com.uploading': 'Enviando a foto…',
+  'err.photo_upload': 'Não foi possível enviar a foto. Tente outra imagem.',
+  'err.photo_too_big': 'A foto é grande demais, mesmo reduzida. Tente outra imagem.',
   'err.report_blocked': 'Você teve {report_strikes} denúncias arquivadas seguidas e está temporariamente sem poder denunciar.',
 };

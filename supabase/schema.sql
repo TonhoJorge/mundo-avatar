@@ -454,6 +454,18 @@ do $$ begin
     drop policy if exists "avatar proprio apaga" on storage.objects;
     create policy "avatar proprio apaga" on storage.objects for delete to authenticated
       using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+
+    -- fotos enviadas nas contribuições (o site reduz antes de enviar; limite de 2 MB)
+    insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+      values ('fotos', 'fotos', true, 2097152, array['image/webp', 'image/png', 'image/jpeg'])
+      on conflict (id) do nothing;
+    drop policy if exists "foto propria insere" on storage.objects;
+    create policy "foto propria insere" on storage.objects for insert to authenticated
+      with check (bucket_id = 'fotos' and (storage.foldername(name))[1] = auth.uid()::text
+                  and not exists (select 1 from public.profiles where id = auth.uid() and banned_at is not null));
+    drop policy if exists "foto propria apaga" on storage.objects;
+    create policy "foto propria apaga" on storage.objects for delete to authenticated
+      using (bucket_id = 'fotos' and (storage.foldername(name))[1] = auth.uid()::text);
   end if;
 end $$;
 
