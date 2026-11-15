@@ -334,3 +334,62 @@ button { cursor: pointer; }
   .aviso { top: 112px; }
   .coords { display: none; }
 }
+
+/* ---------- fotos, idioma ---------- */
+.galeria { margin: 4px 0 12px; }
+.galeria .fotos { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; }
+.galeria .fotos a { flex: 0 0 auto; scroll-snap-align: start; }
+.galeria img {
+  display: block; height: 130px; width: auto; max-width: 260px; object-fit: cover;
+  border-radius: 6px; border: 1px solid var(--borda); background: var(--papel-2);
+}
+.galeria figcaption { font-family: var(--ui); font-size: 11.5px; color: var(--tinta-suave); margin-top: 4px; }
+.galeria figcaption a { color: inherit; }
+.ferramentas { flex-wrap: wrap; max-width: calc(100vw - 24px); }
+.idioma select {
+  border: 1px solid var(--borda); background: var(--papel); border-radius: 18px;
+  padding: 7px 10px; font-family: var(--ui); font-size: 14px; box-shadow: var(--sombra); color: inherit;
+}
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[dir='rtl'] .painel { left: auto; right: 12px; }
+[dir='rtl'] .fechar { right: auto; left: 10px; }
+[dir='rtl'] .painel h2 { margin: 0 0 4px 28px; }
+
+/* ---------- comunidade ---------- */
+.painel h3 { font-family: var(--titulo); font-weight: 400; font-size: 19px; margin: 16px 0 6px; }
+.painel h4 { font-family: var(--ui); font-size: 13px; margin: 0; }
+.painel .dica, .comunidade .dica { font-family: var(--ui); font-size: 12.5px; color: var(--tinta-suave); }
+.link { border: 0; background: none; padding: 0; color: #2f5f7a; text-decoration: underline; font: inherit; cursor: pointer; }
+.cred { font-family: var(--ui); font-size: 12px; color: #8a6414; white-space: nowrap; }
+.painel h2 .cred { font-size: 15px; vertical-align: middle; }
+.comunidade { margin-top: 16px; padding-top: 10px; border-top: 1px solid var(--borda); }
+.contrib { margin: 8px 0; padding: 8px 10px; border: 1px solid var(--borda); border-radius: 8px; background: var(--papel-2); font-size: 15px; }
+.contrib header, .contrib footer { font-family: var(--ui); font-size: 12px; color: var(--tinta-suave); display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.contrib .texto { margin: 6px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.contrib[data-outcome='1'] { border-left: 3px solid #5c8040; }
+.contrib[data-outcome='-1'] { border-left: 3px solid #b03426; opacity: 0.8; }
+.contrib .respostas { margin-top: 6px; padding-left: 10px; border-left: 2px dashed var(--borda); }
+.contrib .respostas .contrib { background: var(--papel); }
+.contrib .estado { font-weight: 600; }
+.votar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-left: auto; }
+.votar button, .comunidade form button, .painel form button {
+  border: 1px solid var(--borda); background: var(--papel); border-radius: 14px; padding: 4px 10px; font-family: var(--ui); font-size: 12.5px;
+}
+.chip-mini { font-size: 11px; padding: 1px 6px; }
+.foto-contrib { max-width: 100%; max-height: 200px; border-radius: 6px; display: block; }
+.painel form.coluna { display: grid; gap: 6px; margin: 10px 0; }
+.painel form.linha { display: flex; flex-wrap: wrap; gap: 6px; align-items: end; margin: 10px 0; }
+.painel form label { display: grid; gap: 3px; font-family: var(--ui); font-size: 12.5px; flex: 1 1 180px; }
+.painel input[type='text'], .painel input[type='email'], .painel input[type='url'], .painel textarea, .painel select {
+  font: inherit; font-size: 14px; padding: 6px 8px; border: 1px solid var(--borda); border-radius: 6px; background: #fffdf6; color: inherit; width: 100%; box-sizing: border-box;
+}
+.painel .linha select { width: auto; flex: 1 1 auto; }
+.refutadas summary { font-family: var(--ui); font-size: 13px; cursor: pointer; margin: 8px 0; }
+.historico { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: 12px; }
+.historico th, .historico td { text-align: left; padding: 5px 4px; border-bottom: 1px solid var(--borda); vertical-align: top; }
+.historico .trecho { color: var(--tinta-suave); }
+.historico tr[data-outcome='1'] .efeito { color: #34502a; font-weight: 600; }
+.historico tr[data-outcome='-1'] .efeito { color: #7a2418; font-weight: 600; }
+.sugestoes { list-style: none; padding: 0; margin: 0; }
+.denuncias { padding-left: 18px; font-family: var(--ui); font-size: 13px; }
+.denuncias li[data-status='confirmada'] strong { color: #7a2418; }

@@ -1143,17 +1143,17 @@
       "id": "akasha",
       "name": "Akasha",
       "type": "haven",
-      "lon": -33,
-      "lat": 47,
+      "lon": -4,
+      "lat": 16,
       "rank": 1,
       "conf": "baixa",
       "canon": "serie",
-      "desc": "Refúgio do Grande Continente conhecido pela habilidade técnica: sobrevive com tecnologias anteriores ao Cataclismo.",
+      "desc": "Refúgio do Grande Continente conhecido pela habilidade técnica: sobrevive com tecnologias anteriores ao Cataclismo, como veículos a motor.",
       "eras": {
         "havens": {
           "nation": "havens",
           "zone": 3,
-          "desc": "Vizinho do Refúgio Perdido. A posição no mapa é uma estimativa: a série ainda não mostrou onde fica."
+          "desc": "A série só diz que fica no Grande Continente. A posição é uma estimativa: Akasha deve ser o refúgio azul (cor das roupas de Ikaika), que a abertura mostra na costa oeste do continente. A teoria de fãs de que seria a antiga Zaofu não bate com a arte oficial, porque Zaofu ficava no interior do sudoeste."
         }
       },
       "refs": [
@@ -1167,17 +1167,64 @@
         "Refúgio Perdido"
       ],
       "type": "haven",
-      "lon": -21,
-      "lat": 43,
+      "lon": -18.5,
+      "lat": 39,
       "rank": 1,
-      "conf": "baixa",
+      "conf": "media",
       "canon": "serie",
-      "desc": "O \"Refúgio Perdido\", que cortou contato com o resto do mundo.",
+      "desc": "O \"Refúgio Perdido\", que se isolou do resto do mundo muito antes de 399 DG. Os Sem-Rosto acreditam que lá não há tempestades e que dobradores e não dobradores vivem em paz.",
       "eras": {
         "havens": {
           "nation": "havens",
+          "replaces": "cidade-republica",
           "zone": 3.5,
-          "desc": "Provavelmente no antigo território da República Unida; imagens oficiais da série mostram a Cidade República tomada pela vegetação. A posição no mapa é uma estimativa."
+          "desc": "Refúgio violeta, no noroeste do Grande Continente, mais ou menos onde ficava a Cidade República. A cidade aparece tomada pela vegetação nas imagens oficiais da série."
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
+    },
+    {
+      "id": "montanha-da-pena",
+      "name": "Montanha da Pena",
+      "aka": [
+        "Feather Mountain"
+      ],
+      "type": "haven",
+      "lon": 24,
+      "lat": 0,
+      "rank": 1,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "Refúgio governado pela imperatriz Yeshe, que preserva as tradições dos Nômades do Ar: tatuagens de flecha, bisões voadores e serviço voluntário dos dobradores.",
+      "eras": {
+        "havens": {
+          "nation": "havens",
+          "zone": 3,
+          "desc": "A série ainda não disse onde fica. A posição é uma estimativa: deve ser o refúgio verde (cor das roupas de Yeshe), que a abertura mostra no sudoeste do Grande Continente. Fãs apostam que fica onde era Omashu."
+        }
+      },
+      "refs": [
+        "Avatar: Sete Refúgios"
+      ]
+    },
+    {
+      "id": "refugio-ilhas-do-fogo",
+      "name": "Refúgio das Ilhas do Fogo",
+      "type": "haven",
+      "lon": -74,
+      "lat": 3.5,
+      "rank": 1,
+      "conf": "baixa",
+      "canon": "serie",
+      "desc": "O sétimo refúgio, ainda sem nome revelado. Fica nas antigas Ilhas do Fogo e é o mais isolado de todos.",
+      "eras": {
+        "havens": {
+          "nation": "havens",
+          "replaces": "ilha-ember",
+          "zone": 3,
+          "desc": "Refúgio anil. A série só mostrou que fica nas Ilhas do Fogo. Ele está marcado na antiga Ilha Ember, que é a aposta dos fãs, mas a ilha exata não foi revelada."
         }
       },
       "refs": [

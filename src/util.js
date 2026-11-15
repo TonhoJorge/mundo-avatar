@@ -53,8 +53,9 @@ export function writeQuery(params) {
   history.replaceState(history.state, '', `${location.pathname}${s ? `?${s}` : ''}${location.hash}`);
 }
 
-export const formatCoord = (lon, lat) =>
-  `${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'L' : 'O'}`;
+/** letters: 'NSLO' (norte, sul, leste, oeste) no idioma atual. */
+export const formatCoord = (lon, lat, letters = 'NSLO') =>
+  `${Math.abs(lat).toFixed(2)}° ${letters[lat >= 0 ? 0 : 1]}, ${Math.abs(lon).toFixed(2)}° ${letters[lon >= 0 ? 2 : 3]}`;
 
 export const prefersReducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 

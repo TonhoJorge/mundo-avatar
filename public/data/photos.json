@@ -1,0 +1,912 @@
+{
+ "reino-da-terra": {
+  "wiki": "https://avatar.fandom.com/wiki/Earth_Kingdom",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/37/Early_Earth_Kingdom_army_%28era_of_Sonam%29.png/revision/latest?cb=20260726074209",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/37/Early_Earth_Kingdom_army_%28era_of_Sonam%29.png/revision/latest?cb=20260726074209",
+    "file": "https://avatar.fandom.com/wiki/File:Early_Earth_Kingdom_army_(era_of_Sonam).png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/1e/Earth_Kingdom_Avatar_Temple.png/revision/latest?cb=20140104112712",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/1e/Earth_Kingdom_Avatar_Temple.png/revision/latest?cb=20140104112712",
+    "file": "https://avatar.fandom.com/wiki/File:Earth_Kingdom_Avatar_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/72/Earth_Kingdom_Royal_Palace.png/revision/latest?cb=20140519000525",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/72/Earth_Kingdom_Royal_Palace.png/revision/latest?cb=20140519000525",
+    "file": "https://avatar.fandom.com/wiki/File:Earth_Kingdom_Royal_Palace.png"
+   }
+  ]
+ },
+ "nacao-do-fogo": {
+  "wiki": "https://avatar.fandom.com/wiki/Fire_Nation",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/5/52/Crescent_Island_Fire_Temple.png/revision/latest?cb=20140108113202",
+    "full": "https://static.wikia.nocookie.net/avatar/images/5/52/Crescent_Island_Fire_Temple.png/revision/latest?cb=20140108113202",
+    "file": "https://avatar.fandom.com/wiki/File:Crescent_Island_Fire_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/15/Fire_Fountain_City.png/revision/latest?cb=20101227195930",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/15/Fire_Fountain_City.png/revision/latest?cb=20101227195930",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Fountain_City.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/ad/Fire_Fountain_statue.png/revision/latest?cb=20101229155859",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/ad/Fire_Fountain_statue.png/revision/latest?cb=20101229155859",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Fountain_statue.png"
+   }
+  ]
+ },
+ "tribo-agua-norte-regiao": {
+  "wiki": "https://avatar.fandom.com/wiki/Northern_Water_Tribe",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/b0/Fire_Nation_siege_Northern_Tribe.png/revision/latest?cb=20140124170914",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/b0/Fire_Nation_siege_Northern_Tribe.png/revision/latest?cb=20140124170914",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Nation_siege_Northern_Tribe.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/0/01/Modern_Northern_Water_Tribe_capital.png/revision/latest?cb=20150129092956",
+    "full": "https://static.wikia.nocookie.net/avatar/images/0/01/Modern_Northern_Water_Tribe_capital.png/revision/latest?cb=20150129092956",
+    "file": "https://avatar.fandom.com/wiki/File:Modern_Northern_Water_Tribe_capital.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/37/Northern_Water_Tribe.png/revision/latest?cb=20140119112429",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/37/Northern_Water_Tribe.png/revision/latest?cb=20140119112429",
+    "file": "https://avatar.fandom.com/wiki/File:Northern_Water_Tribe.png"
+   }
+  ]
+ },
+ "tribo-agua-sul-regiao": {
+  "wiki": "https://avatar.fandom.com/wiki/Southern_Water_Tribe",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/d2/Modernized_Southern_Water_Tribe.png/revision/latest?cb=20170521211715",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/d2/Modernized_Southern_Water_Tribe.png/revision/latest?cb=20170521211715",
+    "file": "https://avatar.fandom.com/wiki/File:Modernized_Southern_Water_Tribe.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/35/Southern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20150129102421",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/35/Southern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20150129102421",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_Water_Tribe_Royal_Palace.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/2/2d/Southern_Water_Tribe_attacked.png/revision/latest?cb=20140903132204",
+    "full": "https://static.wikia.nocookie.net/avatar/images/2/2d/Southern_Water_Tribe_attacked.png/revision/latest?cb=20140903132204",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_Water_Tribe_attacked.png"
+   }
+  ]
+ },
+ "colonias-do-fogo": {
+  "wiki": "https://avatar.fandom.com/wiki/Fire_Nation_colonies",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/db/Fire_Days_Festival.png/revision/latest?cb=20140116092431",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/db/Fire_Days_Festival.png/revision/latest?cb=20140116092431",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Days_Festival.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/7d/Fire_Nation_colony.png/revision/latest?cb=20220323023534",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/7d/Fire_Nation_colony.png/revision/latest?cb=20220323023534",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Nation_colony.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/ea/Fire_Nation_colony_coast.png/revision/latest?cb=20230703213308",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/ea/Fire_Nation_colony_coast.png/revision/latest?cb=20230703213308",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Nation_colony_coast.png"
+   }
+  ]
+ },
+ "terras-duras": {
+  "wiki": "https://avatar.fandom.com/wiki/Seven_Havens",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "file": "https://avatar.fandom.com/wiki/File:Seven_Havens_from_space.png"
+   }
+  ]
+ },
+ "deserto-si-wong": {
+  "wiki": "https://avatar.fandom.com/wiki/Si_Wong_Desert",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/46/Si_Wong_Desert.png/revision/latest?cb=20140407161000",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/46/Si_Wong_Desert.png/revision/latest?cb=20140407161000",
+    "file": "https://avatar.fandom.com/wiki/File:Si_Wong_Desert.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/1b/Si_Wong_rock.png/revision/latest?cb=20140407161000",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/1b/Si_Wong_rock.png/revision/latest?cb=20140407161000",
+    "file": "https://avatar.fandom.com/wiki/File:Si_Wong_rock.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/5/5c/Si_Wong_tribe.png/revision/latest?cb=20150104223728",
+    "full": "https://static.wikia.nocookie.net/avatar/images/5/5c/Si_Wong_tribe.png/revision/latest?cb=20150104223728",
+    "file": "https://avatar.fandom.com/wiki/File:Si_Wong_tribe.png"
+   }
+  ]
+ },
+ "pantano-nebuloso": {
+  "wiki": "https://avatar.fandom.com/wiki/Foggy_Swamp",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/68/Foggy_Swamp.png/revision/latest?cb=20130630224556",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/68/Foggy_Swamp.png/revision/latest?cb=20130630224556",
+    "file": "https://avatar.fandom.com/wiki/File:Foggy_Swamp.png"
+   }
+  ]
+ },
+ "mar-mo-ce": {
+  "wiki": "https://avatar.fandom.com/wiki/Mo_Ce_Sea",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/ad/Blockade.png/revision/latest?cb=20130622203336",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/ad/Blockade.png/revision/latest?cb=20130622203336",
+    "file": "https://avatar.fandom.com/wiki/File:Blockade.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/d1/Avatar_arrow.png/revision/latest?cb=20210815003212",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/d1/Avatar_arrow.png/revision/latest?cb=20210815003212",
+    "file": "https://avatar.fandom.com/wiki/File:Avatar_arrow.png"
+   }
+  ]
+ },
+ "baia-yue": {
+  "wiki": "https://avatar.fandom.com/wiki/Yue_Bay",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/89/Yue_Bay_at_dawn.png/revision/latest?cb=20160516074318",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/89/Yue_Bay_at_dawn.png/revision/latest?cb=20160516074318",
+    "file": "https://avatar.fandom.com/wiki/File:Yue_Bay_at_dawn.png"
+   }
+  ]
+ },
+ "baia-lua-cheia": {
+  "wiki": "https://avatar.fandom.com/wiki/Full_Moon_Bay",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/65/Overview_of_Full_Moon_Bay.png/revision/latest?cb=20140413233811",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/65/Overview_of_Full_Moon_Bay.png/revision/latest?cb=20140413233811",
+    "file": "https://avatar.fandom.com/wiki/File:Overview_of_Full_Moon_Bay.png"
+   }
+  ]
+ },
+ "baia-camaleao": {
+  "wiki": "https://avatar.fandom.com/wiki/Chameleon_Bay",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/87/Chameleon_Bay.png/revision/latest?cb=20140510202632",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/87/Chameleon_Bay.png/revision/latest?cb=20140510202632",
+    "file": "https://avatar.fandom.com/wiki/File:Chameleon_Bay.png"
+   }
+  ]
+ },
+ "templo-ar-sul": {
+  "wiki": "https://avatar.fandom.com/wiki/Southern_Air_Temple",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/0/08/Burnt-out_Southern_Air_Temple.png/revision/latest?cb=20260802165327",
+    "full": "https://static.wikia.nocookie.net/avatar/images/0/08/Burnt-out_Southern_Air_Temple.png/revision/latest?cb=20260802165327",
+    "file": "https://avatar.fandom.com/wiki/File:Burnt-out_Southern_Air_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/2/23/Restored_Southern_Air_Temple.png/revision/latest?cb=20130916095007",
+    "full": "https://static.wikia.nocookie.net/avatar/images/2/23/Restored_Southern_Air_Temple.png/revision/latest?cb=20130916095007",
+    "file": "https://avatar.fandom.com/wiki/File:Restored_Southern_Air_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/73/Southern_Air_Temple.png/revision/latest?cb=20250813172724",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/73/Southern_Air_Temple.png/revision/latest?cb=20250813172724",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_Air_Temple.png"
+   }
+  ]
+ },
+ "templo-ar-norte": {
+  "wiki": "https://avatar.fandom.com/wiki/Northern_Air_Temple",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/1b/Battle_for_the_Northern_Air_Temple.png/revision/latest?cb=20140118124559",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/1b/Battle_for_the_Northern_Air_Temple.png/revision/latest?cb=20140118124559",
+    "file": "https://avatar.fandom.com/wiki/File:Battle_for_the_Northern_Air_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a5/Mechanist_working_on_the_air_balloon.png/revision/latest?cb=20140118125454",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a5/Mechanist_working_on_the_air_balloon.png/revision/latest?cb=20140118125454",
+    "file": "https://avatar.fandom.com/wiki/File:Mechanist_working_on_the_air_balloon.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/f/fc/Northern_Air_Temple_courtyard.png/revision/latest?cb=20140118125455",
+    "full": "https://static.wikia.nocookie.net/avatar/images/f/fc/Northern_Air_Temple_courtyard.png/revision/latest?cb=20140118125455",
+    "file": "https://avatar.fandom.com/wiki/File:Northern_Air_Temple_courtyard.png"
+   }
+  ]
+ },
+ "templo-ar-oeste": {
+  "wiki": "https://avatar.fandom.com/wiki/Western_Air_Temple",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/37/Western_Air_Temple.png/revision/latest?cb=20140821204332",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/37/Western_Air_Temple.png/revision/latest?cb=20140821204332",
+    "file": "https://avatar.fandom.com/wiki/File:Western_Air_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/2/28/Western_Air_Temple_under_attack.png/revision/latest?cb=20110219005123",
+    "full": "https://static.wikia.nocookie.net/avatar/images/2/28/Western_Air_Temple_under_attack.png/revision/latest?cb=20110219005123",
+    "file": "https://avatar.fandom.com/wiki/File:Western_Air_Temple_under_attack.png"
+   }
+  ]
+ },
+ "templo-ar-leste": {
+  "wiki": "https://avatar.fandom.com/wiki/Eastern_Air_Temple",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/b2/Eastern_Air_Temple.png/revision/latest?cb=20130705194029",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/b2/Eastern_Air_Temple.png/revision/latest?cb=20130705194029",
+    "file": "https://avatar.fandom.com/wiki/File:Eastern_Air_Temple.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/45/Eastern_air_temple_abandoned.png/revision/latest/scale-to-width-down/640?cb=20261024202919",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/45/Eastern_air_temple_abandoned.png/revision/latest?cb=20261024202919",
+    "file": "https://avatar.fandom.com/wiki/File:Eastern_air_temple_abandoned.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/13/Restored_Eastern_Air_Temple.png/revision/latest?cb=20131102115726",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/13/Restored_Eastern_Air_Temple.png/revision/latest?cb=20131102115726",
+    "file": "https://avatar.fandom.com/wiki/File:Restored_Eastern_Air_Temple.png"
+   }
+  ]
+ },
+ "ilha-templo-ar": {
+  "wiki": "https://avatar.fandom.com/wiki/Air_Temple_Island",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/ec/Air_Acolytes_on_Air_Temple_Island.png/revision/latest?cb=20121107105557",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/ec/Air_Acolytes_on_Air_Temple_Island.png/revision/latest?cb=20121107105557",
+    "file": "https://avatar.fandom.com/wiki/File:Air_Acolytes_on_Air_Temple_Island.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/9/9f/Air_Temple_Island_%28c._110_AG%29.png/revision/latest?cb=20261009024354",
+    "full": "https://static.wikia.nocookie.net/avatar/images/9/9f/Air_Temple_Island_%28c._110_AG%29.png/revision/latest?cb=20261009024354",
+    "file": "https://avatar.fandom.com/wiki/File:Air_Temple_Island_(c._110_AG).png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/8d/Air_Temple_Island_overview.png/revision/latest?cb=20121107105550",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/8d/Air_Temple_Island_overview.png/revision/latest?cb=20121107105550",
+    "file": "https://avatar.fandom.com/wiki/File:Air_Temple_Island_overview.png"
+   }
+  ]
+ },
+ "capital-fogo": {
+  "wiki": "https://avatar.fandom.com/wiki/Fire_Nation_Capital",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/b5/Capital_crater.png/revision/latest?cb=20110202001928",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/b5/Capital_crater.png/revision/latest?cb=20110202001928",
+    "file": "https://avatar.fandom.com/wiki/File:Capital_crater.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/7e/Capital_harbor.png/revision/latest?cb=20220326204346",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/7e/Capital_harbor.png/revision/latest?cb=20220326204346",
+    "file": "https://avatar.fandom.com/wiki/File:Capital_harbor.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/85/Coronation_Plaza.png/revision/latest?cb=20140905083239",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/85/Coronation_Plaza.png/revision/latest?cb=20140905083239",
+    "file": "https://avatar.fandom.com/wiki/File:Coronation_Plaza.png"
+   }
+  ]
+ },
+ "ilha-ember": {
+  "wiki": "https://avatar.fandom.com/wiki/Ember_Island",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/39/Ember_Island_Theater.png/revision/latest?cb=20130722101317",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/39/Ember_Island_Theater.png/revision/latest?cb=20130722101317",
+    "file": "https://avatar.fandom.com/wiki/File:Ember_Island_Theater.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/45/Ember_Island_beach.png/revision/latest?cb=20140908141112",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/45/Ember_Island_beach.png/revision/latest?cb=20140908141112",
+    "file": "https://avatar.fandom.com/wiki/File:Ember_Island_beach.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/b7/Ember_Island_port.png/revision/latest?cb=20140908141112",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/b7/Ember_Island_port.png/revision/latest?cb=20140908141112",
+    "file": "https://avatar.fandom.com/wiki/File:Ember_Island_port.png"
+   }
+  ]
+ },
+ "ilha-crescente": {
+  "wiki": "https://avatar.fandom.com/wiki/Crescent_Island",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/68/Crescent_Island.png/revision/latest?cb=20140519094412",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/68/Crescent_Island.png/revision/latest?cb=20140519094412",
+    "file": "https://avatar.fandom.com/wiki/File:Crescent_Island.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/17/Crescent_Island_Fire_Temple_at_sunset.png/revision/latest?cb=20130622204600",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/17/Crescent_Island_Fire_Temple_at_sunset.png/revision/latest?cb=20130622204600",
+    "file": "https://avatar.fandom.com/wiki/File:Crescent_Island_Fire_Temple_at_sunset.png"
+   }
+  ]
+ },
+ "ilha-roku": {
+  "wiki": "https://avatar.fandom.com/wiki/Roku's_island",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/c/c3/Roku%27s_island.png/revision/latest?cb=20110104153619",
+    "full": "https://static.wikia.nocookie.net/avatar/images/c/c3/Roku%27s_island.png/revision/latest?cb=20110104153619",
+    "file": "https://avatar.fandom.com/wiki/File:Roku%27s_island.png"
+   }
+  ]
+ },
+ "rocha-fervente": {
+  "wiki": "https://avatar.fandom.com/wiki/Boiling_Rock",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/32/Boiling_Rock.png/revision/latest?cb=20220321233829",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/32/Boiling_Rock.png/revision/latest?cb=20220321233829",
+    "file": "https://avatar.fandom.com/wiki/File:Boiling_Rock.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/0/08/Boiling_Rock_cafeteria.png/revision/latest?cb=20210730154312",
+    "full": "https://static.wikia.nocookie.net/avatar/images/0/08/Boiling_Rock_cafeteria.png/revision/latest?cb=20210730154312",
+    "file": "https://avatar.fandom.com/wiki/File:Boiling_Rock_cafeteria.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/76/Boiling_Rock_gondola.png/revision/latest?cb=20220321172016",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/76/Boiling_Rock_gondola.png/revision/latest?cb=20220321172016",
+    "file": "https://avatar.fandom.com/wiki/File:Boiling_Rock_gondola.png"
+   }
+  ]
+ },
+ "guerreiros-do-sol": {
+  "wiki": "https://avatar.fandom.com/wiki/Sun_Warriors'_ancient_city",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/33/Sun_Warriors%27_ancient_city.png/revision/latest?cb=20111111174035",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/33/Sun_Warriors%27_ancient_city.png/revision/latest?cb=20111111174035",
+    "file": "https://avatar.fandom.com/wiki/File:Sun_Warriors%27_ancient_city.png"
+   }
+  ]
+ },
+ "fonte-de-fogo": {
+  "wiki": "https://avatar.fandom.com/wiki/Fire_Fountain_City",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/15/Fire_Fountain_City.png/revision/latest?cb=20101227195930",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/15/Fire_Fountain_City.png/revision/latest?cb=20101227195930",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Fountain_City.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/ad/Fire_Fountain_statue.png/revision/latest?cb=20101229155859",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/ad/Fire_Fountain_statue.png/revision/latest?cb=20101229155859",
+    "file": "https://avatar.fandom.com/wiki/File:Fire_Fountain_statue.png"
+   }
+  ]
+ },
+ "shu-jing": {
+  "wiki": "https://avatar.fandom.com/wiki/Shu_Jing",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/ba/Shu_Jing.png/revision/latest?cb=20140905234216",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/ba/Shu_Jing.png/revision/latest?cb=20140905234216",
+    "file": "https://avatar.fandom.com/wiki/File:Shu_Jing.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/c/c6/Shu_Jing_restaurant.png/revision/latest?cb=20140905235441",
+    "full": "https://static.wikia.nocookie.net/avatar/images/c/c6/Shu_Jing_restaurant.png/revision/latest?cb=20140905235441",
+    "file": "https://avatar.fandom.com/wiki/File:Shu_Jing_restaurant.png"
+   }
+  ]
+ },
+ "tribo-agua-norte": {
+  "wiki": "https://avatar.fandom.com/wiki/Agna_Qel'a",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/e6/Canal.png/revision/latest?cb=20140119112100",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/e6/Canal.png/revision/latest?cb=20140119112100",
+    "file": "https://avatar.fandom.com/wiki/File:Canal.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/8f/Marker.png/revision/latest?cb=20170904064106",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/8f/Marker.png/revision/latest?cb=20170904064106",
+    "file": "https://avatar.fandom.com/wiki/File:Marker.png"
+   }
+  ]
+ },
+ "oasis-espiritual": {
+  "wiki": "https://avatar.fandom.com/wiki/Spirit_Oasis",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/d3/Spirit_Oasis.png/revision/latest?cb=20140122222809",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/d3/Spirit_Oasis.png/revision/latest?cb=20140122222809",
+    "file": "https://avatar.fandom.com/wiki/File:Spirit_Oasis.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/7b/Spirit_Oasis_overview.png/revision/latest?cb=20140122222810",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/7b/Spirit_Oasis_overview.png/revision/latest?cb=20140122222810",
+    "file": "https://avatar.fandom.com/wiki/File:Spirit_Oasis_overview.png"
+   }
+  ]
+ },
+ "portal-norte": {
+  "wiki": "https://avatar.fandom.com/wiki/Spirit_portal",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/f/f6/Republic_City_portal.png/revision/latest?cb=20141231105559",
+    "full": "https://static.wikia.nocookie.net/avatar/images/f/f6/Republic_City_portal.png/revision/latest?cb=20141231105559",
+    "file": "https://avatar.fandom.com/wiki/File:Republic_City_portal.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/8a/Southern_portal.png/revision/latest?cb=20141231105416",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/8a/Southern_portal.png/revision/latest?cb=20141231105416",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_portal.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/c/c6/Southern_spirit_portal.png/revision/latest?cb=20140920232232",
+    "full": "https://static.wikia.nocookie.net/avatar/images/c/c6/Southern_spirit_portal.png/revision/latest?cb=20140920232232",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_spirit_portal.png"
+   }
+  ]
+ },
+ "tribo-agua-sul": {
+  "wiki": "https://avatar.fandom.com/wiki/Southern_Water_Tribe",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/d2/Modernized_Southern_Water_Tribe.png/revision/latest?cb=20170521211715",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/d2/Modernized_Southern_Water_Tribe.png/revision/latest?cb=20170521211715",
+    "file": "https://avatar.fandom.com/wiki/File:Modernized_Southern_Water_Tribe.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/35/Southern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20150129102421",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/35/Southern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20150129102421",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_Water_Tribe_Royal_Palace.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/2/2d/Southern_Water_Tribe_attacked.png/revision/latest?cb=20140903132204",
+    "full": "https://static.wikia.nocookie.net/avatar/images/2/2d/Southern_Water_Tribe_attacked.png/revision/latest?cb=20140903132204",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_Water_Tribe_attacked.png"
+   }
+  ]
+ },
+ "portal-sul": {
+  "wiki": "https://avatar.fandom.com/wiki/Spirit_portal",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/f/f6/Republic_City_portal.png/revision/latest?cb=20141231105559",
+    "full": "https://static.wikia.nocookie.net/avatar/images/f/f6/Republic_City_portal.png/revision/latest?cb=20141231105559",
+    "file": "https://avatar.fandom.com/wiki/File:Republic_City_portal.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/8a/Southern_portal.png/revision/latest?cb=20141231105416",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/8a/Southern_portal.png/revision/latest?cb=20141231105416",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_portal.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/c/c6/Southern_spirit_portal.png/revision/latest?cb=20140920232232",
+    "full": "https://static.wikia.nocookie.net/avatar/images/c/c6/Southern_spirit_portal.png/revision/latest?cb=20140920232232",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_spirit_portal.png"
+   }
+  ]
+ },
+ "ba-sing-se": {
+  "wiki": "https://avatar.fandom.com/wiki/Ba_Sing_Se",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/6f/Ba_Sing_Se.png/revision/latest?cb=20140422090139",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/6f/Ba_Sing_Se.png/revision/latest?cb=20140422090139",
+    "file": "https://avatar.fandom.com/wiki/File:Ba_Sing_Se.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/e7/Ba_Sing_Se_Middle_Ring.png/revision/latest?cb=20140422090140",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/e7/Ba_Sing_Se_Middle_Ring.png/revision/latest?cb=20140422090140",
+    "file": "https://avatar.fandom.com/wiki/File:Ba_Sing_Se_Middle_Ring.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a0/Ba_Sing_Se_University.png/revision/latest?cb=20140422090140",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a0/Ba_Sing_Se_University.png/revision/latest?cb=20140422090140",
+    "file": "https://avatar.fandom.com/wiki/File:Ba_Sing_Se_University.png"
+   }
+  ]
+ },
+ "lago-laogai": {
+  "wiki": "https://avatar.fandom.com/wiki/Lake_Laogai",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/45/Jinora_explores_Lake_Laogai.png/revision/latest?cb=20140722005314",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/45/Jinora_explores_Lake_Laogai.png/revision/latest?cb=20140722005314",
+    "file": "https://avatar.fandom.com/wiki/File:Jinora_explores_Lake_Laogai.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/4e/Lake_Laogai.png/revision/latest?cb=20130701094250",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/4e/Lake_Laogai.png/revision/latest?cb=20130701094250",
+    "file": "https://avatar.fandom.com/wiki/File:Lake_Laogai.png"
+   }
+  ]
+ },
+ "omashu": {
+  "wiki": "https://avatar.fandom.com/wiki/Omashu",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/c/cc/Omashu.png/revision/latest?cb=20140106134023",
+    "full": "https://static.wikia.nocookie.net/avatar/images/c/cc/Omashu.png/revision/latest?cb=20140106134023",
+    "file": "https://avatar.fandom.com/wiki/File:Omashu.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/ef/Omashu_layout.png/revision/latest?cb=20140106134411",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/ef/Omashu_layout.png/revision/latest?cb=20140106134411",
+    "file": "https://avatar.fandom.com/wiki/File:Omashu_layout.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a1/Omashu_palace_interior.png/revision/latest?cb=20140106151816",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a1/Omashu_palace_interior.png/revision/latest?cb=20140106151816",
+    "file": "https://avatar.fandom.com/wiki/File:Omashu_palace_interior.png"
+   }
+  ]
+ },
+ "caverna-dois-amantes": {
+  "wiki": "https://avatar.fandom.com/wiki/Cave_of_Two_Lovers",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/72/Cave_of_Two_Lovers.png/revision/latest?cb=20140128105157",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/72/Cave_of_Two_Lovers.png/revision/latest?cb=20140128105157",
+    "file": "https://avatar.fandom.com/wiki/File:Cave_of_Two_Lovers.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/dd/Cave_of_Two_Lovers_writing.png/revision/latest?cb=20140128105157",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/dd/Cave_of_Two_Lovers_writing.png/revision/latest?cb=20140128105157",
+    "file": "https://avatar.fandom.com/wiki/File:Cave_of_Two_Lovers_writing.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/32/Cave_sculpture.png/revision/latest?cb=20140128105157",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/32/Cave_sculpture.png/revision/latest?cb=20140128105157",
+    "file": "https://avatar.fandom.com/wiki/File:Cave_sculpture.png"
+   }
+  ]
+ },
+ "gaoling": {
+  "wiki": "https://avatar.fandom.com/wiki/Gaoling",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/f/f5/Gaoling.png/revision/latest?cb=20140317210010",
+    "full": "https://static.wikia.nocookie.net/avatar/images/f/f5/Gaoling.png/revision/latest?cb=20140317210010",
+    "file": "https://avatar.fandom.com/wiki/File:Gaoling.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/9/92/Gaoling_Crisis.png/revision/latest?cb=20201207005550",
+    "full": "https://static.wikia.nocookie.net/avatar/images/9/92/Gaoling_Crisis.png/revision/latest?cb=20201207005550",
+    "file": "https://avatar.fandom.com/wiki/File:Gaoling_Crisis.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/61/Gaoling_street.png/revision/latest?cb=20140317210010",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/61/Gaoling_street.png/revision/latest?cb=20140317210010",
+    "file": "https://avatar.fandom.com/wiki/File:Gaoling_street.png"
+   }
+  ]
+ },
+ "ilha-kyoshi": {
+  "wiki": "https://avatar.fandom.com/wiki/Kyoshi_Island",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/1/13/Damaged_Kyoshi_village.png/revision/latest?cb=20130819101043",
+    "full": "https://static.wikia.nocookie.net/avatar/images/1/13/Damaged_Kyoshi_village.png/revision/latest?cb=20130819101043",
+    "file": "https://avatar.fandom.com/wiki/File:Damaged_Kyoshi_village.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/6b/Kyoshi%27s_shrine.png/revision/latest?cb=20140215112602",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/6b/Kyoshi%27s_shrine.png/revision/latest?cb=20140215112602",
+    "file": "https://avatar.fandom.com/wiki/File:Kyoshi%27s_shrine.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/e3/Kyoshi_Island.png/revision/latest?cb=20130819084150",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/e3/Kyoshi_Island.png/revision/latest?cb=20130819084150",
+    "file": "https://avatar.fandom.com/wiki/File:Kyoshi_Island.png"
+   }
+  ]
+ },
+ "vila-chin": {
+  "wiki": "https://avatar.fandom.com/wiki/Chin_Village",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/5/50/Chin_Village.png/revision/latest?cb=20140215111850",
+    "full": "https://static.wikia.nocookie.net/avatar/images/5/50/Chin_Village.png/revision/latest?cb=20140215111850",
+    "file": "https://avatar.fandom.com/wiki/File:Chin_Village.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/8e/Chin_Village_center.png/revision/latest?cb=20140215111851",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/8e/Chin_Village_center.png/revision/latest?cb=20140215111851",
+    "file": "https://avatar.fandom.com/wiki/File:Chin_Village_center.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/49/Chin_Village_citizens.png/revision/latest?cb=20140215111851",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/49/Chin_Village_citizens.png/revision/latest?cb=20140215111851",
+    "file": "https://avatar.fandom.com/wiki/File:Chin_Village_citizens.png"
+   }
+  ]
+ },
+ "vila-senlin": {
+  "wiki": "https://avatar.fandom.com/wiki/Senlin_Village",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/63/Senlin.png/revision/latest?cb=20130620103404",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/63/Senlin.png/revision/latest?cb=20130620103404",
+    "file": "https://avatar.fandom.com/wiki/File:Senlin.png"
+   }
+  ]
+ },
+ "makapu": {
+  "wiki": "https://avatar.fandom.com/wiki/Makapu_Village",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/be/Makapu_Village_and_mountain.png/revision/latest?cb=20231208225326",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/be/Makapu_Village_and_mountain.png/revision/latest?cb=20231208225326",
+    "file": "https://avatar.fandom.com/wiki/File:Makapu_Village_and_mountain.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/38/Mt._Makapu.png/revision/latest?cb=20130814093047",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/38/Mt._Makapu.png/revision/latest?cb=20130814093047",
+    "file": "https://avatar.fandom.com/wiki/File:Mt._Makapu.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/7/71/Mt._Makapu_erupts.png/revision/latest?cb=20130814110147",
+    "full": "https://static.wikia.nocookie.net/avatar/images/7/71/Mt._Makapu_erupts.png/revision/latest?cb=20130814110147",
+    "file": "https://avatar.fandom.com/wiki/File:Mt._Makapu_erupts.png"
+   }
+  ]
+ },
+ "grande-divisao": {
+  "wiki": "https://avatar.fandom.com/wiki/Great_Divide",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/f/f8/Great_Divide.png/revision/latest?cb=20131202200442",
+    "full": "https://static.wikia.nocookie.net/avatar/images/f/f8/Great_Divide.png/revision/latest?cb=20131202200442",
+    "file": "https://avatar.fandom.com/wiki/File:Great_Divide.png"
+   }
+  ]
+ },
+ "oasis-palmeiras": {
+  "wiki": "https://avatar.fandom.com/wiki/Misty_Palms_Oasis",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/3a/Misty_Palms_Oasis.png/revision/latest?cb=20140404203809",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/3a/Misty_Palms_Oasis.png/revision/latest?cb=20140404203809",
+    "file": "https://avatar.fandom.com/wiki/File:Misty_Palms_Oasis.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/dc/Misty_Palms_Oasis_market.png/revision/latest?cb=20140801190710",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/dc/Misty_Palms_Oasis_market.png/revision/latest?cb=20140801190710",
+    "file": "https://avatar.fandom.com/wiki/File:Misty_Palms_Oasis_market.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/4d/Modern_Misty_Palms_Oasis.png/revision/latest?cb=20140801192159",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/4d/Modern_Misty_Palms_Oasis.png/revision/latest?cb=20140801192159",
+    "file": "https://avatar.fandom.com/wiki/File:Modern_Misty_Palms_Oasis.png"
+   }
+  ]
+ },
+ "biblioteca-wan-shi-tong": {
+  "wiki": "https://avatar.fandom.com/wiki/Wan_Shi_Tong's_Library",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/31/Library_room.png/revision/latest?cb=20140124171521",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/31/Library_room.png/revision/latest?cb=20140124171521",
+    "file": "https://avatar.fandom.com/wiki/File:Library_room.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/f/f1/Wan_Shi_Tong%27s_Library.png/revision/latest?cb=20140404204805",
+    "full": "https://static.wikia.nocookie.net/avatar/images/f/f1/Wan_Shi_Tong%27s_Library.png/revision/latest?cb=20140404204805",
+    "file": "https://avatar.fandom.com/wiki/File:Wan_Shi_Tong%27s_Library.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a2/Wan_Shi_Tong%27s_Library_in_the_Spirit_World.png/revision/latest?cb=20131109212010",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a2/Wan_Shi_Tong%27s_Library_in_the_Spirit_World.png/revision/latest?cb=20131109212010",
+    "file": "https://avatar.fandom.com/wiki/File:Wan_Shi_Tong%27s_Library_in_the_Spirit_World.png"
+   }
+  ]
+ },
+ "passagem-serpente": {
+  "wiki": "https://avatar.fandom.com/wiki/Serpent's_Pass",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/5/5d/Serpent%27s_Pass_entrance.png/revision/latest?cb=20140413234449",
+    "full": "https://static.wikia.nocookie.net/avatar/images/5/5d/Serpent%27s_Pass_entrance.png/revision/latest?cb=20140413234449",
+    "file": "https://avatar.fandom.com/wiki/File:Serpent%27s_Pass_entrance.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/89/Serpent.png/revision/latest?cb=20140413233812",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/89/Serpent.png/revision/latest?cb=20140413233812",
+    "file": "https://avatar.fandom.com/wiki/File:Serpent.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/41/View_of_the_Serpent%27s_Pass.png/revision/latest?cb=20251105002056",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/41/View_of_the_Serpent%27s_Pass.png/revision/latest?cb=20251105002056",
+    "file": "https://avatar.fandom.com/wiki/File:View_of_the_Serpent%27s_Pass.png"
+   }
+  ]
+ },
+ "floresta-wulong": {
+  "wiki": "https://avatar.fandom.com/wiki/Wulong_Forest",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a2/Wulong.png/revision/latest?cb=20130122083150",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a2/Wulong.png/revision/latest?cb=20130122083150",
+    "file": "https://avatar.fandom.com/wiki/File:Wulong.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/2/2a/Wulong_Forest_concept_art.png/revision/latest?cb=20130705094711",
+    "full": "https://static.wikia.nocookie.net/avatar/images/2/2a/Wulong_Forest_concept_art.png/revision/latest?cb=20130705094711",
+    "file": "https://avatar.fandom.com/wiki/File:Wulong_Forest_concept_art.png"
+   }
+  ]
+ },
+ "yu-dao": {
+  "wiki": "https://avatar.fandom.com/wiki/Yu_Dao",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/da/Overview_of_Yu_Dao.png/revision/latest?cb=20200810231731",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/da/Overview_of_Yu_Dao.png/revision/latest?cb=20200810231731",
+    "file": "https://avatar.fandom.com/wiki/File:Overview_of_Yu_Dao.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/bb/Yu_Dao_city_streets.png/revision/latest?cb=20200728163319",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/bb/Yu_Dao_city_streets.png/revision/latest?cb=20200728163319",
+    "file": "https://avatar.fandom.com/wiki/File:Yu_Dao_city_streets.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/de/Yu_Dao_smithy.png/revision/latest?cb=20200728164141",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/de/Yu_Dao_smithy.png/revision/latest?cb=20200728164141",
+    "file": "https://avatar.fandom.com/wiki/File:Yu_Dao_smithy.png"
+   }
+  ]
+ },
+ "cidade-republica": {
+  "wiki": "https://avatar.fandom.com/wiki/Republic_City",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a2/Overgrown_Republic_City.png/revision/latest?cb=20140730103051",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a2/Overgrown_Republic_City.png/revision/latest?cb=20140730103051",
+    "file": "https://avatar.fandom.com/wiki/File:Overgrown_Republic_City.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/84/Republic_City.png/revision/latest?cb=20150129093401",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/84/Republic_City.png/revision/latest?cb=20150129093401",
+    "file": "https://avatar.fandom.com/wiki/File:Republic_City.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/85/Republic_City_before_the_Cataclysm.png/revision/latest?cb=20261025010513",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/85/Republic_City_before_the_Cataclysm.png/revision/latest?cb=20261025010513",
+    "file": "https://avatar.fandom.com/wiki/File:Republic_City_before_the_Cataclysm.png"
+   }
+  ]
+ },
+ "zaofu": {
+  "wiki": "https://avatar.fandom.com/wiki/Zaofu",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/3/35/Zaofu.png/revision/latest?cb=20140726200554",
+    "full": "https://static.wikia.nocookie.net/avatar/images/3/35/Zaofu.png/revision/latest?cb=20140726200554",
+    "file": "https://avatar.fandom.com/wiki/File:Zaofu.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/86/Fall_of_Zaofu.png/revision/latest?cb=20260725122423",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/86/Fall_of_Zaofu.png/revision/latest?cb=20260725122423",
+    "file": "https://avatar.fandom.com/wiki/File:Fall_of_Zaofu.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/e0/Occupied_Zaofu.png/revision/latest?cb=20150407233432",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/e0/Occupied_Zaofu.png/revision/latest?cb=20150407233432",
+    "file": "https://avatar.fandom.com/wiki/File:Occupied_Zaofu.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/9/91/Zaofu_security_team.png/revision/latest?cb=20140804172327",
+    "full": "https://static.wikia.nocookie.net/avatar/images/9/91/Zaofu_security_team.png/revision/latest?cb=20140804172327",
+    "file": "https://avatar.fandom.com/wiki/File:Zaofu_security_team.png"
+   }
+  ]
+ },
+ "ellora": {
+  "wiki": "https://avatar.fandom.com/wiki/Ellora",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/d/de/Ellora.png/revision/latest?cb=20260818172235",
+    "full": "https://static.wikia.nocookie.net/avatar/images/d/de/Ellora.png/revision/latest?cb=20260818172235",
+    "file": "https://avatar.fandom.com/wiki/File:Ellora.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/4/4c/Ellora_city_center.png/revision/latest?cb=20260923015613",
+    "full": "https://static.wikia.nocookie.net/avatar/images/4/4c/Ellora_city_center.png/revision/latest?cb=20260923015613",
+    "file": "https://avatar.fandom.com/wiki/File:Ellora_city_center.png"
+   },
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/9/90/Ellora_from_above.png/revision/latest?cb=20261011192032",
+    "full": "https://static.wikia.nocookie.net/avatar/images/9/90/Ellora_from_above.png/revision/latest?cb=20261011192032",
+    "file": "https://avatar.fandom.com/wiki/File:Ellora_from_above.png"
+   }
+  ]
+ },
+ "ilhas-flutuantes": {
+  "wiki": "https://avatar.fandom.com/wiki/Seven_Havens",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "file": "https://avatar.fandom.com/wiki/File:Seven_Havens_from_space.png"
+   }
+  ]
+ },
+ "akasha": {
+  "wiki": "https://avatar.fandom.com/wiki/Akasha",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/a/a8/Akasha_delegation.png/revision/latest?cb=20261028215746",
+    "full": "https://static.wikia.nocookie.net/avatar/images/a/a8/Akasha_delegation.png/revision/latest?cb=20261028215746",
+    "file": "https://avatar.fandom.com/wiki/File:Akasha_delegation.png"
+   }
+  ]
+ },
+ "floresta-republica": {
+  "wiki": "https://avatar.fandom.com/wiki/Seven_Havens",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "file": "https://avatar.fandom.com/wiki/File:Seven_Havens_from_space.png"
+   }
+  ]
+ },
+ "montanha-da-pena": {
+  "wiki": "https://avatar.fandom.com/wiki/Feather_Mountain",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/e/e1/Feather_Mountain_delegation.png/revision/latest?cb=20261025201557",
+    "full": "https://static.wikia.nocookie.net/avatar/images/e/e1/Feather_Mountain_delegation.png/revision/latest?cb=20261025201557",
+    "file": "https://avatar.fandom.com/wiki/File:Feather_Mountain_delegation.png"
+   }
+  ]
+ },
+ "refugio-ilhas-do-fogo": {
+  "wiki": "https://avatar.fandom.com/wiki/Seven_Havens",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/67/Seven_Havens_from_space.png/revision/latest?cb=20261025093332",
+    "file": "https://avatar.fandom.com/wiki/File:Seven_Havens_from_space.png"
+   }
+  ]
+ },
+ "arquipelago-do-sul": {
+  "wiki": "https://avatar.fandom.com/wiki/Southern_Archipelago",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/6/6b/Southern_Archipelago.png/revision/latest?cb=20230114223254",
+    "full": "https://static.wikia.nocookie.net/avatar/images/6/6b/Southern_Archipelago.png/revision/latest?cb=20230114223254",
+    "file": "https://avatar.fandom.com/wiki/File:Southern_Archipelago.png"
+   }
+  ]
+ },
+ "montanhas-taihua": {
+  "wiki": "https://avatar.fandom.com/wiki/Taihua_Mountains",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/b/b7/Taihua_Mountains.png/revision/latest?cb=20230814005534",
+    "full": "https://static.wikia.nocookie.net/avatar/images/b/b7/Taihua_Mountains.png/revision/latest?cb=20230814005534",
+    "file": "https://avatar.fandom.com/wiki/File:Taihua_Mountains.png"
+   }
+  ]
+ },
+ "cordilheira-kolau": {
+  "wiki": "https://avatar.fandom.com/wiki/Kolau_Mountain_Range",
+  "fotos": [
+   {
+    "src": "https://static.wikia.nocookie.net/avatar/images/8/88/Kolau_Mountain_Range.png/revision/latest?cb=20130706155151",
+    "full": "https://static.wikia.nocookie.net/avatar/images/8/88/Kolau_Mountain_Range.png/revision/latest?cb=20130706155151",
+    "file": "https://avatar.fandom.com/wiki/File:Kolau_Mountain_Range.png"
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+name: Contribuição de desenvolvedor
+description: Enviada pelo modo desenvolvedor do site (só para desenvolvedores aprovados).
+title: "Contribuição de desenvolvedor"
+labels: ["contribuicao-dev"]
+body:
+  - type: textarea
+    id: posicoes
+    attributes:
+      label: Posições (JSON)
+      description: Preenchido automaticamente pelo botão "Enviar ao GitHub" do modo desenvolvedor.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: notas
+    attributes:
+      label: Notas (opcional)

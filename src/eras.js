@@ -1,4 +1,4 @@
-// Definições das três épocas e rótulos usados na interface.
+// Definições das três épocas (textos em português; traduções em public/i18n/).
 
 export const ERAS = [
   {
@@ -29,47 +29,19 @@ export const ERAS = [
     overlay: 'storms',
     summary:
       'Cerca de 225 anos depois de Korra, um Cataclismo derrubou as Quatro Nações. A humanidade sobrevive em sete refúgios isolados, cercados pelas Terras Duras e castigados por tempestades. Os gêmeos Pavi e Nisha, de Ellora, estão no centro da disputa sobre quem é o verdadeiro Avatar.',
-    sources: 'Avatar: Sete Refúgios (2026–). Série em exibição: informações e posições ainda podem mudar.',
-    unknown: [
-      'Montanha da Pena — governada pela imperatriz Yeshe, preserva as tradições dos Nômades do Ar; localização não revelada',
-      'Sétimo refúgio — ainda não revelado',
-    ],
+    sources: 'Avatar: Sete Refúgios (2026–). Série em exibição: informações e posições ainda podem mudar. Akasha, Montanha da Pena e o refúgio das Ilhas do Fogo estão em posições estimadas a partir da arte oficial dos sete refúgios vistos do espaço.',
   },
 ];
 
 export const eraById = (id) => ERAS.find((e) => e.id === id);
 
+// Nomes das nações, tipos etc. ficam no dicionário (chaves nation.*, type.*).
 export const NATION = {
-  earth: { label: 'Reino da Terra', color: '#5c8040', text: '#34502a' },
-  fire: { label: 'Nação do Fogo', color: '#b03426', text: '#7a2418' },
-  water: { label: 'Tribos da Água', color: '#3868a0', text: '#22507e' },
-  air: { label: 'Nômades do Ar', color: '#d69634', text: '#875a12' },
-  republic: { label: 'República Unida', color: '#96683c', text: '#6a4424' },
-  havens: { label: 'Sete Refúgios', color: '#d4aa48', text: '#7a5a14' },
-  none: { label: 'Sem nação', color: '#8a7a66', text: '#4a3a2a' },
-};
-
-export const TYPE_LABEL = {
-  capital: 'Capital',
-  city: 'Cidade',
-  village: 'Vila',
-  temple: 'Templo',
-  haven: 'Refúgio',
-  landmark: 'Lugar notável',
-  spirit: 'Lugar espiritual',
-  region: 'Região',
-  water: 'Águas',
-};
-
-export const CONF_LABEL = {
-  alta: 'Posição confiável',
-  media: 'Posição aproximada',
-  baixa: 'Posição estimada',
-};
-
-export const CANON_LABEL = {
-  serie: 'Série animada',
-  quadrinhos: 'Quadrinhos',
-  livros: 'Livros',
-  rumor: 'Especulação',
+  earth: { color: '#5c8040', text: '#34502a' },
+  fire: { color: '#b03426', text: '#7a2418' },
+  water: { color: '#3868a0', text: '#22507e' },
+  air: { color: '#d69634', text: '#875a12' },
+  republic: { color: '#96683c', text: '#6a4424' },
+  havens: { color: '#d4aa48', text: '#7a5a14' },
+  none: { color: '#8a7a66', text: '#4a3a2a' },
 };

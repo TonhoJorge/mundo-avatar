@@ -1,10 +1,14 @@
 import '@fontsource/marcellus-sc/latin-400.css';
 import '@fontsource/alegreya/latin-400.css';
+import '@fontsource/alegreya/cyrillic-400.css';
 import './style.css';
 import { eraById } from './eras.js';
 import { BASE, CLICKABLE_LAYERS, createMap, showEra, setLabelsVisible, setSelection, placesToGeoJSON } from './map.js';
-import { renderEraNav, updateEraNav, showPlace, showEraInfo, closePanel, setupSearch, toast, showFatal } from './ui.js';
-import { readQuery, writeQuery, storage, getJSON, formatCoord, prefersReducedMotion, copyText } from './util.js';
+import { renderEraNav, updateEraNav, showPlace, showEraInfo, showSheet, closePanel, setupSearch, toast, showFatal } from './ui.js';
+import { createCommunity } from './community.js';
+import { t, LANGS, AUTO_LANGS, initialLang, loadLang, currentLang, localizePlace, applyStatic, autoTranslateAvailable } from './i18n.js';
+import { setBuildingsVisible, updateBuildings } from './buildings.js';
+import { readQuery, writeQuery, storage, getJSON, formatCoord, prefersReducedMotion, copyText, h } from './util.js';
 
 const PREFS_KEY = 'mundo-avatar:prefs';
 const EDITS_KEY = 'mundo-avatar:edicoes';
@@ -16,7 +20,9 @@ const state = {
   panel: null, // 'place' | 'era' | null
   base: [],
   edits: storage.get(EDITS_KEY, {}),
-  prefs: { labels: true, clouds: false, legacy: true, editor: false, era: null, ...storage.get(PREFS_KEY, {}) },
+  prefs: { labels: true, buildings: true, clouds: false, legacy: true, editor: false, era: null, ...storage.get(PREFS_KEY, {}) },
+  photos: {},
+  community: null,
   map: null,
   loaded: false,
   editor: null,
@@ -27,13 +33,15 @@ const savePrefs = () => storage.set(PREFS_KEY, state.prefs);
 
 /** Catálogo efetivo (com as edições locais aplicadas quando o editor está ligado). */
 function places() {
-  if (!state.prefs.editor) return state.base;
-  return state.base.map((p) => (state.edits[p.id] ? { ...p, lon: state.edits[p.id][0], lat: state.edits[p.id][1] } : p));
+  const base = state.base.map(localizePlace);
+  if (!state.prefs.editor) return base;
+  return base.map((p) => (state.edits[p.id] ? { ...p, lon: state.edits[p.id][0], lat: state.edits[p.id][1] } : p));
 }
 const byId = (id) => places().find((p) => p.id === id);
 
 function refreshPlaces() {
   state.map.getSource('lugares')?.setData(placesToGeoJSON(places(), state.era, { legacy: state.prefs.legacy }));
+  updateBuildings(state.map, places(), state.era);
 }
 
 function panelPadding() {
@@ -55,6 +63,8 @@ function select(id, { fly = false } = {}) {
   state.panel = 'place';
   setSelection(state.map, id);
   showPlace(p, state.era, {
+    photos: state.photos[id],
+    extra: state.community?.placeSection(p),
     onEra: (era) => setEra(era),
     onFly: () => flyTo(p),
     onShare: () => share(p),
@@ -90,7 +100,7 @@ function setEra(era) {
 
 async function share(p) {
   const url = `${location.origin}${location.pathname}?era=${state.era}&lugar=${encodeURIComponent(p.id)}${location.hash}`;
-  toast((await copyText(url)) ? 'Link copiado' : 'Não foi possível copiar o link');
+  toast((await copyText(url)) ? t('toast.linkCopied') : t('toast.linkFailed'));
 }
 
 async function setEditor(on) {
@@ -137,6 +147,7 @@ function setupLayersMenu() {
     });
   };
   bind('labels', (v) => setLabelsVisible(state.map, v));
+  bind('buildings', (v) => setBuildingsVisible(state.map, v));
   bind('clouds', () => showEra(state.map, state.era, state.prefs.clouds));
   bind('legacy', refreshPlaces);
   bind('editor', (v) => setEditor(v));
@@ -151,7 +162,7 @@ function setupPointer(map) {
     requestAnimationFrame(() => {
       const ev = pending;
       pending = null;
-      coords.textContent = formatCoord(ev.lngLat.lng, ev.lngLat.lat);
+      coords.textContent = formatCoord(ev.lngLat.lng, ev.lngLat.lat, t('coord.letters'));
       coords.hidden = false;
       const hit = map.queryRenderedFeatures(ev.point, { layers: CLICKABLE_LAYERS }).length > 0;
       map.getCanvas().style.cursor = hit ? 'pointer' : '';
@@ -166,13 +177,52 @@ function setupPointer(map) {
   });
 }
 
+function setupLanguage() {
+  const sel = $('#idioma');
+  const opt = (l) => h('option', { value: l.code, selected: l.code === currentLang() }, l.name);
+  sel.append(...LANGS.map(opt));
+  if (autoTranslateAvailable() || AUTO_LANGS.some((l) => l.code === currentLang())) {
+    sel.append(h('optgroup', { label: t('lang.auto') }, AUTO_LANGS.map(opt)));
+  }
+  sel.addEventListener('change', async () => {
+    const code = sel.value;
+    sel.disabled = true;
+    if (AUTO_LANGS.some((l) => l.code === code)) toast(t('lang.downloading'));
+    try {
+      const got = await loadLang(code, BASE, { allowDownload: true, onProgress: (f) => toast(`${t('lang.downloading')} ${Math.round(f * 100)}%`) });
+      if (got !== code) toast(t('lang.autoFailed'));
+    } catch (err) {
+      console.error(err);
+    }
+    location.reload(); // recomeça com tudo no novo idioma
+  });
+}
+
 async function boot() {
+  try {
+    await loadLang(initialLang(), BASE);
+  } catch (err) {
+    console.error(err);
+    await loadLang('pt', BASE);
+  }
+  applyStatic();
+  setupLanguage();
+  state.community = createCommunity({
+    base: BASE,
+    showSheet: (...c) => { state.selected = null; state.panel = 'community'; if (state.map) setSelection(state.map, ''); writeQuery({ lugar: null }); showSheet(...c); },
+    toast,
+    getEra: () => state.era,
+    onSelectPlace: (id) => select(id, { fly: true }),
+    placeName: (id) => byId(id)?.name ?? id,
+  });
+  $('#btn-conta').addEventListener('click', () => state.community.openAccount());
+  getJSON(`${BASE}data/photos.json`).then((p) => { state.photos = p; }).catch(() => {});
   let meta, data;
   try {
     [meta, data] = await Promise.all([getJSON(`${BASE}tiles/meta.json`), getJSON(`${BASE}data/places.json`)]);
   } catch (err) {
     console.error(err);
-    showFatal('Não foi possível carregar o mapa. Se você administra o site, gere os tiles com "npm run tiles".');
+    showFatal(t('error.load'));
     return;
   }
   state.base = data.places;
@@ -186,20 +236,22 @@ async function boot() {
 
   let map;
   try {
-    map = state.map = createMap({ container: 'mapa', meta, era: state.era });
+    map = state.map = createMap({ container: 'mapa', meta, era: state.era, attribution: t('map.attribution') });
   } catch (err) {
     console.error(err);
-    showFatal('Seu navegador não conseguiu iniciar o globo 3D (WebGL indisponível ou desativado).');
+    showFatal(t('error.webgl'));
     return;
   }
   map.on('load', () => {
     state.loaded = true;
     showEra(map, state.era, state.prefs.clouds);
     setLabelsVisible(map, state.prefs.labels);
+    setBuildingsVisible(map, state.prefs.buildings);
     refreshPlaces();
     writeQuery({ era: state.era });
     if (state.prefs.editor) setEditor(true);
     if (q.place && byId(q.place)) select(q.place, { fly: !hadPosition });
+    else if (new URLSearchParams(location.search).has('code')) state.community.openAccount(); // volta do login
     map.once('idle', () => { document.body.dataset.pronto = '1'; }); // usado pelo teste automático
   });
 

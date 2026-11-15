@@ -1,0 +1,19 @@
+name: Pedido de acesso de desenvolvedor
+description: Peça para entrar na trilha de desenvolvedores do Mundo Avatar (aprovação automática).
+title: "Pedido de acesso de desenvolvedor"
+labels: ["pedido-dev"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A aprovação é **automática** e usa só os dados públicos da sua conta do GitHub:
+
+        - conta com pelo menos **6 meses**;
+        - pelo menos **30 contribuições** nos últimos **90 dias** (podem ser no mesmo dia);
+        - pelo menos **1 pull request aceito** num projeto de outra pessoa.
+
+        Se faltar algo, o robô mostra o quê. Para tentar de novo depois, é só reabrir este pedido.
+  - type: textarea
+    id: sobre
+    attributes:
+      label: Como você quer contribuir? (opcional)

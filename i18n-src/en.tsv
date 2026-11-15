@@ -1,0 +1,423 @@
+aabaf39	Avatar World
+d27da5a	Interactive globe of the Avatar world in three eras: Aang, Korra, and Pavi and Nisha. Non-profit fan project.
+72d8171	Avatar World globe
+eed5257	Non-profit fan project · Avatar © Nickelodeon/Paramount
+64bf6c0	The map could not be loaded. If you run this site, generate the tiles with "npm run tiles".
+bd6d718	Your browser could not start the 3D globe (WebGL unavailable or disabled).
+cadd46e	Search places…
+8861940	Search results
+3696d2b	No places found
+0ef88a5	Map era
+e9f6d56	About the era
+7d752b6	Layers
+3cc52f9	Community
+0094338	Language
+983ef77	Place names
+0103729	3D cities
+36662cd	(zoom in and tilt)
+ffa9f9e	Clouds and storms
+ae0e4da	Places of the old world
+6afa3d2	(Pavi and Nisha era)
+69e5ed8	Developer mode
+3bc28f9	(edit and calibrate positions)
+e1f57a9	Automatic browser translation
+9be0fad	Preparing the translation…
+bb271b6	Your browser cannot translate into this language; showing English.
+fdd43a9	Close panel
+8027534	Images: Avatar Wiki (Fandom) · © Nickelodeon/Paramount ·
+fc359a8	see source page
+8afd789	A place of the old world. Its situation in this era has not been revealed in the series yet.
+c772729	This place does not appear in this era.
+a515b37	Also: {names}
+d27e85e	See in another era
+9fd964b	Position
+d8ecad8	Source
+2b2eeda	Appears in
+6f72b78	Center
+0076334	Copy link
+8540569	Link copied
+f5a45d6	Could not copy the link
+13c1d20	NSEW
+e63f82b	About this era
+b4ffdda	Not on the map yet
+8c17f16	Sources
+47e8a0d	Non-profit fan project. Avatar: The Last Airbender, The Legend of Korra and Avatar: Seven Havens are trademarks of Nickelodeon/Paramount. The map painting is procedural and original (unless the site administrator uses other art); positions marked as estimated are approximations.
+2bd8d26	Capital
+1a32850	City
+5f4d475	Village
+af00a53	Temple
+3b1cf74	Haven
+a72c928	Landmark
+d72d78e	Spiritual place
+22febcc	Region
+fd60fac	Waters
+08422a2	Old world
+bbb2d04	Earth Kingdom
+5d00136	Fire Nation
+d36f5d7	Water Tribes
+bfa3979	Air Nomads
+48c88ff	United Republic
+d099f8c	Seven Havens
+66d8c63	No nation
+61a9920	Reliable position
+326fc4c	Approximate position
+2eb8244	Estimated position
+cf9e76e	Animated series
+0c3840b	Comics
+57006b8	Novels
+c26805a	Speculation
+57c10ce	Drag the markers to fix positions. Click the map to copy a coordinate. Changes stay only in this browser until you send or export them.
+0c37232	Places edited:
+11a56ab	Send to GitHub
+0c86290	Export places.json
+6bd9706	Discard edits
+7cdb5a2	Discard all local edits?
+148cf98	Too many edits for one submission; export places.json and open a pull request.
+ebd61d1	No edits to send
+f8fb47c	Developer contribution: {n} position(s)
+6f6f267	Submissions through GitHub are accepted from approved developers.
+4692f62	Request developer access
+c14d606	Calibration overlay
+61312c4	Load a map image (flat projection, whole world) and align its bounds in degrees.
+3a8505f	West
+f36bb3f	South
+4559336	East
+5eeed3d	North
+7c0996c	Opacity
+4ac3b31	Apply
+4bd4ea8	Remove
+cfd6810	Choose an image first
+e06db75	Invalid bounds
+f7a8cb5	Could not read the image
+b0f41a3	Failed to create the overlay
+25b8a50	Overlay applied
+8e67be3	Copied: lon, lat = {text}
+5f070f8	Information
+1e916f0	Correction
+0f5e4f0	Photo
+9a6f17c	Refutation justification
+9f287df	Refutation
+0f64573	Community contributions
+bf494db	The contributions space is being prepared and opens soon. The rules are already published.
+bca482b	Loading…
+343e099	Community rules
+a7ec17c	Ombudsman
+e9128d5	My history
+3ffa2a9	Sign out
+7573ba8	Sign in
+8c56921	Sign in with {provider}
+6ae5050	You need to sign in to contribute. Everyone starts with credibility {cred_start} (from 0 to {cred_max}).
+5e46739	Or get a sign-in link by email
+09ed4ea	Send link
+fffa1ca	Link sent. Open your email to sign in.
+72768f4	Public name
+93bf2d3	Save
+d569ac8	Saved
+e1d9cb1	Credibility (0 to 10)
+85d8211	Public profile
+080ae15	Member since {date}
+4c838c3	Each row shows the current effect on credibility, which changes if the vote changes.
+9cd63d0	When
+6639f5f	What
+0ab3a08	Votes
+2ec2e9c	Effect
+24218f5	No contributions yet.
+9abeaf0	Report harassment
+273ba18	Account banned.
+3d1a70d	This account was banned by the ombudsman and can no longer contribute or vote.
+3c41e71	Your credibility has reached zero: you can no longer contribute.
+c7557f7	Credibility below {limit2_below}: one contribution every {limit2_days} days.
+ea408cd	Credibility below {limit1_below}: one contribution every {limit1_days} days.
+2a3d5dc	You can contribute freely. Voting requires credibility {vote_min_cred} or more.
+c294f5f	You can contribute and vote freely.
+d6b6a4c	Nobody has contributed about this place yet. Be the first!
+999dd72	Refuted by the community ({n})
+bc113f6	Sign in to contribute or vote.
+586a1f8	Sign in to file a report.
+bd9c26b	Approve
+c44289c	Refute
+853043a	Why is it wrong? A justification is required and can also be voted on.
+dcf6652	Refute with this justification
+dc14d07	You approved.
+d6b0bbb	You refuted.
+3a3f71d	Withdraw vote
+5c9d526	Approved by the majority
+4801a94	Tie: it stays up
+fab3c9f	Refuted by the majority
+ceec918	New contribution
+fbddc8f	Only in this era
+cd2d2e8	All eras
+d7fe8e8	What do you know about this place? Cite the episode or source if you can.
+9df643f	Publish
+6d7b43c	Published! It stays up as long as it is not refuted.
+89f0264	Your credibility: {c}.
+b8b7b17	Use the ombudsman if someone is refuting your contributions to harass you. The analysis is automatic and uses only public data from the last {perse_window_days} days.
+fbe77ad	Who is harassing you?
+436331f	Type the public name
+73974f2	Tell us what happened (kept private)
+34602c3	Describe the case
+f7c770c	Send report
+50f3a76	Pick the person from the list
+09a28ec	Harassment confirmed: the account was banned and its refutations against you were annulled.
+c754b35	Report archived: the data did not confirm a harassment pattern.
+7d5f279	Public results
+a6b78ee	No reports so far.
+abdd60e	Confirmed
+692ec2b	Archived
+3d77df8	{on_reporter} refutations against the reporter, out of {total_refutes} in total; {reverted} reversed
+a60f653	These rules apply to everyone and are enforced automatically by the database: nobody, not even the administrators, can apply them differently without leaving a trace. The numbers below are read live from the configuration.
+dd85154	Credibility
+6b8a123	You need to sign in to contribute. Credibility goes from 0 to {cred_max} and everyone starts with {cred_start}.
+1846c43	Contribution approved by the majority: +{gain_approved}. Just posting earns no points.
+110ac8b	Contribution refuted by the majority: −{loss_refuted}. If the refutation is reversed, the points come back.
+9f4fa28	Whoever refutes must write a justification. The justification can also be approved or refuted and is worth ±{gain_just} to its author.
+a2a2c3d	Credibility is always recalculated from the current result of the votes, so anyone can check the math.
+c1cced3	Voting
+0d4c1a4	Simple majority wins; for now, a single vote is enough.
+0dd8a7e	The result always follows the current majority. In a tie (including 0 to 0), the contribution stays up, but it only earns points when there are more approvals than refutations.
+dffd4b5	A refutation only counts while its justification has not been refuted by the majority (replies and counter-replies follow the same rule).
+c62f199	Nobody votes on what they wrote.
+8fc3ddb	To vote you need credibility {vote_min_cred} or more and an account at least {vote_min_days} days old.
+0ff9bf9	Limits
+365e41c	Zero credibility: can no longer contribute.
+1bf707d	Ombudsman (harassment)
+a02be28	Anyone can report another person for harassment. The system cross-checks the data from the last {perse_window_days} days and confirms harassment if all three conditions are true at the same time:
+7107e12	Focus on one person: the accused refuted at least {perse_min_refutes} of the reporter's contributions.
+b81d735	Disproportion: more than half of all the accused's refutations in that period were against the reporter.
+863fe98	Unfair refutations: most of those refutations were reversed by the community.
+573f35b	If confirmed: the accused's account is banned and all their refutations against the reporter are annulled (the lost credibility comes back).
+b09b8f5	If not confirmed: the report is archived and the reporter sees which numbers fell short.
+07e957c	Anyone with {report_strikes} archived reports in a row cannot file reports for {report_block_days} days.
+d1abf45	Developers
+5898d4f	A separate track, without credibility: the request is made through GitHub and approved automatically.
+3406347	Requirements: a GitHub account at least 6 months old and at least 30 contributions in the last 90 days (they can be on the same day).
+66d72b3	And at least 1 merged pull request in someone else's project.
+b2740a6	Anyone who doesn't qualify sees exactly what was missing and can ask again later.
+1e0843d	Transparency
+cb2f514	Every profile has a public history with each gain and loss and the reason.
+972006b	The result of every report is public, with the numbers used (the text and the reporter stay private).
+6a6f668	The code of the site and of the rules is open on GitHub.
+e3fabfa	Something went wrong. Please try again.
+73464e7	Sign in to do this.
+b25aa58	This account was banned by the ombudsman.
+94eb84b	Zero credibility: you can no longer contribute.
+b6ad36f	Credibility below {limit1_below}: only one contribution every {limit1_days} days.
+36ace5a	Credibility below {limit2_below}: only one contribution every {limit2_days} days.
+715ee87	You cannot vote on what you wrote.
+a6b0db5	Voting requires credibility {vote_min_cred} or more.
+4fcc9a3	Accounts less than {vote_min_days} days old cannot vote yet.
+049c043	Write a justification (at least 10 characters).
+ad82780	Not found.
+674d9d1	You cannot report yourself.
+44820f5	You had {report_strikes} archived reports in a row and are temporarily unable to file reports.
+609d925	The largest nation in the world, covering almost the entire Great Continent. Diverse and decentralized, with local kings and governors under the authority of Ba Sing Se.
+5ed7906	Avatar: The Last Airbender
+a927fc3	The Legend of Korra
+3986ecc	At war with the Fire Nation for a hundred years; it lost territory in the west to the Fire Nation colonies.
+412538f	Shaken by the fall of the Earth Queen; Kuvira reunifies it by force as the Earth Empire, until she is stopped by Korra.
+533c5c5	Volcanic archipelago west of the Great Continent, ruled by the Fire Lord from the Capital.
+e2ed816	Industrial and military power waging the Hundred Year War since Sozin's attack on the Air Nomads.
+9ef8ae0	A nation at peace, ruled by Fire Lord Izumi, Zuko's daughter.
+56ce211	Northern Water Tribe
+0acad2f	Northern polar territory, home of the largest of the Water Tribes.
+cf6e0ab	Southern Water Tribe
+25680b0	Southern polar territory, home of the Southern Water Tribe.
+8ab5670	Fire Nation colonies
+d4fb51a	A strip in the northwest of the Great Continent colonized by the Fire Nation during the war.
+7f76b40	Mixed towns of Fire and Earth people, some more than a century old.
+d5894d7	United Republic of Nations
+e16df67	The former colonies form the United Republic of Nations, founded by Aang and Zuko after the Harmony Restoration Movement.
+e35df07	Harshlands
+b687795	Name given to the devastated world outside the havens, battered by storms after the Cataclysm.
+d0d2c66	Harshlands
+9531dc9	Avatar: Seven Havens
+411253f	Si Wong Desert
+c05b9bc	A vast desert in the heart of the Earth Kingdom, crossed by sandbenders on sand sailers.
+4f634cf	Appa is captured here by sandbenders.
+8bd492f	Foggy Swamp
+71ffef5	A living swamp in the southwest of the Earth Kingdom, connected by the roots of a single giant tree. Home to an isolated tribe of waterbenders.
+8a679fc	Foggy Swamp
+6acad21	LoK Book 4
+c170110	Team Avatar gets lost here and has visions of loved ones.
+04c4100	Toph Beifong lives in the swamp as a hermit and helps Korra recover.
+d2b389a	Mo Ce Sea
+f972fae	Sea between the Fire Nation and the Great Continent.
+006777a	Yue Bay
+22f8ea6	Bay where Republic City was built; named after Princess Yue.
+4632c7d	Eastern Lake
+497239e	Lake crossed by the ferries that carry refugees to Ba Sing Se.
+fe12e52	Full Moon Bay
+39cf327	Hidden port in the center of the Earth Kingdom, from which the refugee ferries leave for Ba Sing Se.
+3bc56dd	Chameleon Bay
+3ab07f1	Large bay on the east coast of the Great Continent. Identification on the map is estimated.
+26c20b7	ATLA Book 2
+f288ea4	Meeting point of the Southern Water Tribe fleet led by Hakoda.
+6758cdd	Southern Air Temple
+c8fe91b	One of the four Air Nomad temples, in the Patola Mountain Range, in the Southern Archipelago.
+cffca19	LoK Book 2
+0553a8e	Home of Aang and Monk Gyatso. Abandoned since Sozin's attack a hundred years earlier; Aang returns here and learns the fate of his people.
+95a9601	In ruins
+f46e722	Kept by the Air Acolytes and visited by Tenzin's family.
+9e3f072	Northern Air Temple
+60700d9	Air Nomad temple at the far west end of the Taihua Mountains, in the north of the Great Continent.
+690412d	LoK Book 3
+71c5371	Occupied by refugees led by the Mechanist, who filled it with steam-powered contraptions.
+5bbe084	Seat of the new Air Nation: Tenzin trains the new airbenders here, until the Red Lotus attack.
+eac8490	Western Air Temple
+0d8149f	A temple built upside down on a cliff face, in a mountain range north of the Fire islands.
+8bf26dc	Refuge of Team Avatar after the Day of Black Sun; this is where Zuko joins the group.
+24d8289	Abandoned
+b61bca6	Eastern Air Temple
+6a12782	Ancient temple of the Air Nomad nuns, in a mountain range southeast of the Earth Kingdom.
+fe09e88	Aang trains with Guru Pathik to master the Avatar State by opening his chakras.
+9604521	Air Temple Island
+409c95a	Island in Yue Bay, facing Republic City.
+0ac2d96	Home of Tenzin, his family and the Air Acolytes; where Korra learns airbending.
+70c3fbf	Fire Nation Capital
+86ad187	A capital built inside the crater of an extinct volcano, seat of the Royal Palace.
+8020b9e	Capital City
+b65319b	Target of the invasion on the Day of Black Sun; stage of the final Agni Kai between Zuko and Azula.
+dc158e1	Seat of Fire Lord Izumi's government.
+2fcb9d5	Ember Island
+22741d9	Summer resort island of the Fire nobility, with beaches and the royal family's beach house.
+d673798	Team Avatar hides here and watches the play by the Ember Island Players.
+4a5c786	Crescent Island
+47f83dc	Volcanic island in the east of the Fire Nation, home of Avatar Roku's Fire Temple.
+4a03f46	Aang speaks with Avatar Roku on the winter solstice; the temple is destroyed by the eruption.
+90506ee	Roku's island
+be32a14	Avatar Roku's home island, in the east of the Fire Nation.
+c64ff4d	Devastated by an eruption about 70 years ago; Roku died trying to contain it.
+3f066fd	Destroyed
+9911793	Boiling Rock
+3020729	Maximum-security prison on an island in the middle of a boiling lake.
+f1b7ca4	Boiling Rock
+e6b5446	Sokka and Zuko break into the prison to rescue Hakoda and Suki.
+f6c5654	Sun Warriors' ancient city
+ba862e2	Ancient city, in the northern islands of the Fire Nation, of the civilization that learned firebending from the dragons.
+f097b5d	Zuko and Aang meet the dragons Ran and Shaw and rediscover the true meaning of fire.
+18b9254	Fire Fountain City
+6c655a7	Port city with an enormous fire-breathing fountain statue.
+1f4b349	Toph and Sokka run scams here until they end up on wanted posters.
+1e568a2	Shu Jing
+ffa723e	Fire Nation island.
+8033318	Katara confronts Yon Rha, the man responsible for her mother's death.
+78b9603	Agna Qel'a
+226f991	City of ice and canals, capital of the Northern Water Tribe.
+6dbefc8	Withstands Admiral Zhao's siege; Princess Yue becomes the Moon Spirit.
+6d0faae	Ruled by Unalaq and later by Desna and Eska.
+e80e632	Spirit Oasis
+a035435	Warm sacred pond where Tui and La, the Moon and Ocean spirits, swim as koi fish.
+6113964	Northern spirit portal
+e403c8f	Passage between the physical world and the Spirit World at the North Pole.
+89f4343	Opened by Korra at the end of Book 2.
+329004b	People of the South Pole.
+9d4163d	Katara and Sokka's small village, where Aang is found in an iceberg.
+a89c787	It grew into a port city; home of Korra and stage of the Water Tribe Civil War.
+bca0c7c	Southern spirit portal
+2c056d7	Passage to the Spirit World at the South Pole, surrounded by the Spirit Wilds.
+ca7270f	Reopened by Korra during Harmonic Convergence.
+7850428	Ba Sing Se
+7cc528d	Capital of the Earth Kingdom, surrounded by concentric walls.
+ba1aae6	Impenetrable City
+82a588b	LoK Books 3 and 4
+8b5ecad	Secretly controlled by the Dai Li; falls to Azula at the end of Book 2 and is liberated by the Order of the White Lotus.
+fa0b84e	Earth Queen Hou-Ting is killed by Zaheer; the city later passes to Kuvira's Earth Empire.
+63e1881	New Ba Sing Se
+a958420	A haven in the northeast of the Great Continent, built where the old Earth Kingdom capital stood; its name preserves its ties to the Old World. It values old traditions and customs. Also called "New Ba".
+c25e757	Lake Laogai
+a7672da	Lake inside the walls of Ba Sing Se.
+72cfbc5	Hides the Dai Li's secret base, where Appa was held prisoner.
+eb90776	Omashu
+23fbcb0	A great city built on a mountain of the Kolau Mountain Range, in the southwest of the Earth Kingdom; famous for its delivery chutes.
+448fb42	Ruled by the eccentric King Bumi; occupied by the Fire Nation and renamed New Ozai, until it is freed during the eclipse.
+73f62b3	Cave of Two Lovers
+64bdd32	Underground labyrinth created by Oma and Shu, the first earthbenders, giving access to Omashu.
+9704efb	Gaoling
+3b99e68	City in the south of the Earth Kingdom, home of the wealthy Beifong family.
+e3f7a67	Toph's hometown, where she secretly fought in the Earth Rumble tournament.
+55a9b47	Kyoshi Island
+62741fd	Island created by Avatar Kyoshi when she separated her homeland from the mainland; home of the Kyoshi Warriors.
+9c98445	Team Avatar meets Suki and the Kyoshi Warriors.
+66f090b	Chin Village
+75dda08	Coastal village that celebrates "Avatar Day".
+67069c2	Aang is put on trial for Kyoshi's alleged crime against Chin the Conqueror.
+51f78b8	Senlin Village
+6aa564f	Village at the edge of the forest, in the south of the former colonies (later the United Republic), haunted by the spirit Hei Bai.
+ba6dc2d	Aang calms Hei Bai and makes his first journey to the Spirit World.
+ee795b2	Makapu Village
+3374801	Village in a valley at the foot of a volcano, in the northeast of the former colonies (later the United Republic); home of the fortuneteller Aunt Wu.
+9c5d480	Aang and Katara save the village from an eruption.
+a637930	The Great Divide
+036f727	The largest canyon in the world.
+e0a8c6a	Aang guides two rival tribes across the canyon.
+8d34fdf	Misty Palms Oasis
+33adb27	Run-down oasis on the edge of the Si Wong Desert.
+8d655d5	Team Avatar meets Professor Zei, who is searching for the lost library.
+8c36864	Wan Shi Tong's Library
+60799ca	Library of the spirit of knowledge, hidden in the desert sands.
+0ee7898	Sokka discovers the date of the eclipse; the library sinks into the sand and returns to the Spirit World.
+0c5c7c3	The Serpent's Pass
+7a9e848	Narrow strip of land in the northeast of the Earth Kingdom, between the Eastern Lake and the sea: a dangerous route to Ba Sing Se.
+170e45f	Aang faces the sea serpent that guards the pass.
+43e15f1	Wulong Forest
+9721b24	Forest on the west coast of the former colonies (later the United Republic).
+528f901	Site of the final battle between Aang and Ozai during Sozin's Comet.
+c9af3df	Yu Dao
+302b5b1	The oldest Fire Nation colony.
+9b47609	Center of the Harmony Restoration Movement crisis, right after the war.
+cbb7d58	Republic City
+cf58242	Capital of the United Republic of Nations, a metropolis where people of every nation live.
+f5f3361	Main setting of The Legend of Korra. After the battle against Kuvira, a spirit portal appears in the city center.
+5817484	Zaofu
+fd7abe3	Metal city founded by Suyin Beifong, protected by petal-shaped domes.
+cffd596	Home of the Metal Clan; taken by Kuvira in Book 4.
+c617764	Ellora
+1f4ccac	Main haven of the series and home of the twins Pavi and Nisha.
+90203c0	Elora
+1c274be	Haven of Wind and Sand
+2d26661	Cosmopolitan metropolis of over a million people in the southeast of the Great Continent, laid out as an octagonal mandala. A system of narrow canyons protects it from the sandstorms and tornadoes of the Harshlands.
+3e0f308	Floating Islands
+20a26dd	A haven built on the water, near the coast.
+08e96a7	Northeast of Ellora, where Chameleon Bay used to be. The exact position of the islands in the bay is an estimate. Explored in Book 2.
+e50a9ac	Akasha
+ea1dd08	A haven of the Great Continent known for its technical skill: it survives with technologies from before the Cataclysm.
+23d40c0	Neighbor of the Lost Haven. Its position on the map is an estimate: the series has not shown where it is yet.
+6544b47	Republic Forest
+07dc140	The "Lost Haven", which cut off contact with the rest of the world.
+06a3694	Lost Haven
+21d2f29	Probably in the former territory of the United Republic; official images from the series show Republic City overgrown with vegetation. Its position on the map is an estimate.
+aa0003d	Southern Archipelago
+a10f2fc	Mountainous southern islands, traditional territory of the Air Nomads, home to the Patola Mountain Range and Whaletail Island.
+9c2a7a0	Taihua Mountains
+a3f817c	A great mountain chain in the north of the Great Continent, from south of Ba Sing Se to the Northern Air Temple.
+87d52e8	Kolau Mountain Range
+e96307a	Mountain range in the southwest of the Earth Kingdom, home to Omashu and the Cave of Two Lovers; considered the birthplace of earthbending.
+ee2d10d	Aang era
+e5f3d44	Aang
+ca9b082	99–100 AG
+34f8a75	The Hundred Year War is coming to an end. The Fire Nation rules colonies in the west of the Earth Kingdom, and the Air Nomads were wiped out a century ago. Aang, the last airbender, awakens from an iceberg and must master the four elements before Sozin's Comet.
+8303653	Avatar: The Last Airbender (2005–2008) and the sequel comics.
+599fc6f	Korra era
+fd727c4	Korra
+8cb833f	170–174 AG
+364784a	Seventy years after the war, the former colonies form the United Republic of Nations, with modern Republic City. Korra reopens the spirit portals, faces the Red Lotus and stops Kuvira's Earth Empire.
+71575e4	The Legend of Korra (2012–2014) and the sequel comics.
+db2c3cd	Pavi and Nisha era
+a22a922	Pavi and Nisha
+126dd5c	≈ 399 AG
+2bc3dd2	About 225 years after Korra, a Cataclysm brought down the Four Nations. Humanity survives in seven isolated havens, surrounded by the Harshlands and battered by storms. The twins Pavi and Nisha, from Ellora, are at the center of the dispute over who is the true Avatar.
+7142d7e	Avatar: Seven Havens (2026–). Series currently airing: information and positions may still change.
+6d96dce	Feather Mountain — ruled by Empress Yeshe, it preserves the traditions of the Air Nomads; location not revealed
+6f839ec	Seventh haven — not revealed yet
+3bbc787	A haven of the Great Continent known for its technical skill: it survives with technologies from before the Cataclysm, such as motor vehicles.
+8b224fb	The series only says it is on the Great Continent. The position is an estimate: Akasha should be the blue haven (the color of Ikaika's clothes), which the opening shows on the west coast of the continent. The fan theory that it is the former Zaofu does not match the official art, because Zaofu was inland in the southwest.
+7492b8e	The "Lost Haven", which isolated itself from the rest of the world long before 399 AG. The Faceless believe there are no storms there and that benders and non-benders live in peace.
+e91bd20	The violet haven, in the northwest of the Great Continent, roughly where Republic City used to be. The city appears overgrown with vegetation in the series' official images.
+ab55f7d	Feather Mountain
+8600cf8	A haven ruled by Empress Yeshe, which preserves the traditions of the Air Nomads: arrow tattoos, flying bison and voluntary service by benders.
+4b29d91	Feather Mountain
+f894b9e	The series has not said where it is yet. The position is an estimate: it should be the green haven (the color of Yeshe's clothes), which the opening shows in the southwest of the Great Continent. Fans bet it is where Omashu used to be.
+7e90bd6	Fire Islands Haven
+c1ed92e	The seventh haven, whose name has not been revealed yet. It is in the former Fire Islands and is the most isolated of all.
+c808dfe	The indigo haven. The series has only shown that it is in the Fire Islands. It is marked on the former Ember Island, which is the fans' bet, but the exact island has not been revealed.
+6538b65	Avatar: Seven Havens (2026–). Series currently airing: information and positions may still change. Akasha, Feather Mountain and the Fire Islands haven are at positions estimated from the official art of the seven havens seen from space.

@@ -58,7 +58,7 @@ Não foi encontrado nenhum repositório aberto com o mundo Avatar já georrefere
    - Makapu fica no nordeste da República Unida, Senlin no sul e a Floresta Wulong na costa oeste;
    - Ellora fica no sudeste do Grande Continente; Nova Ba Sing Se, onde era Ba Sing Se.
 3. **Cores das nações:** seguem o mapa oficial: Fogo laranja-avermelhado, Terra bege, Água azul-gelo, Ar branco-acinzentado.
-4. **Era de Pavi e Nisha:** as tempestades violáceas seguem a arte oficial *Seven Havens from space* (Avatar Wiki), que mostra o planeta coberto de tempestades com sete refúgios brilhando.
+4. **Era de Pavi e Nisha:** as tempestades violáceas seguem a arte oficial *Seven Havens from space* (Avatar Wiki), que mostra o planeta coberto de tempestades com sete refúgios brilhando. A página *Seven Havens* do wiki diz onde fica cada cor: violeta perto da antiga Cidade República, azul na costa oeste do Grande Continente, verde no sudoeste e anil nas Ilhas do Fogo. Para estimar as posições, ajustamos uma projeção de globo a essa arte usando os quatro refúgios de lugar conhecido (Cidade República, Nova Ba Sing Se, Ilhas Flutuantes e Ellora). A ligação entre nome e cor (Akasha azul, Montanha da Pena verde) vem das roupas dos enviados e é inferência; por isso esses lugares estão com confiança `baixa`. A teoria de fãs "Akasha = Zaofu" foi descartada: o mapa interativo do wiki (`Map:Avatar_world_map`) põe Zaofu no interior do sudoeste, longe do brilho azul.
 5. **Conferência automática:** o gerador avisa se algum lugar terrestre cair na água. Posições `baixa` devem ser revisadas com o **modo editor** sobre a arte oficial (veja [ARTE-OFICIAL.md](ARTE-OFICIAL.md)).
 
 ## Ainda falta consultar

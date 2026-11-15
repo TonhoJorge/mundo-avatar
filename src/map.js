@@ -4,6 +4,7 @@ import { Map as MLMap, NavigationControl, GlobeControl, setWorkerUrl } from 'map
 import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import { ERAS, NATION } from './eras.js';
+import { buildingLayers } from './buildings.js';
 
 setWorkerUrl(new URL(workerUrl, location.href).href);
 
@@ -79,7 +80,7 @@ function placeLayer(rank) {
   };
 }
 
-export function createMap({ container, meta, era }) {
+export function createMap({ container, meta, era, attribution }) {
   const style = {
     version: 8,
     projection: { type: 'globe' },
@@ -110,6 +111,9 @@ export function createMap({ container, meta, era }) {
       paint: { 'raster-opacity': 0.85, 'raster-fade-duration': 0 },
     });
   }
+  const b = buildingLayers();
+  style.sources.predios = b.source;
+  style.layers.push(b.layer);
   style.sources.lugares = { type: 'geojson', data: { type: 'FeatureCollection', features: [] } };
   style.layers.push(
     {
@@ -131,12 +135,13 @@ export function createMap({ container, meta, era }) {
 
   const map = new MLMap({
     container,
+    localIdeographFontFamily: '"Noto Sans CJK", "Hiragino Sans", "Microsoft YaHei", "Malgun Gothic", sans-serif',
     style,
     center: [20, 12],
     // globo ocupando ~80% do menor lado da tela
     zoom: 1.6 + Math.log2((0.82 * Math.min(window.innerWidth, window.innerHeight)) / 415),
     minZoom: 0.5,
-    maxZoom: meta.maxzoom + 2.5,
+    maxZoom: Math.max(meta.maxzoom + 2.5, 11), // zoom alto para ver as cidades 3D
     maxPitch: 60,
     hash: 'mapa',
     renderWorldCopies: false,
@@ -145,7 +150,7 @@ export function createMap({ container, meta, era }) {
     pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
     attributionControl: {
       compact: true,
-      customAttribution: 'Projeto de fã sem fins lucrativos · Avatar © Nickelodeon/Paramount',
+      customAttribution: attribution,
     },
   });
   map.addControl(new NavigationControl({ visualizePitch: true }), 'bottom-right');
@@ -175,9 +180,11 @@ export function setSelection(map, id) {
 /** Converte o catálogo em GeoJSON para a era escolhida. */
 export function placesToGeoJSON(places, era, { legacy }) {
   const features = [];
+  // lugares antigos que um refúgio ocupa nesta era (não aparecem como "mundo antigo")
+  const replaced = new Set(places.map((p) => p.eras[era]?.replaces).filter(Boolean));
   for (const p of places) {
     const e = p.eras[era];
-    const isLegacy = !e && legacy && era === 'havens' && p.rank <= 2
+    const isLegacy = !e && legacy && era === 'havens' && p.rank <= 2 && !replaced.has(p.id)
       && p.type !== 'region' && p.type !== 'water' && (p.eras.aang || p.eras.korra);
     if (!e && !isLegacy) continue;
     features.push({

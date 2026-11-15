@@ -1,0 +1,100 @@
+# Trilha de desenvolvedores: aprova pedidos automaticamente pelos dados
+# públicos do GitHub e transforma contribuições de desenvolvedores aprovados
+# (enviadas pelo modo desenvolvedor do site) em pull requests.
+name: Desenvolvedores
+
+on:
+  issues:
+    types: [opened, reopened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: dev-${{ github.event.issue.number }}
+
+jobs:
+  pedido:
+    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'pedido-dev')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const login = context.payload.issue.user.login;
+            const now = new Date();
+            const from = new Date(now - 90 * 864e5);
+            const { user } = await github.graphql(`query($login: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $login) { createdAt contributionsCollection(from: $from, to: $to) { contributionCalendar { totalContributions } } }
+            }`, { login, from: from.toISOString(), to: now.toISOString() });
+            const ageDays = Math.floor((now - new Date(user.createdAt)) / 864e5);
+            const contribs = user.contributionsCollection.contributionCalendar.totalContributions;
+            const prs = (await github.rest.search.issuesAndPullRequests({
+              q: `type:pr is:merged author:${login} -user:${login}`, per_page: 1,
+            })).data.total_count;
+            const checks = [
+              [ageDays >= 182, `Conta com pelo menos 6 meses — a sua tem ${ageDays} dias`],
+              [contribs >= 30, `Pelo menos 30 contribuições nos últimos 90 dias — você tem ${contribs}`],
+              [prs >= 1, `Pelo menos 1 pull request aceito em projeto de outra pessoa — você tem ${prs}`],
+            ];
+            const ok = checks.every(([pass]) => pass);
+            const list = checks.map(([pass, text]) => `- ${pass ? '✅' : '❌'} ${text}`).join('\n');
+            const body = ok
+              ? `### Aprovado ✅\n\n${list}\n\n@${login}, você já pode enviar contribuições pelo **modo desenvolvedor** do site (botão "Enviar ao GitHub") ou abrir pull requests diretamente.`
+              : `### Ainda não aprovado\n\n${list}\n\nQuando cumprir o que falta, é só **reabrir** este pedido que o robô verifica de novo.`;
+            const issue_number = context.payload.issue.number;
+            await github.rest.issues.createComment({ ...context.repo, issue_number, body });
+            if (ok) await github.rest.issues.addLabels({ ...context.repo, issue_number, labels: ['dev-aprovado'] });
+            await github.rest.issues.update({ ...context.repo, issue_number, state: 'closed', state_reason: ok ? 'completed' : 'not_planned' });
+
+  contribuicao:
+    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'contribuicao-dev')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const login = issue.user.login;
+            const issue_number = issue.number;
+            const say = (body) => github.rest.issues.createComment({ ...context.repo, issue_number, body });
+            const approved = (await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue label:dev-aprovado author:${login}`, per_page: 1,
+            })).data.total_count > 0;
+            if (!approved) {
+              await say(`@${login}, só desenvolvedores aprovados enviam contribuições por aqui. Peça acesso pelo modelo **Pedido de acesso de desenvolvedor** (a aprovação é automática).`);
+              await github.rest.issues.update({ ...context.repo, issue_number, state: 'closed', state_reason: 'not_planned' });
+              return;
+            }
+            const m = /```json\s*([\s\S]*?)```/.exec(issue.body ?? '');
+            let edits;
+            try { edits = JSON.parse(m[1]); } catch { await say('Não encontrei o bloco JSON com as posições.'); return; }
+            const path = 'public/data/places.json';
+            const { data: file } = await github.rest.repos.getContent({ ...context.repo, path, ref: 'main' });
+            const data = JSON.parse(Buffer.from(file.content, 'base64').toString('utf8'));
+            const problems = [];
+            let n = 0;
+            for (const [id, pos] of Object.entries(edits)) {
+              const p = data.places.find((x) => x.id === id);
+              const lon = Number(pos?.lon), lat = Number(pos?.lat);
+              if (!p) { problems.push(`lugar desconhecido: ${id}`); continue; }
+              if (!(lon >= -180 && lon <= 180 && lat >= -85 && lat <= 85)) { problems.push(`posição inválida em ${id}`); continue; }
+              p.lon = Math.round(lon * 100) / 100; p.lat = Math.round(lat * 100) / 100; n++;
+            }
+            if (!n) { await say(`Nada para aplicar.\n\n${problems.map((x) => `- ${x}`).join('\n')}`); return; }
+            const branch = `contribuicao-dev-${issue_number}`;
+            const { data: ref } = await github.rest.git.getRef({ ...context.repo, ref: 'heads/main' });
+            await github.rest.git.createRef({ ...context.repo, ref: `refs/heads/${branch}`, sha: ref.object.sha }).catch(() => {});
+            await github.rest.repos.createOrUpdateFileContents({
+              ...context.repo, path, branch, sha: file.sha,
+              message: `Posições enviadas por @${login} (#${issue_number})`,
+              content: Buffer.from(`${JSON.stringify(data, null, 2)}\n`).toString('base64'),
+            });
+            const { data: pr } = await github.rest.pulls.create({
+              ...context.repo, head: branch, base: 'main',
+              title: `Contribuição de @${login}: ${n} posição(ões)`,
+              body: `Gerado automaticamente a partir de #${issue_number} (desenvolvedor aprovado).\n\nFecha #${issue_number}`,
+            });
+            await say(`Pull request criado: ${pr.html_url}${problems.length ? `\n\nIgnorados:\n${problems.map((x) => `- ${x}`).join('\n')}` : ''}`);

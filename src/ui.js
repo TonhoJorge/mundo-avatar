@@ -1,13 +1,16 @@
 // Interface: seletor de era, busca, painel de detalhes, camadas e avisos.
 
-import { ERAS, eraById, NATION, TYPE_LABEL, CONF_LABEL, CANON_LABEL } from './eras.js';
+import { ERAS, eraById, NATION } from './eras.js';
 import { h, normalize } from './util.js';
+import { t, currentLang, localizeEra } from './i18n.js';
+
+const typeLabel = (type) => t(`type.${type}`);
 
 const $ = (sel) => document.querySelector(sel);
 
 // --------------------------------------------------------------------------
 export function renderEraNav(nav, current, onPick) {
-  nav.replaceChildren(...ERAS.map((e) => h('button', {
+  nav.replaceChildren(...ERAS.map(localizeEra).map((e) => h('button', {
     type: 'button',
     class: `era era-${e.id}`,
     'data-era': e.id,
@@ -33,61 +36,77 @@ export function closePanel() {
 function openPanel(...children) {
   const p = panel();
   p.replaceChildren(
-    h('button', { type: 'button', class: 'fechar', 'aria-label': 'Fechar painel', onclick: () => p.dispatchEvent(new CustomEvent('fechar')) }, '×'),
+    h('button', { type: 'button', class: 'fechar', 'aria-label': t('panel.close'), onclick: () => p.dispatchEvent(new CustomEvent('fechar')) }, '×'),
     ...children.flat(Infinity).filter((c) => c != null && c !== false),
   );
   p.hidden = false;
   p.scrollTop = 0;
 }
 
-export function showPlace(place, era, { onEra, onFly, onShare }) {
+function gallery(info) {
+  if (!info?.fotos?.length) return null;
+  const link = (href, ...c) => h('a', { href, target: '_blank', rel: 'noopener noreferrer' }, ...c);
+  return h('figure', { class: 'galeria' },
+    h('div', { class: 'fotos' }, info.fotos.map((f) => link(f.file,
+      h('img', {
+        src: f.src, alt: '', loading: 'lazy', decoding: 'async', referrerpolicy: 'no-referrer',
+        onerror: (ev) => ev.target.closest('a')?.remove(),
+      })))),
+    h('figcaption', {}, t('photos.credit'), ' ', link(info.wiki, t('photos.source'))));
+}
+
+/** Painel genérico (comunidade, regras, perfis…). */
+export function showSheet(...children) {
+  openPanel(...children);
+  panel().querySelector('h2')?.focus({ preventScroll: true });
+}
+
+export function showPlace(place, era, { photos, onEra, onFly, onShare, extra }) {
   const e = place.eras[era];
   const name = e?.name ?? place.name;
   const nation = e?.nation && e.nation !== 'none' ? NATION[e.nation] : null;
-  const aka = [...(e?.name && e.name !== place.name ? [place.name] : []), ...(place.aka ?? [])];
-  const present = ERAS.filter((x) => place.eras[x.id]);
-  const absent = !e && (era === 'havens'
-    ? 'Lugar do mundo antigo. A situação dele nesta era ainda não foi revelada na série.'
-    : 'Este lugar não aparece nesta era.');
+  const aka = [...new Set([...(e?.name && e.name !== place.name ? [place.name] : []), ...(place.aka ?? [])])].filter((a) => a !== name);
+  const present = ERAS.filter((x) => place.eras[x.id]).map(localizeEra);
+  const absent = !e && t(era === 'havens' ? 'place.legacy' : 'place.absent');
 
   openPanel(
-    h('p', { class: 'tipo' }, TYPE_LABEL[place.type] ?? place.type),
+    h('p', { class: 'tipo' }, typeLabel(place.type)),
     h('h2', { id: 'painel-titulo', tabindex: '-1' }, name),
-    aka.length ? h('p', { class: 'aka' }, `Também: ${aka.join(' · ')}`) : null,
+    aka.length ? h('p', { class: 'aka' }, t('place.aka', { names: aka.join(' · ') })) : null,
     h('div', { class: 'chips' },
-      nation ? h('span', { class: 'chip', style: `--cor:${nation.color}` }, nation.label) : null,
+      nation ? h('span', { class: 'chip', style: `--cor:${nation.color}` }, t(`nation.${e.nation}`)) : null,
       e?.status ? h('span', { class: 'chip chip-status' }, e.status) : null),
+    gallery(photos),
     absent ? h('p', { class: 'ausente' }, absent) : null,
     h('p', {}, place.desc),
     e?.desc ? h('p', {}, e.desc) : null,
     present.length > 1 || absent ? h('div', { class: 'outras-eras' },
-      h('p', { class: 'rotulo' }, 'Ver em outra era'),
+      h('p', { class: 'rotulo' }, t('place.otherEra')),
       h('div', { class: 'chips' }, present.map((x) => h('button', {
         type: 'button', class: `chip chip-era era-${x.id}`, disabled: x.id === era,
         onclick: () => onEra(x.id),
       }, `${x.short} · ${x.years}`)))) : null,
     h('dl', { class: 'meta' },
-      h('dt', {}, 'Posição'), h('dd', {}, CONF_LABEL[place.conf] ?? place.conf),
-      h('dt', {}, 'Fonte'), h('dd', {}, CANON_LABEL[place.canon] ?? place.canon),
-      place.refs?.length ? [h('dt', {}, 'Aparece em'), h('dd', {}, place.refs.join('; '))] : null),
+      h('dt', {}, t('place.position')), h('dd', {}, t(`conf.${place.conf}`)),
+      h('dt', {}, t('place.source')), h('dd', {}, t(`canon.${place.canon}`)),
+      place.refs?.length ? [h('dt', {}, t('place.appears')), h('dd', {}, place.refs.join('; '))] : null),
     h('div', { class: 'acoes' },
-      h('button', { type: 'button', onclick: onFly }, 'Centralizar'),
-      h('button', { type: 'button', onclick: onShare }, 'Copiar link')),
+      h('button', { type: 'button', onclick: onFly }, t('place.center')),
+      h('button', { type: 'button', onclick: onShare }, t('place.copyLink'))),
+    extra ?? null,
   );
 }
 
 export function showEraInfo(eraId) {
-  const e = eraById(eraId);
+  const e = localizeEra(eraById(eraId));
   openPanel(
-    h('p', { class: 'tipo' }, 'Sobre esta era'),
+    h('p', { class: 'tipo' }, t('era.about')),
     h('h2', { id: 'painel-titulo', tabindex: '-1' }, e.label),
     h('p', { class: 'aka' }, e.years),
     h('p', {}, e.summary),
-    e.unknown ? [h('p', { class: 'rotulo' }, 'Ainda sem lugar no mapa'), h('ul', {}, e.unknown.map((u) => h('li', {}, u)))] : null,
-    h('dl', { class: 'meta' }, h('dt', {}, 'Fontes'), h('dd', {}, e.sources)),
-    h('p', { class: 'legal' },
-      'Projeto de fã, sem fins lucrativos. Avatar: A Lenda de Aang, A Lenda de Korra e Avatar: Sete Refúgios são marcas da Nickelodeon/Paramount. ',
-      'A pintura do mapa é procedural e original (salvo quando o administrador do site usa outra arte); posições marcadas como estimadas são aproximações.'),
+    e.unknown ? [h('p', { class: 'rotulo' }, t('era.unknown')), h('ul', {}, e.unknown.map((u) => h('li', {}, u)))] : null,
+    h('dl', { class: 'meta' }, h('dt', {}, t('era.sources')), h('dd', {}, e.sources)),
+    h('p', { class: 'legal' }, t('era.legal')),
   );
 }
 
@@ -114,15 +133,15 @@ export function setupSearch({ input, list, getPlaces, onPick }) {
 
   const render = () => {
     if (!results.length) {
-      list.replaceChildren(h('li', { class: 'vazio', role: 'option', 'aria-disabled': 'true' }, 'Nenhum lugar encontrado'));
+      list.replaceChildren(h('li', { class: 'vazio', role: 'option', 'aria-disabled': 'true' }, t('search.none')));
     } else {
       list.replaceChildren(...results.map((p, i) => h('li', {
         id: `resultado-${i}`, role: 'option', 'aria-selected': i === active ? 'true' : 'false',
         onclick: () => pick(i),
       },
       h('span', { class: 'r-nome' }, p.name),
-      h('span', { class: 'r-tipo' }, TYPE_LABEL[p.type] ?? ''),
-      h('span', { class: 'r-eras' }, ERAS.map((e) => h('i', { class: `era-${e.id}`, title: e.label, 'data-on': p.eras[e.id] ? '1' : '0' }, e.short[0]))))));
+      h('span', { class: 'r-tipo' }, typeLabel(p.type)),
+      h('span', { class: 'r-eras' }, ERAS.map(localizeEra).map((e) => h('i', { class: `era-${e.id}`, title: e.label, 'data-on': p.eras[e.id] ? '1' : '0' }, e.short[0]))))));
     }
     list.hidden = false;
     input.setAttribute('aria-expanded', 'true');
@@ -144,11 +163,11 @@ export function setupSearch({ input, list, getPlaces, onPick }) {
     if (!q) { results = []; close(); return; }
     results = getPlaces()
       .map((p) => {
-        const keys = [p.name, ...(p.aka ?? []), ...Object.values(p.eras).map((e) => e.name).filter(Boolean)].map(normalize);
+        const keys = [p.name, p.ptName, ...(p.aka ?? []), ...Object.values(p.eras).map((e) => e.name).filter(Boolean)].filter(Boolean).map(normalize);
         return { p, s: score(keys, q) };
       })
       .filter((r) => r.s < 9)
-      .sort((a, b) => a.s - b.s || a.p.rank - b.p.rank || a.p.name.localeCompare(b.p.name, 'pt'))
+      .sort((a, b) => a.s - b.s || a.p.rank - b.p.rank || a.p.name.localeCompare(b.p.name, currentLang()))
       .slice(0, 8)
       .map((r) => r.p);
     active = results.length ? 0 : -1;
