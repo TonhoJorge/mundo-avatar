@@ -86,6 +86,42 @@ function boxBlurF(m, W, H, r) {
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const w = windowSum(I, W, H, x, y, r); o[y * W + x] = w.s / w.n; }
   return o;
 }
+// rios: faixa de tom do miolo cinza, área mínima (px) e comprimento mínimo
+// (diagonal da caixa, px)
+const RIVER_GRAY = [40, 90];
+const RIVER_GRAY_CONE = [95, 142];
+const RIVER_MIN_AREA = 120;
+const RIVER_MIN_LEN = 40;
+const RIVER_TIP = 70;
+
+/** Mantém só os componentes conexos (4-vizinhança) aprovados por keep(info). */
+function keepComponents(m, W, H, keep) {
+  const seen = new Uint8Array(W * H), stack = new Int32Array(W * H), out = new Uint8Array(W * H);
+  for (let i = 0; i < W * H; i++) {
+    if (!m[i] || seen[i]) continue;
+    let top = 0; const comp = [];
+    let x0 = W, y0 = H, x1 = 0, y1 = 0;
+    stack[top++] = i; seen[i] = 1;
+    while (top) {
+      const j = stack[--top]; comp.push(j);
+      const x = j % W, y = (j / W) | 0;
+      if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+      for (const k of [x > 0 ? j - 1 : -1, x < W - 1 ? j + 1 : -1, y > 0 ? j - W : -1, y < H - 1 ? j + W : -1]) {
+        if (k >= 0 && m[k] && !seen[k]) { seen[k] = 1; stack[top++] = k; }
+      }
+    }
+    const info = {
+      n: comp.length,
+      diag: Math.hypot(x1 - x0, y1 - y0),
+      landFrac: (f) => comp.reduce((s, j) => s + f[j], 0) / comp.length,
+      touches: (mask) => comp.some((j) => mask[j]),
+      every: (fn) => comp.every(fn),
+    };
+    if (keep(info)) for (const j of comp) out[j] = 1;
+  }
+  return out;
+}
+
 /** Remove componentes conexos menores que minArea (ruído). */
 function dropSmall(m, W, H, minArea) {
   const seen = new Uint8Array(W * H), stack = new Int32Array(W * H);
@@ -176,20 +212,79 @@ async function main() {
   const water = new Uint8Array(N);
   for (let i = 0; i < N; i++) water[i] = land[i] ? 0 : 1;
   dropSmall(water, W, H, 60); // furinhos de "mar" dentro da terra viram terra
+  { // sob o cone, o rio clareado tem o tom do mar clareado: "lagos" fechados ali são rio
+    const fake = keepComponents(water, W, H, (c) => c.every((j) => inTri(j % W, (j / W) | 0, CONE, 30)));
+    for (let i = 0; i < N; i++) if (fake[i]) water[i] = 0;
+  }
   for (let i = 0; i < N; i++) if (!land[i] && !water[i]) land[i] = 1;
 
   console.log('rios e montanhas…');
+  // No mapa oficial cada rio é uma faixa cinza-escura (tons 40–90) entre dois
+  // contornos pretos, com ~12 px de largura, que sai do litoral e afina terra
+  // adentro. Relevo e litoral são traço preto simples, sem esse miolo cinza.
+  // (as muralhas de Ba Sing Se ocupam ~110 px; o círculo maior engolia os rios vizinhos)
+  const skipBase = (x, y) => (x - BSS.x) ** 2 + (y - BSS.y) ** 2 < 125 ** 2 || EXCLUDE.some((bx) => inBox(x, y, bx));
+  const skip = (x, y) => skipBase(x, y) || inTri(x, y, CONE, 18);
+  const landFrac = boxBlurF(land, W, H, 14);
   const dark = new Uint8Array(N);
   for (let i = 0; i < N; i++) dark[i] = cls[i] === 9 && land[i] ? 1 : 0;
-  const coastNear = dilate(water, W, H, 9); // contorno do litoral não é rio
-  let thick = open(dark, W, H, 2); // traços grossos (rios); os finos (relevo) somem
+  // sombreado cinza dos picos brancos (Ar) e dos vulcões não é rio
+  const peaks = new Uint8Array(N);
+  for (let i = 0; i < N; i++) peaks[i] = cls[i] === 4 || cls[i] === 3 ? 1 : 0;
+  const peakFrac = boxBlurF(peaks, W, H, 12);
+  // 1) miolo: cinza neutro com pelo menos 3 px de largura. Sob o cone translúcido
+  // do quadro de detalhe o mesmo rio aparece clareado (tons 100–130).
+  let core = new Uint8Array(N);
   for (let i = 0; i < N; i++) {
     const x = i % W, y = (i / W) | 0;
-    if (coastNear[i] || (x - BSS.x) ** 2 + (y - BSS.y) ** 2 < BSS.r ** 2 || inTri(x, y, CONE, 18)) thick[i] = 0;
+    if (skipBase(x, y) || peakFrac[i] >= 0.2) continue;
+    const r = data[i * 3], g = data[i * 3 + 1], b = data[i * 3 + 2];
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+    // (o cone tinge tudo de bege: lá o cinza do rio vira um pardo de saturação ~45)
+    // Na faixa da borda do cone vale qualquer dos dois tons; a linha da borda em
+    // si é preta (<50) e fina, e não passa na abertura abaixo.
+    if (inTri(x, y, CONE, -1)) core[i] = landFrac[i] > 0.5 && mx - mn <= 55 && mx >= RIVER_GRAY_CONE[0] && mx <= RIVER_GRAY_CONE[1] ? 1 : 0;
+    else if (inTri(x, y, CONE, 18)) core[i] = landFrac[i] > 0.5 && mx - mn <= 55 && mx >= 50 && mx <= RIVER_GRAY_CONE[1] ? 1 : 0;
+    else core[i] = land[i] && mx - mn <= 22 && mx >= RIVER_GRAY[0] && mx <= RIVER_GRAY[1] ? 1 : 0;
   }
-  thick = dropSmall(thick, W, H, 150); // rio é traço longo
+  core = open(core, W, H, 1);
+  // 2) o rio é o miolo mais o contorno preto colado nele
+  const coreNear = dilate(core, W, H, 4);
+  let thick = new Uint8Array(N);
+  for (let i = 0; i < N; i++) thick[i] = core[i] || (coreNear[i] && dark[i]) ? 1 : 0;
+  thick = close(thick, W, H, 2);
+  // (entorno majoritariamente terra: descarta contornos de ilhotas)
+  thick = keepComponents(thick, W, H, (c) => c.n >= RIVER_MIN_AREA && c.diag >= RIVER_MIN_LEN && c.landFrac(landFrac) >= 0.55);
+  { // 2b) rios menores: cunha preta sólida (≥5 px de largura) com a foz no litoral
+    let wedge = open(dark, W, H, 2);
+    for (let i = 0; i < N; i++) if (thick[i] || peakFrac[i] >= 0.2 || skip(i % W, (i / W) | 0)) wedge[i] = 0;
+    const mouth = dilate(water, W, H, 4);
+    wedge = keepComponents(wedge, W, H, (c) => c.n >= 60 && c.n <= 4000 && c.diag >= 25 && c.touches(mouth) && c.landFrac(landFrac) >= 0.55);
+    for (let i = 0; i < N; i++) if (wedge[i]) thick[i] = 1;
+  }
+  { // 3) nascentes: onde o miolo some, o rio segue como traço preto grosso (≥3 px);
+    // cresce por ele até RIVER_TIP px, longe do contorno do litoral
+    const shoreNear = dilate(water, W, H, 6);
+    const path = open(dark, W, H, 1);
+    for (let i = 0; i < N; i++) if (shoreNear[i] || peakFrac[i] >= 0.2 || skip(i % W, (i / W) | 0)) path[i] = 0;
+    let front = [];
+    for (let i = 0; i < N; i++) if (thick[i]) front.push(i);
+    for (let step = 0; step < RIVER_TIP && front.length; step++) {
+      const next = [];
+      for (const j of front) {
+        const x = j % W;
+        for (const k of [x > 0 ? j - 1 : -1, x < W - 1 ? j + 1 : -1, j - W, j + W]) {
+          if (k >= 0 && k < N && path[k] && !thick[k]) { thick[k] = 1; next.push(k); }
+        }
+      }
+      front = next;
+    }
+  }
+  for (let i = 0; i < N; i++) if (thick[i]) { land[i] = 1; water[i] = 0; } // rio é terra pintada de rio
+  const coastNear = dilate(water, W, H, 9);
   const hatch = new Uint8Array(N);
-  for (let i = 0; i < N; i++) hatch[i] = dark[i] && !thick[i] && !coastNear[i] && !inTri(i % W, (i / W) | 0, CONE, 18) ? 1 : 0;
+  const riverNear = dilate(thick, W, H, 4); // o contorno preto do rio não é relevo
+  for (let i = 0; i < N; i++) hatch[i] = dark[i] && !riverNear[i] && !coastNear[i] &&!inTri(i % W, (i / W) | 0, CONE, 18) ? 1 : 0;
   const mountD = boxBlurF(hatch, W, H, 14);
 
   console.log('nações…');
