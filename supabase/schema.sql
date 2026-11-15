@@ -33,7 +33,9 @@ insert into public.config (key, value, label) values
   ('perse_share',           0.5,  'Ouvidoria: parcela mínima das refutações do acusado contra o denunciante'),
   ('perse_reverted_share',  0.5,  'Ouvidoria: parcela mínima dessas refutações que foram revertidas'),
   ('report_strikes',        3,    'Ouvidoria: denúncias arquivadas seguidas que bloqueiam novas denúncias'),
-  ('report_block_days',     90,   'Ouvidoria: dias de bloqueio para novas denúncias')
+  ('report_block_days',     90,   'Ouvidoria: dias de bloqueio para novas denúncias'),
+  ('zero_recover_days',     180,  'Dias com credibilidade zero até recomeçar'),
+  ('zero_recover_to',       2,    'Credibilidade de quem recomeça depois da espera')
 on conflict (key) do nothing;
 
 create or replace function public.cfg(k text) returns numeric
@@ -47,6 +49,11 @@ create table if not exists public.profiles (
   banned_at timestamptz,
   ban_reason text
 );
+-- Recomeço depois de credibilidade zero: a partir de cred_reset_at a conta
+-- vale cred_base mais só as contribuições feitas depois dessa data.
+alter table public.profiles add column if not exists zero_since timestamptz;
+alter table public.profiles add column if not exists cred_reset_at timestamptz;
+alter table public.profiles add column if not exists cred_base numeric;
 
 create or replace function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$
@@ -116,15 +123,58 @@ end $$;
 create or replace function public.outcome(cid bigint) returns int
 language sql stable set search_path = public as $$ select sign(t.approvals - t.refutes)::int from tally(cid) t $$;
 
-create or replace function public.credibility(uid uuid) returns numeric
+-- Credibilidade calculada pelo resultado atual das votações (sem o recomeço).
+create or replace function public.raw_credibility(uid uuid) returns numeric
 language sql stable set search_path = public as $$
-  select round(greatest(0, least(cfg('cred_max'), cfg('cred_start') + coalesce(sum(
-    case when c.kind = 'justificativa'
+  select round(greatest(0, least(cfg('cred_max'), coalesce(p.cred_base, cfg('cred_start')) + coalesce((
+    select sum(case when c.kind = 'justificativa'
       then case outcome(c.id) when 1 then cfg('gain_just') when -1 then -cfg('loss_just') else 0 end
       else case outcome(c.id) when 1 then cfg('gain_approved') when -1 then -cfg('loss_refuted') else 0 end
-    end), 0))), 2)
-  from contributions c where c.author = uid
+    end)
+    from contributions c where c.author = uid and (p.cred_reset_at is null or c.created_at >= p.cred_reset_at)), 0))), 2)
+  from profiles p where p.id = uid
 $$;
+
+-- Quem está em zero há zero_recover_days dias já aparece com zero_recover_to.
+create or replace function public.credibility(uid uuid) returns numeric
+language sql stable set search_path = public as $$
+  select case
+    when p.zero_since is not null and p.zero_since <= now() - make_interval(days => cfg('zero_recover_days')::int)
+      then cfg('zero_recover_to')
+    else raw_credibility(uid) end
+  from profiles p where p.id = uid
+$$;
+
+-- Atualiza a marca de "em zero desde" e aplica o recomeço quando o prazo passou.
+-- Chamada sempre que um voto pode ter mudado a credibilidade de alguém.
+create or replace function public.refresh_cred(uid uuid) returns void
+language plpgsql security definer set search_path = public as $$
+declare p profiles;
+begin
+  select * into p from profiles where id = uid;
+  if not found then return; end if;
+  if p.zero_since is not null and p.zero_since <= now() - make_interval(days => cfg('zero_recover_days')::int) then
+    update profiles set cred_base = cfg('zero_recover_to'), cred_reset_at = now(), zero_since = null where id = uid;
+  elsif raw_credibility(uid) <= 0 then
+    if p.zero_since is null then update profiles set zero_since = now() where id = uid; end if;
+  elsif p.zero_since is not null then
+    update profiles set zero_since = null where id = uid;
+  end if;
+end $$;
+
+-- Recalcula o autor do item votado e de toda a cadeia acima (uma réplica
+-- mexe no resultado do item que ela contesta).
+create or replace function public.refresh_chain(cid bigint) returns void
+language plpgsql security definer set search_path = public as $$
+declare c contributions;
+begin
+  select * into c from contributions where id = cid;
+  while found loop
+    perform refresh_cred(c.author);
+    exit when c.parent_id is null;
+    select * into c from contributions where id = c.parent_id;
+  end loop;
+end $$;
 
 -- ============================================================== ouvidoria
 create table if not exists public.reports (
@@ -141,7 +191,8 @@ create table if not exists public.reports (
 
 -- ================================================================= vistas
 create or replace view public.public_profiles with (security_invoker = on) as
-  select id, name, created_at, banned_at is not null as banned, ban_reason, credibility(id) as credibility
+  select id, name, created_at, banned_at is not null as banned, ban_reason, credibility(id) as credibility,
+         zero_since, cred_reset_at
   from profiles;
 
 create or replace view public.contribution_list with (security_invoker = on) as
@@ -169,6 +220,8 @@ returns bigint language plpgsql security definer set search_path = public as $$
 declare uid uuid := require_user(); cred numeric := credibility(uid); new_id bigint;
 begin
   if p_kind not in ('info', 'correcao', 'foto') then raise exception 'bad_kind'; end if;
+  perform refresh_cred(uid); -- aplica o recomeço se o prazo em zero já passou
+  cred := credibility(uid);
   if cred <= 0 then raise exception 'cred_zero'; end if;
   if cred < cfg('limit2_below') and exists (select 1 from contributions where author = uid and kind <> 'justificativa'
       and created_at > now() - make_interval(days => cfg('limit2_days')::int)) then raise exception 'limit2'; end if;
@@ -203,12 +256,14 @@ begin
   else
     raise exception 'bad_value';
   end if;
+  perform refresh_chain(p_id);
 end $$;
 
 create or replace function public.unvote(p_id bigint) returns void
 language plpgsql security definer set search_path = public as $$
 begin
   delete from votes where contribution_id = p_id and voter = require_user();
+  perform refresh_chain(p_id);
 end $$;
 
 create or replace function public.set_name(p_name text) returns void
@@ -250,6 +305,7 @@ begin
       where id = p_accused;
     update votes v set annulled_at = now() from contributions c
       where c.id = v.contribution_id and v.voter = p_accused and v.value = -1 and c.author = uid and v.annulled_at is null;
+    perform refresh_cred(uid);
   end if;
 
   return jsonb_build_object('id', rid, 'confirmed', ok, 'total_refutes', n_total, 'on_reporter', n_on, 'reverted', n_rev);
@@ -281,4 +337,5 @@ grant select on public.public_profiles, public.contribution_list, public.public_
 
 revoke execute on function public.contribute, public.vote, public.unvote, public.set_name, public.report, public.require_user from public, anon;
 grant execute on function public.contribute, public.vote, public.unvote, public.set_name, public.report to authenticated;
-grant execute on function public.cfg, public.tally, public.outcome, public.credibility to anon, authenticated;
+grant execute on function public.cfg, public.tally, public.outcome, public.credibility, public.raw_credibility to anon, authenticated;
+revoke execute on function public.refresh_cred, public.refresh_chain from public, anon, authenticated;

@@ -9,7 +9,7 @@ const DEFAULTS = {
   cred_start: 5, cred_max: 10, gain_approved: 0.1, loss_refuted: 0.1, gain_just: 0.01, loss_just: 0.01,
   vote_min_cred: 3, vote_min_days: 7, limit1_below: 2, limit1_days: 30, limit2_below: 1, limit2_days: 90,
   perse_window_days: 90, perse_min_refutes: 5, perse_share: 0.5, perse_reverted_share: 0.5,
-  report_strikes: 3, report_block_days: 90,
+  report_strikes: 3, report_block_days: 90, zero_recover_days: 180, zero_recover_to: 2,
 };
 
 export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace, placeName }) {
@@ -98,7 +98,7 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
 
   function limitsNote() {
     const c = user.credibility;
-    if (c <= 0) return t('com.limit0');
+    if (c <= 0) return t('com.limit0', R());
     if (c < rules.limit2_below) return t('com.limit2', R());
     if (c < rules.limit1_below) return t('com.limit1', R());
     if (c < rules.vote_min_cred) return t('com.noVote', R());
@@ -172,6 +172,7 @@ export function createCommunity({ base, showSheet, toast, getEra, onSelectPlace,
     ]);
     if (!p) { showSheet(h('p', {}, t('err.not_found'))); return; }
     const effect = (c) => {
+      if (p.cred_reset_at && c.created_at < p.cred_reset_at) return t('com.beforeReset');
       const just = c.kind === 'justificativa';
       if (c.outcome > 0) return `+${fmtNum(just ? rules.gain_just : rules.gain_approved)}`;
       if (c.outcome < 0) return `−${fmtNum(just ? rules.loss_just : rules.loss_refuted)}`;
